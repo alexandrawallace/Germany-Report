@@ -1,0 +1,3341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="逐校核查作品集如何被评价、谁负责评审、是否有等级或分值、通过机制与现场考试标准。">
+  <title>德国 20 所艺术院校作品集评价机制与评价依据</title>
+  <style>
+    :root {
+      --ink: #17201d;
+      --muted: #5d6b65;
+      --paper: #fafbf8;
+      --surface: #ffffff;
+      --surface-2: #f0f4f1;
+      --line: #d7dfda;
+      --accent: #175a45;
+      --accent-dark: #0f4032;
+      --accent-soft: #e8f2ed;
+      --shadow: 0 14px 38px rgba(18, 45, 35, 0.09);
+      --radius: 16px;
+      --sidebar: 312px;
+      --switcher-height: 58px;
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { max-width: 100%; scroll-behavior: smooth; background: var(--paper); overflow-x: clip; }
+    body {
+      margin: 0;
+      max-width: 100%;
+      overflow-x: clip;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    a { color: var(--accent); text-underline-offset: 0.16em; }
+    a:hover { color: var(--accent-dark); }
+    a[target="_blank"]::after { content: "↗"; margin-left: 0.18em; font-size: 0.75em; opacity: 0.68; }
+    :focus-visible { outline: 3px solid #e6a33e; outline-offset: 3px; border-radius: 5px; }
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 2000;
+      left: 16px;
+      top: -80px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      color: white;
+      background: #102f26;
+      transition: top 0.18s ease;
+    }
+    .skip-link:focus { top: 72px; }
+
+    .progress { position: fixed; z-index: 1800; top: 0; left: 0; right: 0; height: 4px; background: transparent; }
+    .progress-bar { width: 0; height: 100%; background: linear-gradient(90deg, #2d8a66, #d49b41); }
+
+    .report-switcher {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      min-height: var(--switcher-height);
+      border-bottom: 1px solid rgba(215, 223, 218, 0.94);
+      background: rgba(250, 251, 248, 0.95);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 5px 20px rgba(20, 43, 35, 0.06);
+    }
+    .switcher-inner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 1760px;
+      min-height: var(--switcher-height);
+      margin: 0 auto;
+      padding: 8px clamp(14px, 3vw, 38px);
+      overflow-x: auto;
+    }
+    .suite-home,
+    .report-tab {
+      flex: 0 0 auto;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #2c3d36;
+      background: #fff;
+      font-size: 0.88rem;
+      font-weight: 760;
+      line-height: 1.2;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .suite-home { margin-right: 4px; color: #fff; border-color: #213f35; background: #213f35; }
+    .suite-home:hover { color: #fff; background: #142e26; }
+    .suite-home.is-current,
+    .report-tab.is-current { color: #fff; border-color: var(--accent); background: var(--accent); }
+
+    .report-panel[data-report="application"] { --accent: #175a45; --accent-dark: #0e3f31; --accent-soft: #e7f2ed; --hero-end: #263d35; }
+    .report-panel[data-report="professors"] { --accent: #4a477f; --accent-dark: #312e62; --accent-soft: #eeedf7; --hero-end: #2d304d; }
+    .report-panel[data-report="portfolio"] { --accent: #7b4a23; --accent-dark: #593217; --accent-soft: #f5ede6; --hero-end: #41352e; }
+
+    .hero {
+      position: relative;
+      padding: 60px clamp(22px, 5vw, 80px) 48px;
+      overflow: hidden;
+      color: #f8fffb;
+      background: linear-gradient(125deg, var(--accent-dark) 0%, var(--accent) 58%, var(--hero-end) 100%);
+    }
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero::before { width: 430px; height: 430px; right: -120px; top: -230px; }
+    .hero::after { width: 250px; height: 250px; right: 140px; bottom: -210px; }
+    .hero-inner { position: relative; max-width: 1280px; margin: 0 auto; }
+    .eyebrow { margin: 0 0 11px; font-size: 0.76rem; font-weight: 780; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.8; }
+    .hero h1 { max-width: 1080px; margin: 0; font-size: clamp(2rem, 4.4vw, 4.15rem); line-height: 1.08; letter-spacing: -0.035em; }
+    .hero-lede { max-width: 900px; margin: 19px 0 0; color: rgba(248,255,251,0.84); font-size: clamp(1rem, 1.7vw, 1.18rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 15px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 10px;
+      color: #fff;
+      background: rgba(255,255,255,0.09);
+      font: inherit;
+      font-weight: 720;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .button:hover { color: #fff; background: rgba(255,255,255,0.17); }
+    .button-primary { color: var(--accent-dark); border-color: #edf7f1; background: #edf7f1; }
+    .button-primary:hover { color: var(--accent-dark); background: #fff; }
+
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(130px, 1fr)); gap: 12px; max-width: 900px; margin-top: 32px; }
+    .stat { min-height: 88px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; background: rgba(255,255,255,0.075); backdrop-filter: blur(6px); }
+    .stat-value { display: block; font-size: 1.42rem; font-weight: 820; line-height: 1.15; }
+    .stat-label { display: block; margin-top: 7px; color: rgba(248,255,251,0.73); font-size: 0.78rem; line-height: 1.3; }
+
+    .mobile-bar { display: none; position: sticky; z-index: 250; top: var(--switcher-height); padding: 10px 14px; border-bottom: 1px solid var(--line); background: rgba(250,251,248,0.95); backdrop-filter: blur(10px); }
+    .mobile-menu-button { min-height: 42px; padding: 8px 13px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: #fff; font: inherit; font-weight: 720; cursor: pointer; }
+
+    .layout { display: grid; grid-template-columns: var(--sidebar) minmax(0, 1fr); max-width: 1760px; margin: 0 auto; }
+    .toc {
+      position: sticky;
+      top: var(--switcher-height);
+      align-self: start;
+      height: calc(100vh - var(--switcher-height));
+      padding: 25px 20px 34px;
+      border-right: 1px solid var(--line);
+      background: rgba(247,249,246,0.92);
+      overflow-y: auto;
+      backdrop-filter: blur(12px);
+    }
+    .toc-title { margin: 0 0 13px; color: var(--muted); font-size: 0.75rem; font-weight: 820; letter-spacing: 0.13em; text-transform: uppercase; }
+    .toc-search { width: 100%; min-height: 42px; margin-bottom: 16px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: #fff; font: inherit; }
+    .toc-list { display: flex; flex-direction: column; gap: 2px; }
+    .toc-link { display: block; padding: 7px 9px; border-radius: 8px; color: #34423c; font-size: 0.84rem; line-height: 1.32; text-decoration: none; }
+    .toc-link:hover { color: var(--accent-dark); background: var(--accent-soft); }
+    .toc-link.active { color: #fff; background: var(--accent); }
+    .toc-part { margin-top: 9px; color: #17241f; font-weight: 820; }
+    .toc-entry { padding-left: 18px; }
+
+    main { min-width: 0; padding: 36px clamp(20px, 3.2vw, 54px) 90px; }
+    .report-body { max-width: 1320px; margin: 0 auto; }
+    .notice { margin: 0 0 26px; padding: 17px 20px; border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    .notice strong { color: var(--accent-dark); }
+
+    .report-body h2,
+    .report-body h3,
+    .report-body h4,
+    .report-body h5,
+    .report-body h6 { color: #16231e; text-wrap: balance; scroll-margin-top: calc(var(--switcher-height) + 22px); }
+    .report-body h2 { margin: 70px 0 22px; padding-top: 20px; border-top: 2px solid #bdc9c1; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.16; letter-spacing: -0.02em; }
+    .report-body h3 { margin: 50px 0 18px; font-size: clamp(1.35rem, 2vw, 1.82rem); line-height: 1.25; }
+    .report-body h4 { margin: 31px 0 10px; color: var(--accent-dark); font-size: 1.1rem; }
+    .report-body h5 { margin: 25px 0 8px; font-size: 1rem; }
+    .report-body h6 { margin: 22px 0 7px; color: #374941; font-size: 0.93rem; }
+    p { margin: 0.7em 0; max-width: 94ch; }
+    ul, ol { padding-left: 1.4em; }
+    li { margin: 0.34em 0; }
+    hr { margin: 48px 0; border: 0; border-top: 1px solid var(--line); }
+    blockquote { margin: 18px 0; padding: 13px 18px; border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; color: #33453d; background: var(--accent-soft); }
+    blockquote p { margin: 0; }
+    code { padding: 0.13em 0.34em; border: 1px solid #d7e0da; border-radius: 5px; color: #173e31; background: #eff4f0; font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace; font-size: 0.88em; overflow-wrap: anywhere; }
+    pre { max-width: 100%; padding: 15px; border: 1px solid var(--line); border-radius: 10px; background: #f2f5f3; overflow: auto; }
+    pre code { padding: 0; border: 0; background: transparent; }
+    strong { color: #111b17; }
+
+    .status { display: inline-flex; align-items: center; gap: 0.3em; padding: 0.23em 0.58em; border: 1px solid; border-radius: 999px; font-size: 0.78em; font-weight: 820; line-height: 1.35; white-space: nowrap; }
+    .status-confirmed { color: #0f5b3d; border-color: #77b69a; background: #e6f5ed; }
+    .status-pending { color: #4c5e56; border-color: #aebbb4; background: #f1f4f2; }
+    .status-inferred { color: #79500e; border-color: #d0a354; background: #fff4d9; }
+    .status-third-party { color: #8a2f2f; border-color: #d38b8b; background: #fff0f0; }
+
+    .table-wrap { width: 100%; margin: 18px 0 30px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); overflow: auto; box-shadow: 0 8px 24px rgba(20,44,35,0.05); overscroll-behavior-x: contain; }
+    table { width: max-content; min-width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.84rem; line-height: 1.48; }
+    th, td { min-width: 130px; max-width: 340px; padding: 10px 12px; border-right: 1px solid #dfe6e1; border-bottom: 1px solid #dfe6e1; vertical-align: top; text-align: left; overflow-wrap: anywhere; }
+    thead th { position: sticky; z-index: 4; top: 0; color: #fff; background: var(--accent); font-weight: 760; }
+    tbody th[scope="row"] { position: sticky; z-index: 2; left: 0; min-width: 180px; max-width: 250px; color: #13251e; background: var(--accent-soft); font-weight: 760; }
+    thead th:first-child { position: sticky; z-index: 6; left: 0; }
+    tbody tr:nth-child(even) td { background: #fafcfb; }
+    tr:last-child th, tr:last-child td { border-bottom: 0; }
+    tr th:last-child, tr td:last-child { border-right: 0; }
+    .master-table { font-size: 0.78rem; }
+    .master-table th, .master-table td { min-width: 150px; }
+    .master-table th:first-child, .master-table td:first-child { min-width: 225px; }
+
+    details { margin: 22px 0; border: 1px solid var(--line); border-radius: 12px; background: #f8faf8; }
+    details summary { min-height: 44px; padding: 10px 15px; color: var(--accent-dark); font-weight: 780; cursor: pointer; }
+    details > :not(summary) { margin-left: 15px; margin-right: 15px; }
+
+    .back-top { position: fixed; z-index: 1250; right: 20px; bottom: 20px; display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--accent); border-radius: 50%; color: #fff; background: var(--accent); box-shadow: var(--shadow); font-size: 1.1rem; cursor: pointer; opacity: 0; transform: translateY(10px); pointer-events: none; transition: opacity 0.18s ease, transform 0.18s ease; }
+    .back-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+    footer { padding: 28px 22px 46px; border-top: 1px solid var(--line); color: var(--muted); background: #f0f4f1; text-align: center; font-size: 0.86rem; }
+
+    @media (max-width: 1120px) {
+      :root { --switcher-height: 62px; }
+      .layout { grid-template-columns: 1fr; }
+      .mobile-bar { display: flex; justify-content: space-between; align-items: center; }
+      .toc { position: fixed; z-index: 900; top: var(--switcher-height); left: 0; width: min(88vw, 350px); height: calc(100vh - var(--switcher-height)); border-right: 1px solid var(--line); box-shadow: 18px 0 50px rgba(14,35,27,0.18); transform: translateX(-104%); transition: transform 0.2s ease; }
+      .toc.open { transform: none; }
+      main { padding-top: 23px; }
+    }
+
+    @media (max-width: 700px) {
+      body { font-size: 16px; }
+      :root { --switcher-height: 58px; }
+      .switcher-inner { gap: 6px; }
+      .suite-home, .report-tab { min-height: 38px; padding: 7px 11px; font-size: 0.82rem; }
+      .hero { padding: 44px 20px 36px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stat { min-height: 84px; }
+      main { padding-left: 15px; padding-right: 15px; }
+      .report-body h2 { margin-top: 56px; }
+      .report-body h3 { margin-top: 42px; }
+      .notice { padding: 15px; }
+      th, td { min-width: 145px; }
+      tbody th[scope="row"] { min-width: 165px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+    }
+
+    @media print {
+      @page { size: A4 landscape; margin: 12mm; }
+      body { color: #000; background: #fff; font-size: 9.5pt; }
+      .progress, .report-switcher, .mobile-bar, .toc, .hero-actions, .back-top, .skip-link { display: none !important; }
+      .report-panel:not(.is-active) { display: none !important; }
+      .hero { padding: 0 0 9mm; color: #000; background: #fff; border-bottom: 2px solid #000; }
+      .hero::before, .hero::after { display: none; }
+      .hero-lede, .eyebrow, .stat-label { color: #333; }
+      .stats { grid-template-columns: repeat(4, 1fr); gap: 2mm; margin-top: 6mm; }
+      .stat { min-height: 0; padding: 2.5mm; border: 1px solid #777; background: #fff; }
+      .layout { display: block; max-width: none; }
+      main { padding: 0; }
+      .report-body { max-width: none; }
+      .notice { box-shadow: none; break-inside: avoid; }
+      .report-body h2 { break-before: page; margin-top: 0; }
+      .report-body h3, .report-body h4 { break-after: avoid; }
+      .table-wrap { overflow: visible; box-shadow: none; break-inside: auto; }
+      table { width: 100%; font-size: 7pt; }
+      thead { display: table-header-group; }
+      tr { break-inside: avoid; }
+      thead th, tbody th[scope="row"] { position: static; color: #000; background: #eee !important; }
+      th, td { min-width: 0 !important; max-width: none; padding: 1.5mm; border-color: #777; }
+      details > * { display: block !important; }
+      details summary { display: none !important; }
+      .status { color: #000 !important; border-color: #555 !important; background: #fff !important; }
+      a { color: #000; text-decoration: underline; }
+      a[target="_blank"]::after { content: ""; }
+      footer { padding: 7mm 0 0; color: #333; background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#portfolio--main-content">跳到当前报告正文</a>
+  <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+  <nav class="report-switcher" aria-label="三份报告切换"><div class="switcher-inner"><a class="suite-home" href="./德国美院_2027-28_申请研究三合一总报告_2026-09-29.html">三合一总报告</a><a class="report-tab" href="./德国美院_2027-28_申请信息核查_2026-09-29.html">申请信息核查</a><a class="report-tab" href="./德国美院_2027-28_教授与Klassen研究档案_2026-09-29.html">教授与 Klassen</a><a class="report-tab is-current" href="./德国美院_20校_作品集评价机制与评价依据数据库_2026-09-29.html" aria-current="page">作品集评价机制</a></div></nav>
+  <section class="report-panel is-active" data-report="portfolio" data-title="德国 20 所艺术院校作品集评价机制与评价依据" id="portfolio--panel">
+    <header class="hero" id="portfolio--top">
+      <div class="hero-inner">
+        <p class="eyebrow">Portfolio evaluation · Official rules</p>
+        <h1>德国 20 所艺术院校作品集评价机制与评价依据</h1>
+        <p class="hero-lede">逐校核查作品集如何被评价、谁负责评审、是否有等级或分值、通过机制与现场考试标准。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#portfolio--0-研究口径与证据规则">进入正文</a>
+          <button class="button print-button" type="button">打印当前报告</button>
+          <a class="button" href="./德国美院_20校_作品集评价机制与评价依据数据库_2026-09-29.md">原始 Markdown</a>
+        </div>
+        <div class="stats" aria-label="报告完整性概览">
+          <div class="stat"><span class="stat-value">265</span><span class="stat-label">正文标题</span></div>
+          <div class="stat"><span class="stat-value">25</span><span class="stat-label">完整数据表</span></div>
+          <div class="stat"><span class="stat-value">9</span><span class="stat-label">目录入口</span></div>
+          <div class="stat"><span class="stat-value">85</span><span class="stat-label">去重来源网址</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-bar">
+      <button class="mobile-menu-button" type="button" aria-controls="portfolio--toc" aria-expanded="false">目录</button>
+      <span>作品集评价机制</span>
+    </div>
+
+    <div class="layout">
+      <aside class="toc" id="portfolio--toc" aria-label="作品集评价机制目录">
+        <p class="toc-title">作品集评价机制 · 目录</p>
+        <label class="sr-only" for="portfolio--toc-search">搜索目录</label>
+        <input class="toc-search" id="portfolio--toc-search" type="search" placeholder="搜索学校、教授或章节…" autocomplete="off">
+        <nav class="toc-list"><a class="toc-link toc-entry" href="#portfolio--0-研究口径与证据规则" data-label="0. 研究口径与证据规则">0. 研究口径与证据规则</a>
+<a class="toc-link toc-entry" href="#portfolio--第一部分-20所德国艺术院校作品集评价标准总表" data-label="第一部分：《20所德国艺术院校作品集评价标准总表》">第一部分：《20所德国艺术院校作品集评价标准总表》</a>
+<a class="toc-link toc-entry" href="#portfolio--第二部分-逐校详细档案" data-label="第二部分：逐校详细档案">第二部分：逐校详细档案</a>
+<a class="toc-link toc-entry" href="#portfolio--第三部分-跨校事实比较" data-label="第三部分：跨校事实比较">第三部分：跨校事实比较</a>
+<a class="toc-link toc-entry" href="#portfolio--第四部分-这些评价标准对作品集准备意味着什么" data-label="第四部分：《这些评价标准对作品集准备意味着什么》">第四部分：《这些评价标准对作品集准备意味着什么》</a>
+<a class="toc-link toc-entry" href="#portfolio--第五部分-制度冲突-版本风险与尚未公开的信息" data-label="第五部分：制度冲突、版本风险与尚未公开的信息">第五部分：制度冲突、版本风险与尚未公开的信息</a>
+<a class="toc-link toc-entry" href="#portfolio--第六部分-20所德国艺术院校-作品集到底-看什么" data-label="第六部分：《20所德国艺术院校：作品集到底“看什么”？》">第六部分：《20所德国艺术院校：作品集到底“看什么”？》</a>
+<a class="toc-link toc-entry" href="#portfolio--第七部分-最终事实核查" data-label="第七部分：最终事实核查">第七部分：最终事实核查</a>
+<a class="toc-link toc-entry" href="#portfolio--第八部分-需要申请人之后再次确认的问题" data-label="第八部分：需要申请人之后再次确认的问题">第八部分：需要申请人之后再次确认的问题</a></nav>
+      </aside>
+
+      <main id="portfolio--main-content" tabindex="-1">
+        <article class="report-body">
+          <div class="notice"><strong>完整内容说明：</strong>本面板由对应 Markdown 全文转换，未做摘要、删节或 iframe 嵌套。研究基准日为 2026-09-29；可变信息仍须在实际申请前点击官方来源复核。</div>
+          
+<p><strong>研究基准日：</strong> 2026年9月29日<br><strong>目标申请周期：</strong> Wintersemester 2027/28<br><strong>研究对象：</strong> 与 Freie Kunst / Bildende Kunst / Malerei / Fine Art 直接相关的首次申请路径<br><strong>报告性质：</strong> 上一轮申请信息研究的专项补充；只回答“学校如何判断申请人的艺术能力”，不重复完整申请报告。</p>
+<blockquote>
+<p><strong>最重要的阅读规则：</strong>“学校没有公开”不等于“学校内部没有”。本报告只把学校官方规章、官方公报和官方申请页写明的内容作为结论；没有公开的内部评分表、教授个人判断和实际讨论过程，一律保留为“未确认”。</p>
+</blockquote>
+<h3 id="portfolio--0-研究口径与证据规则">0. 研究口径与证据规则</h3>
+<h4 id="portfolio--0-1-四类信息严格分开">0.1 四类信息严格分开</h4>
+<ol>
+<li><strong>提交要求：</strong> 申请人必须交什么，例如件数、PDF、原作、尺寸、Skizzenbuch。</li>
+<li><strong>评价维度：</strong> 委员会公开说它看什么，例如艺术独立性、创造力、实现能力、反思。</li>
+<li><strong>评分方法：</strong> 委员会如何形成分数、等级、共同成绩、票决或整体判断。</li>
+<li><strong>通过/录取规则：</strong> 达到什么结果才进入下一轮、证明艺术适合性或获得录取资格。</li>
+</ol>
+<p>作品数量、允许媒介和文件格式不会仅因出现在申请页上就被改写为评分维度；同样，教授个人教学理念不会被改写成学校统一标准。</p>
+<h4 id="portfolio--0-2-官方证据等级">0.2 官方证据等级</h4>
+<ul>
+<li><strong>Level 1：</strong> 学校官方 Prüfungsordnung / Eignungsprüfungsordnung / Zulassungsordnung / Satzung / Amtsblatt / 正式实施细则。</li>
+<li><strong>Level 2：</strong> 学校官方申请页、官方 FAQ、官方申请手册或专业说明页。</li>
+<li><strong>Level 3：</strong> 学校官方教授 / Klasse 页面。</li>
+<li><strong>Level 4：</strong> 学校官方采访、新闻或出版物。</li>
+<li><strong>Level 5：</strong> 教授本人公开表达。</li>
+<li><strong>Level 6：</strong> 可靠第三方机构。</li>
+</ul>
+<p>只有 <strong>Level 1–2</strong> 被用来认定校级正式评价依据；Level 3–5 只能补充教授个人教学/选拔倾向；本报告没有以 Level 6 作为任何核心结论的唯一依据。</p>
+<h4 id="portfolio--0-3-a-d-机制分类">0.3 A–D 机制分类</h4>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 1" tabindex="0"><table class="data-table master-table"><caption class="sr-only">作品集评价机制 · 数据表 1</caption>
+<thead>
+<tr>
+<th scope="col">类型</th>
+<th scope="col">判定规则</th>
+<th align="right">本报告数量</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><strong>A</strong></th>
+<td>官方公开了可操作的分值、等级、计算方式或明确阈值；不要求必须是百分制</td>
+<td align="right"><strong>13</strong></td>
+</tr>
+<tr><th scope="row"><strong>B</strong></th>
+<td>没有公开具体分值/等级，但 Level 1–2 明确写出评价维度或观察项</td>
+<td align="right"><strong>7</strong></td>
+</tr>
+<tr><th scope="row"><strong>C</strong></th>
+<td>只公开通过/淘汰或分阶段机制，未公开具体评价维度</td>
+<td align="right"><strong>0</strong></td>
+</tr>
+<tr><th scope="row"><strong>D</strong></th>
+<td>充分检索后仍未找到官方具体评价标准</td>
+<td align="right"><strong>0</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong>A 型学校：</strong> Düsseldorf、HFBK Hamburg、HfBK Dresden、ABK Stuttgart、HfK Bremen、HBK Braunschweig、Kunsthochschule Kassel、HfG Offenbach、Kunstakademie Münster、Burg Halle、HGB Leipzig、AdBK Karlsruhe、Muthesius Kiel。<br><strong>B 型学校：</strong> UdK Berlin、AdBK München、AdBK Nürnberg、weißensee、HBKsaar、HKS Ottersberg、Bauhaus-Universität Weimar。</p>
+<blockquote>
+<p><strong>分类边界：</strong> HFBK Hamburg 的 A/B/C、Münster 的共同成绩1/2/3、Kassel 的“通过／优秀通过／不通过”、Dresden 的“至少满足三项＋委员多数”都属于公开的可操作等级或阈值，因此归 A；“A 型”不等于一定公开百分比。HKS Ottersberg 的法规没有操作性维度，但当前官方专业页明确点名 <code>Persönlichkeit / kreatives Potenzial / Engagement</code>，故谨慎归 B，并在逐校档案中标明它仅为 Level 2 选拔取向。</p>
+</blockquote>
+<h4 id="portfolio--0-4-版本控制">0.4 版本控制</h4>
+<ul>
+<li>优先采用研究基准日仍由学校官方列示的<strong>当前有效长期规章</strong>。</li>
+<li>若存在年度执行办法，则只对该年度有效；例如 BURG 的 30+20+20+30 是 <strong>2026年度</strong>规则，不能自动写成 2027。</li>
+<li>若 2027/28 专版未发布，明确写“2027机制待复核”，而不是把 2026执行细节改写为2027事实。</li>
+<li>若官方页面与法规冲突，保留冲突，不自行选一个“看起来合理”的版本。</li>
+</ul>
+<h3 id="portfolio--第一部分-20所德国艺术院校作品集评价标准总表">第一部分：《20所德国艺术院校作品集评价标准总表》</h3>
+<blockquote>
+<p>表内“作品集是否评分”包括定性等级/二元评价；“具体分值”只在官方公开数值、等级或可操作阈值时填写。现场环节写“有”不一定表示到校：UdK 2026 后续考试为线上，2027方式待发。</p>
+</blockquote>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 2" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 2</caption>
+<thead>
+<tr>
+<th scope="col">学校</th>
+<th scope="col">专业</th>
+<th scope="col">作品集是否评分</th>
+<th scope="col">是否有公开具体分值</th>
+<th scope="col">是否有明确评价维度</th>
+<th scope="col">评价维度</th>
+<th scope="col">是否有通过线</th>
+<th scope="col">谁评价</th>
+<th scope="col">作品集作用</th>
+<th scope="col">是否有现场考试</th>
+<th scope="col">现场考试评价标准</th>
+<th scope="col">官方依据</th>
+<th scope="col">证据等级</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">Kunstakademie Düsseldorf</th>
+<td>Freie Kunst</td>
+<td>是</td>
+<td>是：每位委员逐维给 1–3 级并取算术平均</td>
+<td>是</td>
+<td>艺术造型能力；所选媒介的实现能力；艺术构思与强度</td>
+<td>平均 2.3 或更优＝艺术适合；1.3 或更优＝卓越艺术天赋</td>
+<td>法定委员会：主席、6 位艺术教授、1 位有表决权艺术工作人员；学生仅咨询</td>
+<td>法规允许仅凭作品集直接通过/淘汰；疑难者可追加测试。2026 实际仅审作品</td>
+<td>2026 无；法规保留疑难个案追加至少 4 小时实践和/或 15–30 分钟谈话</td>
+<td>与作品集相同三维、1–3 级和均值机制</td>
+<td><a href="https://kunstakademie-duesseldorf.de/wp-content/uploads/Nr.-56-Ordnung-zur-Feststellung-der-kuenstlerischen-Eignung-fuer-den-Studiengang-Freie-Kunst.pdf" target="_blank" rel="noopener noreferrer">Freie Kunst 认定规章，2021</a>；<a href="https://kunstakademie-duesseldorf.de/studienangebot-und-bewerbung/studienbewerbung/" target="_blank" rel="noopener noreferrer">2026 申请页</a></td>
+<td>L1；L2</td>
+</tr>
+<tr><th scope="row">Universität der Künste Berlin</th>
+<td>Bildende Kunst – Absolvent*in</td>
+<td>是（定性审查）</td>
+<td>否</td>
+<td>是</td>
+<td>深入的内容/形式研究；自身艺术兴趣与能力；观察能力；原创性；强度</td>
+<td>无数值线；预选中作品不得显示申请人欠缺所需特殊艺术天赋，终审须证明特殊艺术天赋</td>
+<td>5 位教授＋2 位独立教学的学术工作人员；学生仅发言；委员会多数决</td>
+<td>第一轮预选；通过后进入限时任务、反思文字与专业谈话</td>
+<td>有后续测试，但 2026 为线上，不是现场</td>
+<td>官方未公开环节分值/权重；终审整体认定特殊艺术天赋</td>
+<td><a href="https://www.udk-berlin.de/fileadmin/2_dezentral/Referat_Studienangelegenheiten/UdK_Anzeiger/2021/01-2021_Anzeiger_der_UdK_Berlin.pdf" target="_blank" rel="noopener noreferrer">Zulassungsordnung 1/2021</a>；<a href="https://www.udk-berlin.de/fileadmin/2_dezentral/Studienberatung/Bildende_Kunst/Ausfuehrungsbestimmungen_BK_Absolvent_WiSe26_27.pdf" target="_blank" rel="noopener noreferrer">2026 实施细则</a></td>
+<td>L1；L2</td>
+</tr>
+<tr><th scope="row">Hochschule für bildende Künste Hamburg（HFBK）</th>
+<td>B.F.A. Bildende Künste</td>
+<td>是</td>
+<td>有 A/B/C 整体等级；无数字分</td>
+<td>是</td>
+<td>Konzeption；Gestaltungsfähigkeit；所选媒介的实现能力</td>
+<td>只有 A 录取；B（有潜力但尚未充分显出特殊艺术能力）和 C 均不录取</td>
+<td>至少 3 位教授＋1 位有票学术人员＋2 位无票学生；校长依方向提名任命</td>
+<td>通常直接决定；不能明确时可追加实践和/或谈话</td>
+<td>不必然；委员会可酌情追加</td>
+<td>仍用三维和 A/B/C；无公开面谈单独量表或权重</td>
+<td><a href="https://hfbk-hamburg.de/@/file/a3vefs2rwllylxp3" target="_blank" rel="noopener noreferrer">Immatrikulationsordnung，2026-06-18</a>；<a href="https://hfbk-hamburg.de/de/informationen/studieninteressierte/bewerben/bewerbung-bachelor-bildende-kuenste" target="_blank" rel="noopener noreferrer">BFA 申请页</a></td>
+<td>L1；L2</td>
+</tr>
+<tr><th scope="row">Hochschule für Bildende Künste Dresden（HfBK Dresden）</th>
+<td>Diplom Bildende Kunst</td>
+<td>是</td>
+<td>无数值分；有四维达标与多数通过机制</td>
+<td>是</td>
+<td>手工能力水平；艺术能力水平；原创性；创造潜力；终试谈话另看自我反思及一般/当代艺术知识</td>
+<td>初选：四项至少三项＋过半评委 <code>bestanden</code>；终试沿用同门槛并加入谈话标准</td>
+<td>专业 Zulassungskommission / 其委任的 Prüfungskommission；教授须占票数多数，学生仅咨询</td>
+<td>数字作品集是预选，决定是否进入一日制现场考试</td>
+<td>是：5–10 小时实践＋10–60 分钟谈话</td>
+<td>实践沿用四维、至少三维；谈话看反思和艺术知识；过半评委通过</td>
+<td><a href="https://www.hfbk-dresden.de/fileadmin/user_upload/Downloads/Hochschule/Organisation/Ordnungen/Immatrikulationsordnung_29.10.25.pdf" target="_blank" rel="noopener noreferrer">Immatrikulationsordnung，2025-10-29</a>；<a href="https://www.hfbk-dresden.de/bewerbung-bildende-kunst" target="_blank" rel="noopener noreferrer">申请页</a></td>
+<td>L1；L2</td>
+</tr>
+<tr><th scope="row">Akademie der Bildenden Künste München（AdBK München）</th>
+<td>Diplom Freie Kunst</td>
+<td>是（定性审查）</td>
+<td>否</td>
+<td>是</td>
+<td>艺术工作强度；实验/解题多样性；独立想法与图像生成；空间/构图；抽象、创造与即兴；动机与敏感度；想象；技术能力与理解</td>
+<td>无公开分值/逐项线；委员会依一般多数规则作决定</td>
+<td>5 名教授＋2 名全职艺术/科学工作人员；多数决、平票主席决定</td>
+<td>提交作品是 Freie Kunst 唯一公开艺术考试载体</td>
+<td>否；现行专项条款和官网明确取消实践/口试</td>
+<td>不适用；旧 §15 的现场条文与后加专项条款冲突，当前以 §7(1a)及官网为准</td>
+<td><a href="https://www.adbk.de/de/component/phocadownload/category/1-studium/62-satzungen.html?Itemid=101&download=866%3Alesefassung-vom-30-1-2026-satzung-ueber-die-qualifikation-fuer-ein-studium-an-der-adbk-muenchen" target="_blank" rel="noopener noreferrer">现行资格 Satzung，2026-01-30</a>；<a href="https://www.adbk.de/de/component/content/article/praktische-und-muendliche-pruefung.html?Itemid=101&catid=9" target="_blank" rel="noopener noreferrer">考试说明</a></td>
+<td>L1；L2</td>
+</tr>
+<tr><th scope="row">Staatliche Akademie der Bildenden Künste Stuttgart（ABK Stuttgart）</th>
+<td>Diplom Bildende Kunst</td>
+<td>是</td>
+<td>是：0–100 分</td>
+<td>是</td>
+<td>艺术造型能力 50；手工能力 30；兴趣、反思及口头表达 20</td>
+<td>普通路线初选/终试 ≥70；无通常学历的 Begabtenprüfung 路线初选/终试 ≥90</td>
+<td>3–4 名有表决权的 Auswahlkommission 成员，原则上为全职教授；简单多数</td>
+<td>数字作品集是预选，达到门槛才可参加实践＋口试</td>
+<td>是；实践任务可到校或 Hausaufgabe，另有 15–20 分钟口试</td>
+<td>同三维、合计 100；法规未公开实践与口试各自权重</td>
+<td><a href="https://www.abk-stuttgart.de/wp-content/uploads/2024/09/abk_Zulassungs-Immatrikulationssatzung_2025.pdf" target="_blank" rel="noopener noreferrer">ZIS 2025</a>；<a href="https://www.abk-stuttgart.de/bewerbung/aufnahmeverfahren/bewerbung-kunst-diplom/" target="_blank" rel="noopener noreferrer">2026/27 申请页</a></td>
+<td>L1；L2</td>
+</tr>
+<tr><th scope="row">Hochschule für Künste Bremen（HfK Bremen）</th>
+<td>Diplom Freie Kunst</td>
+<td>是</td>
+<td>是：每阶段最高 100 分；三维等权、算术平均</td>
+<td>是</td>
+<td>感知/观察；艺术呈现与原创转化；反思、历史定位、选择组织及表达</td>
+<td>作品集 ≥60 进面试；最终特殊艺术能力 ≥80、普通艺术能力 ≥60</td>
+<td>2023 合并版：至少 3 名教授考官＋2 名咨询学生；考官独立给分、取平均</td>
+<td>作品集是第一阶段；通过才进入现场 Fachgespräch，通过考试后另进名额分配</td>
+<td>当前有现场面谈，无实践制作</td>
+<td>同三维；但修订后 §4 仍残留现场制作作品措辞，第二阶段精确计分对象待校方确认</td>
+<td><a href="https://www.hfk-bremen.de/media/filer_public/1a/31/1a31a57e-67d2-4efb-826a-1e3fa4450cc4/hfk_bremen-aufnahmepruefungsordnung-freie_kunst-20160413.pdf" target="_blank" rel="noopener noreferrer">合并版：含 2021/2023 修订</a>；<a href="https://www.hfk-bremen.de/de/bewerbung/bewerbung-im-freie-kunst-diplom/4" target="_blank" rel="noopener noreferrer">当前申请页</a></td>
+<td>L1；L2</td>
+</tr>
+<tr><th scope="row">Akademie der Bildenden Künste Nürnberg（AdBK Nürnberg）</th>
+<td>Bildende Kunst，Schwerpunkt Freie Kunst（Diplom）</td>
+<td>是，以二元谓词评定</td>
+<td>否</td>
+<td>是，但作品集维度较概括</td>
+<td>艺术—创造性天赋与适合性；表达自身艺术观念的能力；当前申请页另要求显现个人兴趣及对自选内容/主题的深入投入</td>
+<td>预选和口试均须 <code>mit Erfolg abgelegt</code>；无通常学历路线预选须显示“außergewöhnlich geeignet”</td>
+<td>Freie Kunst/相关专业及 Basislehre 全体教授，另 2 名专职艺术员工；多数决</td>
+<td>数字作品集是预选依据，决定是否进入约 10 分钟口试；口试还看原作</td>
+<td>是：口试，无实践制作考试</td>
+<td>德语课堂参与能力、欧洲艺术史基础知识、对本人艺术项目及观念的适当反思能力</td>
+<td><a href="https://adbk-nuernberg.de/bewerbung/bewerbung-und-aufnahmeverfahren/freie-kunst/" target="_blank" rel="noopener noreferrer">当前 Freie Kunst 申请页</a>；<a href="https://adbk-nuernberg.de/site/assets/files/3267/2026_infoblatt_studienbewerberinnen_de.pdf" target="_blank" rel="noopener noreferrer">2026 申请手册</a>；<a href="https://adbk-nuernberg.de/akademie/intern/downloads/" target="_blank" rel="noopener noreferrer">官方 Downloads 入口</a>（QualS 原 PDF 在最终核查时已失效）</td>
+<td>Level 1（条文内容可核，但原 PDF 当前不可打开，故保留可访问性警示）；Level 2</td>
+</tr>
+<tr><th scope="row">Hochschule für Bildende Künste Braunschweig（HBK Braunschweig）</th>
+<td>Freie Kunst（Diplom）</td>
+<td>是</td>
+<td>是：0–10 分；作品集 40%、面谈 60%</td>
+<td>是</td>
+<td>艺术总体印象；图像/视觉理解；实现能力与独立艺术表达；投入强度；独立性；原创性</td>
+<td>作品集通常 ≥5 才进面谈；无 HZB 路线作品集 ≥8；加权总评 ≥5 为特殊艺术能力；无 HZB 路线须总评 ≥9 且整体表现突出</td>
+<td>4 名教授＋2 名艺术员工有表决权；2 名学生咨询；可分成 3 人面谈小组</td>
+<td>量化预选且占最终总评 40%</td>
+<td>是：约 10 分钟个人面谈，占 60%</td>
+<td>与作品集相同的 §7(1) 正式维度；面谈围绕提交作品</td>
+<td><a href="https://www.hbk-bs.de/fileadmin/Studium/Downloads_fuer_alle_Studiengaenge/Feststellungsordnung.pdf" target="_blank" rel="noopener noreferrer">Feststellungsordnung，Verkündungsblatt 10/2025</a>；<a href="https://www.hbk-bs.de/studium/bewerben/freie-kunst-diplom/" target="_blank" rel="noopener noreferrer">当前 Freie Kunst 申请页</a></td>
+<td>Level 1；Level 2</td>
+</tr>
+<tr><th scope="row">weißensee kunsthochschule berlin</th>
+<td>Freie Kunst：Malerei / Bildhauerei / Bühnen- und Kostümbild（Diplom）</td>
+<td>是，但未公开作品集单独分值</td>
+<td>否；仅 <code>geeignet / nicht geeignet</code></td>
+<td>是</td>
+<td>艺术总体印象；对专业相关问题的艺术理解；想象力；实现能力；跨主题投入强度；独立性；反思能力；原创性</td>
+<td>预选须让委员会识别出所需特殊艺术天赋；终试仅“适合/不适合”</td>
+<td>每专业委员会通常 2 名教授＋1 名有独立教学资格的学术员工（无则第 3 名教授）；2 名学生有发言权</td>
+<td>预选决定能否参加 Zugangsprüfung；终试总体印象同时看提交作品与考试作品</td>
+<td>是：正式规则为 2–3 天艺术考试＋专业面谈</td>
+<td>正式维度同左；面谈通常涉及考试表现及预期艺术/职业发展</td>
+<td><a href="https://kh-berlin.de/fileadmin/_migrated/content_uploads/Mitteilungsblatt_215.pdf" target="_blank" rel="noopener noreferrer">Mitteilungsblatt 215（2015；2014-12-03 合并文本）</a>；<a href="https://kh-berlin.de/service/mitteilungsblaetter" target="_blank" rel="noopener noreferrer">当前法规目录</a>；<a href="https://kh-berlin.de/studium/studienbewerbung" target="_blank" rel="noopener noreferrer">当前申请总页</a>；<a href="https://kh-berlin.de/fileadmin/user_upload/Info-Malerei-2025.pdf" target="_blank" rel="noopener noreferrer">Malerei 2025/26 官方申请说明</a></td>
+<td>Level 1；Level 2</td>
+</tr>
+<tr><th scope="row">Kunsthochschule Kassel</th>
+<td>Bildende Kunst</td>
+<td>是，且可仅凭作品集淘汰</td>
+<td>否；只公开结果等级</td>
+<td>是</td>
+<td>抽象能力；表达自身艺术观念；细致观察；创造与即兴；动机与敏感性；幻想与想象；技术能力与理解</td>
+<td>普通路线须 <code>Bestanden</code>；无通常学历须 <code>Mit Auszeichnung bestanden</code>；无数值线</td>
+<td>每个考试委员会至少 3 名有表决权考官，教授占多数</td>
+<td>第一考试部分；若作品集已足以否定艺术天赋，可不进入现场任务与面谈</td>
+<td>是：一日或多日监督任务；通常约 30 分钟专业面谈</td>
+<td>§2 的七项标准适用于整体考试；法规未为三个环节设权重</td>
+<td><a href="https://kunsthochschulekassel.de/fileadmin/presse/DOWNLOADS/BK/po_kuenstl_begab.pdf" target="_blank" rel="noopener noreferrer">2014《Prüfungsordnung zur Feststellung der künstlerischen Begabung》</a>；<a href="https://kunsthochschulekassel.de/bewerbung/bewerbungs-abc/bewerbung-bildende-kunst.html" target="_blank" rel="noopener noreferrer">当前 Bildende Kunst 申请页</a>；<a href="https://kunsthochschulekassel.de/studium/downloads/bildende-kunst.html" target="_blank" rel="noopener noreferrer">当前法规下载目录</a></td>
+<td>Level 1；Level 2</td>
+</tr>
+<tr><th scope="row">Hochschule für Gestaltung Offenbach（HfG Offenbach）</th>
+<td>B.F.A. Kunst</td>
+<td>是：Mappe作定性预审；现行最终成绩等同考试日成绩</td>
+<td>有考试总评档；Mappe无公开单独分值</td>
+<td>是</td>
+<td>实现自身艺术/设计想法；抽象/迁移；细致观察；即兴；动机/敏感性；二维三维语境想象；反思/批评；技术；口头表达</td>
+<td>普通路线≤4.0；无通常HZB须≤1.7；≥4.3不通过</td>
+<td>至少4名教授、1名特殊任务教师、1名艺术/学术人员；2名学生咨询；教授占表决多数</td>
+<td>决定是否进入考试日；有HZB者即使Mappe未过也可申请参加考试日</td>
+<td>是：书面任务＋2项艺术任务＋通常15分钟谈话</td>
+<td>九项维度；2024现行规则最终评价等同考试日，考试日内部权重未公开</td>
+<td><a href="https://www.hfg-offenbach.de/system/downloads/files/65ba517c6866670b740c0000/original/aufnahmesatzung_bfa_und_mfa_kunst_hfg_24.pdf?1706709370=" target="_blank" rel="noopener noreferrer">2024 Aufnahmesatzung</a>；<a href="https://www.hfg-offenbach.de/de/pages/verwaltung" target="_blank" rel="noopener noreferrer">法规目录</a></td>
+<td>Level 1；Level 2</td>
+</tr>
+<tr><th scope="row">Kunstakademie Münster</th>
+<td>Freie Kunst（Akademiebrief）</td>
+<td>是</td>
+<td>有共同成绩1/2/3；无维度分值/权重</td>
+<td>是</td>
+<td>艺术造型能力；所选媒介的实现能力；艺术构思与强度</td>
+<td>成绩1＝卓越艺术天赋；2＝艺术适合；3＝不足</td>
+<td>7名负责艺术班级的教授有表决权；员工/行政/学生各1人咨询；多数决</td>
+<td>作品可直接通过或淘汰；仅无法明确时进入专业面谈</td>
+<td>无常规实践题；疑难个案有专业面谈</td>
+<td>与作品相同三维，合成共同成绩；面谈无单独比例</td>
+<td><a href="https://www.kunstakademie-muenster.de/fileadmin/media/Website_2018/Verwaltung/Dez1_akad_stud_ang/ordnungen/20251111_Feststellungsordnung_FK_Fassung_6_AeO.pdf" target="_blank" rel="noopener noreferrer">Feststellungsordnung，第六次修订2025</a>；<a href="https://www.kunstakademie-muenster.de/bewerbung" target="_blank" rel="noopener noreferrer">2027/28申请页</a></td>
+<td>Level 1；Level 2</td>
+</tr>
+<tr><th scope="row">Burg Giebichenstein Kunsthochschule Halle</th>
+<td>Diplom Malerei/Grafik、Plastik</td>
+<td>是</td>
+<td>2026：Mappe 30分；两项任务各20；谈话30；总分100</td>
+<td>是</td>
+<td>感知；呈现/表达；想象/抽象；问题识别/分析；幻想/创造；专业能力；动机</td>
+<td>Mappe≥15/30进主程序；普通总分≥40且谈话≥15；无Abitur总分≥50且谈话≥15</td>
+<td>项目Prüfungsausschuss；具体任务至少2名教师评审；按多数决定</td>
+<td>2026为量化预选且占总分30%</td>
+<td>是：中央任务＋专业任务＋谈话</td>
+<td>七项长期维度；2026环节分值30+20+20+30</td>
+<td><a href="https://www.burg-halle.de/media/documents/Allgemeine_Info_pdfs/Amtsblattausgaben/WEB_Amtsblatt_24._Jahrgang__Nr._5_Halle__Saale__15.12.2025__002_.pdf" target="_blank" rel="noopener noreferrer">2026年度公报</a>；<a href="https://www.burg-halle.de/media/documents/Hochschule/Studium/Amtsblatt_2004-01.pdf" target="_blank" rel="noopener noreferrer">2004原始Amtsblatt</a>；<a href="https://www.burg-halle.de/media/documents/Hochschule/Studium/Amtsblatt_06_2020.pdf" target="_blank" rel="noopener noreferrer">2020修订Amtsblatt</a></td>
+<td>Level 1（原始公报与年度公报）</td>
+</tr>
+<tr><th scope="row">Hochschule der Bildenden Künste Saar（HBKsaar）</th>
+<td>Freie Kunst</td>
+<td>是（定性）</td>
+<td>否；最终二元结果</td>
+<td>是</td>
+<td>艺术—造型发展能力；实现/落实能力；反思能力</td>
+<td>通过/不通过；无数值线</td>
+<td>学科Prüfungsausschuss至少3名教师，其中至少2名高校教师；简单多数</td>
+<td>第一阶段预选，决定是否进入口头/实践考试</td>
+<td>是：mündliche/praktische Prüfung / Prüfungsgespräch</td>
+<td>预选与后续均按三项维度；无环节权重</td>
+<td><a href="https://www.hbksaar.de/files/hbksaar/download/hochschulrecht/Recht%20der%20Studierenden/Verordnung_Eignungspruefung_dip_ba.pdf" target="_blank" rel="noopener noreferrer">Eignungsprüfungsverordnung</a>；<a href="https://www.hbksaar.de/bewerbung-informationen" target="_blank" rel="noopener noreferrer">当前申请页</a></td>
+<td>Level 1；Level 2</td>
+</tr>
+<tr><th scope="row">Hochschule für Künste im Sozialen, Ottersberg（HKS）</th>
+<td>Künste im Sozialen，Schwerpunkt Freie Kunst（B.F.A.）</td>
+<td>常规路径无传统完整Mappe；无HZB特殊路径作品样本是否单独评分未确认</td>
+<td>否</td>
+<td>是，但仅Level 2给出宽泛取向</td>
+<td><code>Persönlichkeit</code>；<code>kreatives Potenzial</code>；<code>Engagement</code>；法规只写特别/卓越艺术能力</td>
+<td>二元通过机制；无数值线</td>
+<td>Zulassungsausschuss至少3名不同方向教师＋1名咨询学生；可设至少2名教师的Prüfungsteam</td>
+<td>常规路径以艺术任务和谈话为核心；无HZB者另上传10件作品PDF</td>
+<td>有艺术任务＋谈话；2026数字，2027形式待通知</td>
+<td>法规无操作性维度；Level 2三项取向无权重</td>
+<td><a href="https://www.hks-ottersberg.de/media/dokumente/downloads/ordnungen/A3d_Zulassungsordnung_KiS.pdf" target="_blank" rel="noopener noreferrer">Zulassungsordnung 2025</a>；<a href="https://www.hks-ottersberg.de/studium/kuenste_im_sozialen/index.php" target="_blank" rel="noopener noreferrer">专业总览</a></td>
+<td>Level 1；Level 2</td>
+</tr>
+<tr><th scope="row">Hochschule für Grafik und Buchkunst Leipzig（HGB）</th>
+<td>Diplom Malerei/Grafik</td>
+<td>是（定性）</td>
+<td>无数值；有Rang 1/2/3</td>
+<td>是</td>
+<td>艺术造型能力；实现能力；艺术构思；强度</td>
+<td>Rang 1＝特别适合；Rang 2＝适合；Rang 3＝不足；无HZB须Rang 1</td>
+<td>各专业Zulassungskommission至少5名具考试资格成员</td>
+<td>第一轮预选，决定是否进入Eignungsprüfung</td>
+<td>是：艺术实践任务＋考试谈话</td>
+<td>同四项维度；各部分评价后形成总评，算法未公开</td>
+<td><a href="https://www.hgb-leipzig.de/f/e/PDF/Immatrikulationsordnung%20in%20der%20Lesefassung%20vom%2014.05.2026.pdf" target="_blank" rel="noopener noreferrer">Immatrikulationsordnung，2026-05-14</a>；<a href="https://www.hgb-leipzig.de/studium/bewerbung/" target="_blank" rel="noopener noreferrer">申请页</a></td>
+<td>Level 1；Level 2</td>
+</tr>
+<tr><th scope="row">Bauhaus-Universität Weimar</th>
+<td>Diplom Freie Kunst</td>
+<td>是（定性）</td>
+<td>否；二元结果</td>
+<td>是</td>
+<td>独立性；创造力；艺术发展能力，整体须明显高于平均</td>
+<td>通过/不通过；简单多数，平票由主席决定</td>
+<td>2名本专业教授、2名学术员工、1名本专业学生</td>
+<td>数字作品预选，决定是否进入谈话/原作展示</td>
+<td>有后续约15分钟个人谈话；现行规则无固定实践题</td>
+<td>预选与谈话均按三项维度；无分值</td>
+<td><a href="https://www.uni-weimar.de/fileadmin/user/uni/universitaetsleitung/kanzler/mdu_akad/22/24_2022.pdf" target="_blank" rel="noopener noreferrer">Eignungsprüfungsordnung，MdU 24/2022</a>；<a href="https://www.uni-weimar.de/de/kunst-und-gestaltung/studium/freie-kunst/" target="_blank" rel="noopener noreferrer">专业页</a></td>
+<td>Level 1；Level 2</td>
+</tr>
+<tr><th scope="row">Staatliche Akademie der Bildenden Künste Karlsruhe（AdBK Karlsruhe）</th>
+<td>Diplom Freie Kunst（Malerei/Grafik、Bildhauerei）</td>
+<td>是</td>
+<td>有1–5级、5:3:2维度权重、均值和通过线</td>
+<td>是</td>
+<td>艺术造型能力×5；艺术—手工能力×3；反思和/或语言表述艺术问题×2</td>
+<td>预选≤4.0；最终≤3.0；无HZB另须一般教育检查</td>
+<td>5–6名全职教授；简单多数，平票由主席决定</td>
+<td>作品＋动机信预选；达到4.0才进入后续；三阶段评分进入同一总平均</td>
+<td>是：至少5小时实践＋通常15分钟口试</td>
+<td>各环节同三维1–5级；5:3:2是维度权重，不是阶段比例</td>
+<td><a href="https://www.kunstakademie-karlsruhe.de/fileadmin/abk/media/dokumente/allgemeine_Satzungen_Richtlinien/studium_und_lehre/abk_dok_Zulass_und_Immatrikualtionssatzung_Fassung_31.05.2022.pdf" target="_blank" rel="noopener noreferrer">Zulassungs- und Immatrikulationssatzung 2022</a>；<a href="https://www.kunstakademie-karlsruhe.de/studium/bewerbung/freie-kunst/" target="_blank" rel="noopener noreferrer">申请页</a></td>
+<td>Level 1；Level 2</td>
+</tr>
+<tr><th scope="row">Muthesius Kunsthochschule Kiel</th>
+<td>B.F.A. Freie Kunst</td>
+<td>是；作品集是正式考试部分</td>
+<td>有1–5成绩、±0.3细分和总评档；无环节权重</td>
+<td>是</td>
+<td>想象/发明/感知；原创与独立；形式把握；色彩感知；绘画能力；立体空间表现；技术构造理解</td>
+<td>每部分须通过且总评≤3.5；无通常HZB须优于2.0</td>
+<td>总Eignungsprüfungsausschuss 5人；专业委员会至少3名教师；每项实践至少2人评分</td>
+<td>当前先数字预选、后带原作；数字预选如何映射法规Mappe成绩未完全公开</td>
+<td>是：3项实践任务＋Kolloquium</td>
+<td>七项维度；谈话看动机、意图、设想与知识；阶段权重未公开</td>
+<td><a href="https://muthesius-kunsthochschule.de/wp-content/uploads/2013/05/bachelor-epo.pdf" target="_blank" rel="noopener noreferrer">Bachelor-Eignungsprüfungsordnung 2009</a>；<a href="https://muthesius-kunsthochschule.de/bewerbungsablauf/" target="_blank" rel="noopener noreferrer">当前流程</a></td>
+<td>Level 1；Level 2（法规年代风险）</td>
+</tr>
+</tbody></table></div>
+<h4 id="portfolio--总表的三个必要解释">总表的三个必要解释</h4>
+<ol>
+<li><strong>通过艺术考试不必然等于获得最终学位名额。</strong> 部分学校在艺术资格认定后仍有名额分配、形式审核或注册条件。</li>
+<li><strong>同名术语不能跨校等同。</strong> <code>künstlerische Eignung</code>、<code>besondere künstlerische Begabung</code>、<code>überragende künstlerische Befähigung</code> 的法律层级与适用路径由各校规章分别定义。</li>
+<li><strong>作品集权重只有官方明文时才写比例。</strong> 本报告能确认的典型明示包括 HBK Braunschweig 40%/60%、BURG 2026 的30/20/20/30；HfG Offenbach 的50/50是2023旧规，2024现行规则已取消。</li>
+</ol>
+<h3 id="portfolio--第二部分-逐校详细档案">第二部分：逐校详细档案</h3>
+<p>每校均按 A–I 整理：作品集作用、机制类型、正式维度、分值、通过线、评审人员、现场考试、官方文件和研究结论；并单列【目前无法确认】。教授个人表述若出现，会明确标为补充，不会升级为学校正式标准。</p>
+<h4 id="portfolio--1-kunstakademie-dusseldorf-freie-kunst">1. Kunstakademie Düsseldorf — Freie Kunst</h4>
+<p><strong>2027/28 状态：</strong> 目标周期的年度执行说明尚未公布；以下正式评分机制来自仍列示的 2021《Feststellungsordnung》，2026 申请页只用于说明最近一次“仅审提交作品”的执行方式，不能外推为 2027 永久规则。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集作用">A. 作品集作用</h5>
+<ol>
+<li><strong>提交要求，不等于评价维度。</strong> [Level 1] 《Feststellungsverfahren Freie Kunst》§1(4) 要求通常提交 <strong>20–25 件原创作品</strong>，媒介自选、装入不超过 DIN A0 的作品夹；大型/雕塑作品可用照片补充记录，但照片不能替代原创作品。Film/Video 有另一套数量与载体规则。2026 官方申请页更新了实际格式细节（如实体作品夹最大 5kg、Film/Video 上传 mp4 等），因此实际提交应以当年申请页为准。</li>
+<li><strong>决定性入口证据。</strong> [Level 1] 法规 §4、§6(3)–(5) 规定：先审 <code>Arbeitsproben (Mappenvorlage)</code>；若仅凭作品集已明确合格，可直接认定资格；若明确不合格，直接不认定且不进入后续；只有无法明确判断者，才可能参加实践任务和/或专业谈话。</li>
+<li><strong>2026 实际执行与永久授权要分开。</strong> [Level 2] 2026 官方申请页明确写明：本年度认定“<strong>ausschließlich anhand der eingereichten künstlerischen Arbeiten</strong>”，且“<strong>Es findet keine weitere praktische Prüfung statt</strong>”；Abitur 平均分等不计入。这个页面可证明 2026 轮次的实际做法，但不能废止 Level 1 法规保留的可选后续程序。</li>
+</ol>
+<h5 id="portfolio--b-类型">B. 类型</h5>
+<p><strong>A 型。</strong> [Level 1] 存在逐维度 1–3 级、算术平均和 2.3 / 1.3 两条明确阈值，公开机制具有较强可复算性。</p>
+<h5 id="portfolio--c-官方评价维度-原词与中文">C. 官方评价维度：原词与中文</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 3" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 3</caption>
+<thead>
+<tr>
+<th scope="col">Level 1 法规原词（§5）</th>
+<th scope="col">中文直译</th>
+<th scope="col">Level 2 申请页给出的官方解释（不能扩张为额外维度）</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><code>künstlerische Gestaltungsfähigkeit</code></th>
+<td>艺术造型 / 形式建构能力</td>
+<td>把思想与感受独立转化为自选形式语言；不僵守单一类别，而会实验</td>
+</tr>
+<tr><th scope="row"><code>Realisierungsfähigkeit in den gewählten künstlerischen Medien</code></th>
+<td>在所选艺术媒介中的实现能力</td>
+<td>具体制作/完成作品的实践能力，包括绘画、素描、细节把握等</td>
+</tr>
+<tr><th scope="row"><code>künstlerische Konzeption und Intensität</code></th>
+<td>艺术构思与强度</td>
+<td>表达与形式的原创性，以及构思和造型感受力</td>
+</tr>
+</tbody></table></div>
+<p><strong>边界：</strong> [Level 1] 以上三项是正式 <code>Bewertungskriterien</code>。作品数量、DIN A0、原作、文件格式是<strong>提交要求</strong>；Abitur 成绩不计入是<strong>录取规则</strong>；三者不能混写成审美维度。</p>
+<h5 id="portfolio--d-具体分值-等级-计算">D. 具体分值 / 等级 / 计算</h5>
+<ul>
+<li>[Level 1] 每一位委员会成员，对每一个 §5 维度分别给一个 <code>Rangstufe</code>：<ul>
+<li><strong>1</strong> = <code>hervorragende künstlerische Begabung</code>（卓越艺术天赋）；</li>
+<li><strong>2</strong> = <code>künstlerische Eignung</code>（艺术适合性）；</li>
+<li><strong>3</strong> = <code>nicht ausreichende künstlerische Eignung</code>（艺术适合性不足）。</li>
+</ul>
+</li>
+<li>[Level 1] 对“所给出的各等级”取<strong>算术平均</strong>。法规没有另列各维度权重，亦没有允许以 Abitur 分数补偿艺术评价。</li>
+<li>[Level 1] 记录中须写入 <code>die einzelnen Bewertungsnoten sowie die Gesamtnote</code>，即各单项评价与总评。</li>
+</ul>
+<h5 id="portfolio--e-通过线">E. 通过线</h5>
+<ul>
+<li>[Level 1] 平均 <strong>2.3 或更优（数值更小）</strong>：认定 <code>künstlerische Eignung</code>。</li>
+<li>[Level 1] 平均 <strong>1.3 或更优</strong>：认定 <code>hervorragende künstlerische Begabung</code>。</li>
+<li>[Level 1] 申请 Freie Kunst 通常须有 Hochschulreife 加 <code>künstlerische Eignung</code>；没有 Hochschulreife 时，须达到更高的 <code>hervorragende künstlerische Begabung</code>。因此 1.3 不是普通申请人的“一般录取线”，而是更高法律等级。</li>
+<li>[Level 1] 高于 2.3 不获得艺术资格。资格认定与完成其他入学形式条件仍应区分。</li>
+</ul>
+<p><strong>同校项目变体（不要混用）：</strong> [Level 1] Lehramt 的 Amtliche Mitteilung Nr.57 沿用同三维度和 1–3 级，但其普通艺术适合性阈值是平均 <strong>2.5 或更优</strong>，且只认定 <code>künstlerische Eignung</code>。本报告主表的 2.3/1.3 属于 <strong>Freie Kunst</strong>。</p>
+<h5 id="portfolio--f-评审人员-表决与记录">F. 评审人员、表决与记录</h5>
+<ul>
+<li>[Level 1] Freie Kunst 委员会：校长或一位副校长任主席；6 位艺术学科专任教授；1 位有表决权的艺术工作人员。参议院学生代表还可提名最多 2 位已完成 Orientierungsstudium 的学生委员，但其<strong>无表决权</strong>。</li>
+<li>[Level 1] 所申请艺术领域如校内有相应专任教授，开会时至少须有一名该领域成员/替补成员在场。</li>
+<li>[Level 1] 会议不公开；须包括主席在内有 8 位有表决权成员到场才构成法定人数。以出席有表决权成员多数决定；资格表决不得弃权；票数相等时主席票决定。</li>
+<li>[Level 1] §10 要求每个程序阶段形成书面记录，包括日期地点、委员姓名、申请人、范围/时长/题目、各评分与总评、特殊事件；主席签字。§11 允许申请人在收到决定后一个月内申请查看记录及评委评价。</li>
+<li>[Level 2] 2026 申请页用较简化语言称，实际审查由艺术教授与艺术—学术工作人员组成的委员会完成，委员会每年由参议院重新选出。精确法定构成仍以 Level 1 §3 为准。</li>
+</ul>
+<h5 id="portfolio--g-现场-追加考试及其评价">G. 现场 / 追加考试及其评价</h5>
+<ul>
+<li><strong>法规授权。</strong> [Level 1] 对作品集不能明确判定者，委员会可要求：<ul>
+<li>一项由委员会命题、至少 <strong>4 小时</strong>的图像/视觉实践工作；和/或</li>
+<li>基于作品集、围绕造型基础问题和艺术关联的 <strong>15–30 分钟</strong>专业谈话。</li>
+</ul>
+</li>
+<li><strong>评价方法。</strong> [Level 1] 追加任务和/或谈话仍用 §5 三项维度，由每位委员分别给 1–3 级并进入算术平均；不存在另一个已公开的现场考试量表。</li>
+<li><strong>2026 执行。</strong> [Level 2] 当前申请页明确说无追加实践考试、仅审提交作品。因此对 2026 申请者，应把作品集视为实际唯一艺术评价材料；但对未来年份仍须重查页面，不能把 2026 做法写成法规永久取消了 §6(5)。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-版本-链接-页码-条款">H. 官方文件、版本、链接、页码 / 条款</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 4" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 4</caption>
+<thead>
+<tr>
+<th scope="col">证据</th>
+<th scope="col">版本与定位</th>
+<th scope="col">用途</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><a href="https://kunstakademie-duesseldorf.de/wp-content/uploads/Nr.-56-Ordnung-zur-Feststellung-der-kuenstlerischen-Eignung-fuer-den-Studiengang-Freie-Kunst.pdf" target="_blank" rel="noopener noreferrer">Level 1《Ordnung zur Feststellung der künstlerischen Eignung für den Studiengang Freie Kunst … (Feststellungsverfahren Freie Kunst)》</a></th>
+<td>原 1989-06-19；<strong>Fassung vom 23.02.2021</strong>；Amtliche Mitteilungen Nr.56, 24.02.2021。PDF p.3 §1；p.4 §3；p.5 §§4–6(1–4)；p.6 §6(5)；p.7 §§10–11</td>
+<td>提交、委员会、维度、分级、均值、阈值、追加考试、记录</td>
+</tr>
+<tr><th scope="row"><a href="https://kunstakademie-duesseldorf.de/wp-content/uploads/Nr.-57-Feststellungsordnung-Lehramt-Bachelor-und-Master.pdf" target="_blank" rel="noopener noreferrer">Level 1《Feststellungsordnung Künstlerisches Lehramt》</a></th>
+<td>23.02.2021；Amtliche Mitteilungen Nr.57, 24.02.2021。PDF p.5 §§4–6；p.6 §6(5)</td>
+<td>只用于说明 Lehramt 的 2.5 项目差异</td>
+</tr>
+<tr><th scope="row"><a href="https://kunstakademie-duesseldorf.de/studienangebot-und-bewerbung/studienbewerbung/" target="_blank" rel="noopener noreferrer">Level 2 2026 Studienbewerbung / Mappenprüfung</a></th>
+<td>页面含 WiSe 2026/27 日期；无 PDF 页码</td>
+<td>当年提交格式、当前仅审作品、无实践考试、官方解释</td>
+</tr>
+<tr><th scope="row"><a href="https://kunstakademie-duesseldorf.de/amtliche-mitteilungen/" target="_blank" rel="noopener noreferrer">Level 1 Amtliche Mitteilungen 索引</a></th>
+<td>检索至 2026-09-29；截至 Nr.88（08.07.2026）未见 Nr.56 入学评价规则的后续修订</td>
+<td>当前性核查</td>
+</tr>
+</tbody></table></div>
+<h5 id="portfolio--i-事实结论">I. 事实结论</h5>
+<ol>
+<li><strong>正式标准可确认。</strong> Düsseldorf / Freie Kunst 是 <strong>A 型</strong>：三维度、1–3 级、算术平均、2.3 与 1.3 阈值均有 Level 1 明文。</li>
+<li><strong>作品集的法律作用很强。</strong> 法规允许只凭作品集直接认定或否定；2026 Level 2 页面更进一步，把本轮实际执行限定为仅按提交作品判断。</li>
+<li><strong>不得误写。</strong> 不能把 Level 2 对三项维度的解释拆成更多独立评分项；不能把 1.3 写成所有人的普通录取线；不能把 2026 “无实践考试”写成永久废止法规中的可选追加程序。</li>
+</ol>
+<h6 id="portfolio--目前无法确认">【目前无法确认】</h6>
+<ul>
+<li>未公布每位委员的实际评分表、各委员评分分布、历史录取率、名额排序或同分处理；这些不能从 2.3 阈值反推。</li>
+<li>法规没有明说三项是否在表格中标成相同权重；它只规定每项分别评级并对所给等级取算术平均。</li>
+<li>2026 页面与法规在“是否追加考试”上的差异属于“当年执行收窄 vs 法规长期授权”；学校未公开解释为何本年度不启用 §6(5)。</li>
+</ul>
+<h6 id="portfolio--教授个人倾向-非正式标准">教授个人倾向（非正式标准）</h6>
+<ul>
+<li>本轮在官方教授页、招生页和定向检索中<strong>没有找到可可靠归属于某位现任教授的、关于入学作品集取舍的公开个人表述</strong>。[Level 3/Level 5：未确认]</li>
+<li>学校官方页面对“实验、原创性、形式语言、实践完成度”的说明是 <strong>Level 2 机构解释</strong>，不是某位教授的个人偏好；不得把某位 Klasse 的艺术风格反推为委员会标准。</li>
+</ul>
+<hr>
+<h4 id="portfolio--2-universitat-der-kunste-berlin-bildende-kunst-absolvent-in">2. Universität der Künste Berlin — Bildende Kunst（Absolvent*in）</h4>
+<p><strong>2027/28 状态：</strong> 目标周期实施细则尚未公布；长期程序依据 2021《Zulassungsordnung》，具体观察项与线上后续测试形式依据自 2026-02-01 起有效的 2026 实施细则，2027 须复核。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集作用-2">A. 作品集作用</h5>
+<ol>
+<li><strong>预选门槛。</strong> [Level 1] Zulassungsordnung §§3–4 规定程序分 <code>Vorauswahl</code> 与 <code>Zugangsprüfung</code>。预选以作品样本为依据；若作品在第一次审查时<strong>尚未显出</strong>缺乏本项目所需 <code>besondere künstlerische Begabung</code>，即通过预选。这是一个负面表述的淘汰门槛，而不是分数线。</li>
+<li><strong>终试组成部分。</strong> [Level 1] 通过预选后，作品集并未退出评价；Zugangsprüfung 包括：15–20 件自制艺术/设计作品、1.5 天左右命题作品、最多 2 页的形式/内容反思文字，以及通常 5–10 分钟的专业谈话。</li>
+<li><strong>当前执行。</strong> [Level 1/Level 2] 自 2026-02-01 有效的官方 <code>Ausführungsbestimmung</code> 明确：作品集可数字或实体提交；预选通过者参加线上 Zugangsprüfung；作品集、反思文字、限时任务与谈话均进入终审语境。官方申请页也明确先 Mappendurchsicht、后线上任务与谈话。</li>
+<li><strong>提交要求，不等于评分。</strong> [Level 1] 约 15–20 件、自制、文件名、尺寸、材质、年份、文件大小等是可受理性/呈现要求；不能把符合 PDF/MP4 格式本身当作艺术质量分。</li>
+</ol>
+<h5 id="portfolio--b-类型-2">B. 类型</h5>
+<p><strong>B 型。</strong> [Level 1] 2026 实施细则公开了作品应让委员会看见的具体观察项，但没有任何数字、等级、权重或合成公式。委员会最终投票并不使其变成 A 型评分量表。</p>
+<h5 id="portfolio--c-官方评价维度-观察项-原词与中文">C. 官方评价维度 / 观察项：原词与中文</h5>
+<p>2026 <code>Ausführungsbestimmung</code> I 段使用 <code>sollen / sollten … zeigen / widerspiegeln / sichtbar machen</code>，所以最严谨的称呼是“<strong>官方作品集观察项 / 期待</strong>”，而非假装存在的逐项打分表。</p>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 5" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 5</caption>
+<thead>
+<tr>
+<th scope="col">官方原词</th>
+<th scope="col">中文</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><code>eine intensive inhaltliche und formale Auseinandersetzung mit einigen Themenfeldern</code></th>
+<td>对若干主题领域进行深入的内容与形式研究</td>
+</tr>
+<tr><th scope="row"><code>die eigenen künstlerischen Interessen … widerspiegeln</code></th>
+<td>反映自身艺术兴趣</td>
+</tr>
+<tr><th scope="row"><code>die eigenen künstlerischen … Fähigkeiten widerspiegeln</code></th>
+<td>反映自身艺术能力</td>
+</tr>
+<tr><th scope="row"><code>die eigene Fähigkeit zur Beobachtung … sichtbar machen</code></th>
+<td>让自身观察能力可见</td>
+</tr>
+<tr><th scope="row"><code>Originalität</code></th>
+<td>原创性</td>
+</tr>
+<tr><th scope="row"><code>Intensität</code></th>
+<td>强度 / 投入与作品呈现出的集中度（法规未再定义，不宜自行细化）</td>
+</tr>
+</tbody></table></div>
+<p><strong>另行区分：</strong> [Level 1] 最多两页的文字须反思 <code>die eigene Haltung zur künstlerischen Arbeit nach Form und Inhalt</code>，这是<strong>反思文字的任务要求</strong>；它会被面谈引用，但文件没有把“写作漂亮”列成作品集独立评分维度。</p>
+<h5 id="portfolio--d-具体分值">D. 具体分值</h5>
+<ul>
+<li>[Level 1] <strong>未公开</strong>作品集分数、各维度等级、权重、总分、平均方式或排名公式。</li>
+<li>[Level 1] 法规中的 <code>einzelne Beurteilungen</code>（须记入记录）只证明存在个别评定记录，不能推出这些评定必为数值。</li>
+<li>[Level 1] 终审在谈话后由委员会对是否录取进行表决；这是决策程序，不是作品集量化评分。</li>
+</ul>
+<h5 id="portfolio--e-通过线-2">E. 通过线</h5>
+<ul>
+<li><strong>预选：</strong> [Level 1] 初审作品不得显示申请人缺乏所需的 <code>besondere künstlerische Begabung</code>。没有公开更细的通过界线。</li>
+<li><strong>终审：</strong> [Level 1] 基于 Zugangsprüfung 结果证明所需 <code>besondere künstlerische Begabung</code>，且满足 §1 其他条件，方获录取。</li>
+<li><strong>委员会票：</strong> [Level 1] 决定须获委员会<strong>成员多数</strong>，不得弃权。该多数票要求是决定有效规则，但不是“作品集得几票就算通过”的单独公开量表，因为最终投票发生在整套终试之后。</li>
+</ul>
+<h5 id="portfolio--f-评审人员-表决与记录-2">F. 评审人员、表决与记录</h5>
+<ul>
+<li>[Level 1] 委员会由学院理事会（Fakultätsrat）指定：5 位专任高校教师 + 2 位具有独立教学职责的学术工作人员；主席和副主席必须来自 5 位高校教师。任期 2 年。</li>
+<li>[Level 1] 另有 2 名本项目学生由 Fakultätsrat 指定，只有发言权、无表决权。</li>
+<li>[Level 1] 决定须获委员会成员多数；不得弃权。法规未单列票数相同时的处理规则。</li>
+<li>[Level 1] 每个程序阶段都须有记录，内容包括委员及申请人姓名、地点、各阶段起止时间、<code>einzelne Beurteilungen</code>、投票结果、决定理由；由主席与记录人签字。</li>
+<li>[Level 1] 专业谈话可在座位允许时供同阶段申请人和校内成员旁听，但申请人可要求排除旁听；其余阶段、合议和结果宣布均不公开。</li>
+</ul>
+<h5 id="portfolio--g-现场-线上考试及评价">G. 现场 / 线上考试及评价</h5>
+<ul>
+<li>[Level 1] 2026 终试在线进行。实践题由委员会指定，可给 1 题或 2 题择一；公布后有 <strong>1.5 天</strong>完成；媒介不限，可提交 1–3 件结果，独立完成，学院不供材料和场地。</li>
+<li>[Level 1] 通常有 <strong>5–10 分钟</strong>线上专业谈话，面对整个委员会，讨论作品集、反思文字与限时任务；由一位教授委员开启。谈话结束后委员会表决录取。</li>
+<li>[Level 1] 未公开实践题、作品集、反思文字、面谈四者之间的权重，也未公开各环节必须分别通过的规则；只能确认它们共同服务于 <code>besondere künstlerische Begabung</code> 的整体认定。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-版本-链接-页码-条款-2">H. 官方文件、版本、链接、页码 / 条款</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 6" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 6</caption>
+<thead>
+<tr>
+<th scope="col">证据</th>
+<th scope="col">版本与定位</th>
+<th scope="col">用途</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><a href="https://www.udk-berlin.de/fileadmin/2_dezentral/Referat_Studienangelegenheiten/UdK_Anzeiger/2021/01-2021_Anzeiger_der_UdK_Berlin.pdf" target="_blank" rel="noopener noreferrer">Level 1《Zulassungsordnung für den Studiengang „Bildende Kunst“》</a></th>
+<td>28.10.2020；公布于 UdK-Anzeiger 1/2021, 04.02.2021。PDF p.2 §§1–7；p.3 §§7–11</td>
+<td>两阶段、预选阈值、终试组成、录取、委员会、投票、记录</td>
+</tr>
+<tr><th scope="row"><a href="https://www.udk-berlin.de/fileadmin/2_dezentral/Studienberatung/Bildende_Kunst/Ausfuehrungsbestimmungen_BK_Absolvent_WiSe26_27.pdf" target="_blank" rel="noopener noreferrer">Level 1 2026《Ausführungsbestimmung zum Zulassungsverfahren … Bildende Kunst》</a></th>
+<td><strong>gültig ab 01.02.2026</strong>。PDF p.1 Abschnitt I；p.2 Abschnitt II；p.3 Abschnitt III</td>
+<td>作品集观察项、数字/实体提交、线上任务与谈话、表决时点</td>
+</tr>
+<tr><th scope="row"><a href="https://www.udk-berlin.de/bewerbung/bewerbungsguide/bildende-kunst-absolventin-mit-der-option-auf-meisterschuelerin/" target="_blank" rel="noopener noreferrer">Level 2 当前申请页：Bildende Kunst Absolvent*in</a></th>
+<td>页面含当前申请流程；无 PDF 页码</td>
+<td>当期两阶段说明及实施细则入口</td>
+</tr>
+<tr><th scope="row"><a href="https://www.udk-berlin.de/fileadmin/2_dezentral/Referat_Studienangelegenheiten/UdK_Fundstellenanzeiger/2026-09-07_Fundstellenanzeiger.pdf" target="_blank" rel="noopener noreferrer">Level 1《Fundstellennachweis … Stand 7. September 2026》</a></th>
+<td>PDF p.15，<code>Bildende Kunst</code> 条目；官方现行法规索引</td>
+<td>截点当前性复核</td>
+</tr>
+<tr><th scope="row">UdK Mappe FAQ（研究阶段曾可访问；最终外链核查时原页面已失效）</th>
+<td>无可用页码；不作为核心证据</td>
+<td>仅作历史检索记录：曾有机构性说明称不存在统一“秘方”、材料应反映申请人的兴趣与深入研究；由于原页面已无法复核，本报告不把这句话列为当前正式评价标准</td>
+</tr>
+</tbody></table></div>
+<h5 id="portfolio--i-事实结论-2">I. 事实结论</h5>
+<ol>
+<li><strong>类型为 B，而非 C。</strong> 2026 Level 1 实施细则已公开“内容/形式深入研究、自身兴趣与能力、观察、原创性、强度”等观察项；只是没有评分表。</li>
+<li><strong>作品集不是唯一终审材料。</strong> 它先决定能否进入 Zugangsprüfung，并在终试中与命题作品、反思文字、谈话再次共同审查。</li>
+<li><strong>正式可说到的边界。</strong> 能说“委员会以这些品质观察作品并整体认定特殊艺术天赋”；不能说“原创性占 30%”“必须五票”“每项至少及格”等，因为官方未公布。</li>
+</ol>
+<h6 id="portfolio--目前无法确认-2">【目前无法确认】</h6>
+<ul>
+<li>未公布各观察项的权重、逐项描述等级、委员个人评分格式、四个终试部分的合成方式或数值通过线。</li>
+<li>法规要求记录 <code>einzelne Beurteilungen</code>，但公开文本未说明它是文字意见、等级还是内部表格。</li>
+<li>未公布预选与终试历年通过率、项目名额如何与艺术资格决定相衔接、票数相同如何处理。</li>
+</ul>
+<h6 id="portfolio--教授个人倾向-非正式标准-2">教授个人倾向（非正式标准）</h6>
+<ul>
+<li>本轮未找到能够可靠归属于某位现任委员会教授的招生作品集个人偏好表述。[Level 3/Level 5：未确认]</li>
+<li>研究阶段曾检索到 UdK 一般 Mappe FAQ 的机构性建议（不存在统一“万能配方”、材料应反映自身兴趣与深入研究），但该页面在最终外链核查时已失效；因此这里只保留检索记录，<strong>不把该句列为当前可验证的 Level 2 标准</strong>。可复核的正式观察项仍以 2026 实施细则为准。</li>
+</ul>
+<hr>
+<h4 id="portfolio--3-hfbk-hamburg-b-f-a-bildende-kunste">3. HFBK Hamburg — B.F.A. Bildende Künste</h4>
+<p><strong>2027/28 状态：</strong> 目标周期年度说明尚未公布；正式机制依据 2026-06-18 现行 Immatrikulationsordnung，未来申请轮次是否修订或改变追加考试方式仍须复核。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集作用-3">A. 作品集作用</h5>
+<ol>
+<li><strong>核心认定材料。</strong> [Level 1] Immatrikulationsordnung §5(1)–(2) 要求提交自制艺术样本；委员会依据所交样本判断是否存在 <code>besondere künstlerische Befähigung</code>。</li>
+<li><strong>通常可直接决定。</strong> [Level 1] 委员会可以仅凭作品样本作出结论；也可决定邀请申请人参加实践 Aufnahmeprüfung 和/或委员会面谈。[Level 2] 当前申请页把实际逻辑表述为：只有数字作品集尚不能明确判断时，才可能邀请带实体作品集参加简短面谈。</li>
+<li><strong>提交要求，不等于评价维度。</strong> [Level 1] 作品原则上应来自最近两年、能以申请人姓名识别并标注创作日期；提交形式由 HFBK 指定。[Level 2] 当前 BFA 页要求数字上传，并列出 PDF、视频/音频等格式。最近两年、文件格式、CV 和学历材料均是提交/形式条件，不是 A/B/C 艺术评价本身。</li>
+</ol>
+<h5 id="portfolio--b-类型-3">B. 类型</h5>
+<p><strong>A 型。</strong> [Level 1] 法规同时给出三项明确评价维度和 A/B/C 结果等级，并明确只有 A 录取。虽无数字加总，它仍符合“公开等级 + 明确阈值”的 A 型定义。</p>
+<h5 id="portfolio--c-官方评价维度-原词与中文-2">C. 官方评价维度：原词与中文</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 7" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 7</caption>
+<thead>
+<tr>
+<th scope="col">Level 1 §5(2) 原词</th>
+<th scope="col">中文</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><code>Konzeption</code></th>
+<td>构思 / 概念形成</td>
+</tr>
+<tr><th scope="row"><code>Gestaltungsfähigkeit</code></th>
+<td>造型 / 形式建构能力</td>
+</tr>
+<tr><th scope="row"><code>Realisierungsfähigkeit in den gewählten künstlerischen Medien</code></th>
+<td>在所选艺术媒介中的实现能力</td>
+</tr>
+</tbody></table></div>
+<p>[Level 1] 法规表述为委员会 <code>anhand der Konzeption sowie der Gestaltungs- und Realisierungsfähigkeit in den gewählten künstlerischen Medien</code> 作判断。它没有给三项各自的行为锚点或子指标；不能用个人经验补写“研究性”“社会议题”“技术纯熟”等隐藏维度。</p>
+<h5 id="portfolio--d-具体等级">D. 具体等级</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 8" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 8</caption>
+<thead>
+<tr>
+<th align="right">Level 1 §6(1) 等级</th>
+<th scope="col">官方含义</th>
+<th scope="col">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"><strong>A</strong></td>
+<td><code>eine besondere künstlerische Befähigung ist erkennbar</code></td>
+<td>可识别出特殊艺术能力</td>
+</tr>
+<tr>
+<td align="right"><strong>B</strong></td>
+<td><code>eine besondere künstlerische Befähigung ist derzeit nicht ausreichend erkennbar, Entwicklungspotential ist vorhanden</code></td>
+<td>目前尚不能充分识别特殊艺术能力，但存在发展潜力</td>
+</tr>
+<tr>
+<td align="right"><strong>C</strong></td>
+<td><code>eine besondere künstlerische Befähigung ist nicht erkennbar</code></td>
+<td>未能识别出特殊艺术能力</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>[Level 1] 这是对申请结果的<strong>整体等级</strong>；法规没有说三项维度分别各打 A/B/C，也没有公开把三项换算为总等级的公式。</li>
+<li>[Level 2] 当前 FAQ 简化写成作品集按 A（录取）或 C（拒绝）评价。由于 Level 1 2026 法规明确仍有 B，正式制度应保留 A/B/C；FAQ 不能用来删除 B。可保守理解为 FAQ 只向申请人概括最终录取/拒绝，而非完整复述法定等级。</li>
+</ul>
+<h5 id="portfolio--e-通过线-3">E. 通过线</h5>
+<ul>
+<li>[Level 1] <strong>只有 A</strong> 等级申请人可以入学，并被视为狭义 <code>Studienplatzanwärter*innen</code>。</li>
+<li>[Level 1] B 虽明确记载“有发展潜力”，仍未达到当前录取所需的特殊艺术能力；B 与 C 均不录取。</li>
+<li>[Level 1] 取得 A 后还须完成录取接受和注册程序；艺术 A 级不能替代其他适用的语言/行政条件。</li>
+</ul>
+<h5 id="portfolio--f-评审人员-表决与记录-3">F. 评审人员、表决与记录</h5>
+<ul>
+<li>[Level 1] BFA/MFA <code>Bildende Künste</code> 委员会：1 位教授任主席；至少另 2 位教授；1 位有表决权的学术人员代表；2 位无表决权的学生代表。如某 Studienschwerpunkt 无法派出至少 3 位教授，须从其他方向补教授。</li>
+<li>[Level 1] 至少 3 位教授在场才有法定人数。成员由校长根据各 Studienschwerpunkte 提议，为该次招生程序任命。</li>
+<li>[Level 1] 会议原则上现场举行；校长决定的例外情形可全数字或混合举行。会议不公开；可邀请校内专家，但专家无表决权。</li>
+<li>[Level 1] §5(3) 只明文要求“考试结果书面固定/记录”。现行 Immatrikulationsordnung <strong>没有公开</strong>多数票比例、是否允许弃权、票数相同时如何处理，也没有列出记录必须包含的明细。不能借用 Düsseldorf 或 UdK 的表决规则补足。</li>
+</ul>
+<h5 id="portfolio--g-现场-追加考试及评价">G. 现场 / 追加考试及评价</h5>
+<ul>
+<li>[Level 1] 委员会可酌情邀请申请人参加<strong>实践 Aufnahmeprüfung 和/或面谈</strong>；法规未把它设为每人必经阶段，也未公布 BFA 实践题时长或面谈时长。</li>
+<li>[Level 1] 数字/电子提交者若被邀请参加实践或面谈，须带实体作品集。</li>
+<li>[Level 2] 当前 BFA 申请页称，当数字作品集不能产生明确决定时，可能邀请申请人携实体作品集进行简短个人面谈，通常在 4 月中下旬。该页面没有公布另一个面谈评分表。</li>
+<li>[Level 1] 最终仍是 §5 所列三项能力与 §6 A/B/C 的整体认定；没有证据支持“面谈单独占分”或“现场任务可按固定比例拉分”。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-版本-链接-页码-条款-3">H. 官方文件、版本、链接、页码 / 条款</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 9" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 9</caption>
+<thead>
+<tr>
+<th scope="col">证据</th>
+<th scope="col">版本与定位</th>
+<th scope="col">用途</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><a href="https://hfbk-hamburg.de/@/file/a3vefs2rwllylxp3" target="_blank" rel="noopener noreferrer">Level 1《Immatrikulations-, Neben- und Gasthörer*innenordnung der HFBK Hamburg》</a></th>
+<td><strong>Fassung vom 18. Juni 2026</strong>。PDF p.1 前言；p.3–4 §3；p.5–6 §§4–6；p.15 §12</td>
+<td>评价维度、A/B/C、A 通过线、可选追加考试、委员会、书面记录</td>
+</tr>
+<tr><th scope="row"><a href="https://hfbk-hamburg.de/de/informationen/administration/ordnungen-satzungen-richtlinien/studium-und-lehre" target="_blank" rel="noopener noreferrer">Level 1 HFBK Studium und Lehre — Ordnungen 索引</a></th>
+<td>截至 2026-09-29 的学校法规入口</td>
+<td>当前版本链路核查</td>
+</tr>
+<tr><th scope="row"><a href="https://hfbk-hamburg.de/de/informationen/studieninteressierte/bewerben/bewerbung-bachelor-bildende-kuenste" target="_blank" rel="noopener noreferrer">Level 2 Bewerbung Bachelor „Bildende Künste“</a></th>
+<td>当前官方申请页；无 PDF 页码</td>
+<td>数字提交、评审构成的通俗说明、疑难时短面谈</td>
+</tr>
+<tr><th scope="row"><a href="https://hfbk-hamburg.de/de/informationen/studieninteressierte/faq-bewerbung" target="_blank" rel="noopener noreferrer">Level 2 FAQ Bewerbung</a></th>
+<td>当前官方 FAQ；无 PDF 页码</td>
+<td>A/C 的简化公众说明、无个别作品集咨询及“authentisch”机构理由</td>
+</tr>
+</tbody></table></div>
+<h5 id="portfolio--i-事实结论-3">I. 事实结论</h5>
+<ol>
+<li><strong>正式标准可确认。</strong> HFBK BFA 是 <strong>A 型</strong>：三项评价维度 + A/B/C 整体等级 + 只有 A 录取，全部有 2026 Level 1 明文。</li>
+<li><strong>评分是等级制但不是数值表。</strong> 可说“整体 A/B/C”；不可说“构思 A、实现 B 后取平均”，因为法规没有逐维度等级或合成公式。</li>
+<li><strong>作品集通常具有决定性。</strong> 追加实践/面谈是委员会酌情措施；当前 Level 2 页面也仅把短面谈用于数字作品集无法明确判断的情形。</li>
+</ol>
+<h6 id="portfolio--目前无法确认-3">【目前无法确认】</h6>
+<ul>
+<li>未公开三项维度的权重、行为锚点、委员个人表格、整体 A/B/C 的合成方式。</li>
+<li>未公开委员会普通决定采用何种多数、能否弃权、平票处理；只确认法定人数至少 3 位教授。</li>
+<li>Level 1 仍有 B，而 Level 2 FAQ 只写 A/C；未公开说明实际 B 是否在 2026 BFA 操作中使用、是否仅作为内部/过渡判断。正式报告应保留 Level 1 的 B，不自行删除。</li>
+<li>未公布 BFA 实践考试题型、时长、面谈精确时长或这些追加环节与作品集的权重。</li>
+</ul>
+<h6 id="portfolio--教授个人倾向-非正式标准-3">教授个人倾向（非正式标准）</h6>
+<ul>
+<li>[Level 2] HFBK FAQ 说明学校不提供正式 Mappenbesprechung，因为希望收到“尽可能 authentisch（真实/本真的）”的申请；这是<strong>机构招生建议</strong>，不是 §5 的第四个评分维度，更不是某位教授的个人偏好。</li>
+<li>本轮未找到可可靠归属于某位现任教授、且直接说明 BFA 入学作品集取舍的公开个人表述。[Level 3/Level 5：未确认]</li>
+</ul>
+<hr>
+<h4 id="portfolio--4-hfbk-dresden-diplom-bildende-kunst">4. HfBK Dresden — Diplom Bildende Kunst</h4>
+<p><strong>2027/28 状态：</strong> 目标周期年度安排尚未公布；正式机制依据 2025-10-29 现行 Immatrikulationsordnung，当前专业申请页用于核对最近流程，不把其年度细节直接写成 2027 事实。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集的作用">A. 作品集的作用</h5>
+<ul>
+<li><strong>数字作品集是第一阶段 Vorauswahl（预选）的直接评价对象。</strong> 通过预选才会收到 Eignungsprüfung 邀请；已通过的预选只对紧接着的这一次入学考试有效。【Level 1：Immatrikulationsordnung §3 Abs. 12，PDF p.9；§4 Abs. 6，PDF p.13】</li>
+<li><strong>作品集不是整个程序的唯一评价依据。</strong> 第二阶段另有现场实践任务与考试谈话；申请人还必须把数字作品集对应的原作带到考试谈话。【Level 1：§4 Abs. 2、8，PDF pp.12–13】</li>
+<li>原作和申请作品会成为考试谈话的内容，但现行条文没有把原作品集规定为终试中另计分、另加权的独立项目；终试明文评价的是现场完成作品及谈话中的两项能力。故不能声称“初审作品集分数会带入终试”。【Level 1：§4 Abs. 8–9，PDF pp.13–14】</li>
+</ul>
+<h6 id="portfolio--必须区分的四层">必须区分的四层</h6>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 10" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 10</caption>
+<thead>
+<tr>
+<th scope="col">层次</th>
+<th scope="col">官方规定</th>
+<th scope="col">证据</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">提交要求</th>
+<td>25–30 件 Bildende Kunst 作品；一个合并 PDF，≤30 MB；数字视频/声音作品可另传且合计 ≤50 MB；作品总表须含尺寸与材料；本人创作声明；另交个人发展与学习愿望说明；终试带原作</td>
+<td>【Level 1：§4 Abs. 2，PDF p.12；Level 2：申请页 <code>Bewerbungsmappe</code>】</td>
+</tr>
+<tr><th scope="row">评价维度</th>
+<td>初选与现场作品均用四项；谈话另评两项</td>
+<td>【Level 1：§4 Abs. 6、9，PDF pp.13–14】</td>
+</tr>
+<tr><th scope="row">评分/决策方法</th>
+<td>四项至少满足三项；评委中过半数给出 <code>bestanden</code></td>
+<td>【Level 1：§4 Abs. 6、9，PDF pp.13–14】</td>
+</tr>
+<tr><th scope="row">录取规则</th>
+<td>先过初选，再过 Eignungsprüfung；官网称年度录取受空余学位数量约束；法规未公开学位不足时的排名/同分处理公式</td>
+<td>【Level 1：§3 Abs. 12、17；§4 Abs. 11；Level 2：申请页 <code>Zulassung</code>】</td>
+</tr>
+</tbody></table></div>
+<p>通过的 Eignungsprüfung 结果可用于紧接着的冬季学期及下一日历年的冬季学期；这是资格结果的有效期，不是作品集分数保留或无条件学位保留。【Level 1：§4 Abs. 11，PDF p.14】</p>
+<h5 id="portfolio--b-类型判断">B. 类型判断</h5>
+<p><strong>A 型。</strong> 理由不是存在数字分数，而是官方同时公开了可操作的多维达标规则（四项中至少三项）和集体决策阈值（超过一半评委给 <code>bestanden</code>）。【Level 1：§4 Abs. 6、9，PDF pp.13–14；Level 2：申请页逐字复述同一规则】</p>
+<h5 id="portfolio--c-官方评价维度-原词-中文">C. 官方评价维度（原词＋中文）</h5>
+<h6 id="portfolio--c1-数字作品集预选">C1. 数字作品集预选</h6>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 11" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 11</caption>
+<thead>
+<tr>
+<th scope="col">官方德文原词</th>
+<th scope="col">中文释义</th>
+<th scope="col">条款</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><code>Stand der handwerklichen Fähigkeiten</code></th>
+<td>手工/工艺技能所达到的水平</td>
+<td>【Level 1：§4 Abs. 6 Nr.1，PDF p.13】</td>
+</tr>
+<tr><th scope="row"><code>Stand der künstlerischen Fähigkeiten</code></th>
+<td>艺术能力所达到的水平</td>
+<td>【Level 1：§4 Abs. 6 Nr.2，PDF p.13】</td>
+</tr>
+<tr><th scope="row"><code>vorhandene Originalität</code></th>
+<td>已体现的原创性</td>
+<td>【Level 1：§4 Abs. 6 Nr.3，PDF p.13】</td>
+</tr>
+<tr><th scope="row"><code>schöpferisches Potential</code></th>
+<td>创造潜力</td>
+<td>【Level 1：§4 Abs. 6 Nr.4，PDF p.13】</td>
+</tr>
+</tbody></table></div>
+<h6 id="portfolio--c2-现场实践作品">C2. 现场实践作品</h6>
+<p>现场实践作品沿用以上同四项，但明确是 <strong><code>hinsichtlich der gestellten Aufgabe</code></strong>（相对于给定任务）来判断。【Level 1：§4 Abs. 9 Satz 1，PDF pp.13–14】</p>
+<h6 id="portfolio--c3-考试谈话">C3. 考试谈话</h6>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 12" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 12</caption>
+<thead>
+<tr>
+<th scope="col">官方德文原词</th>
+<th scope="col">中文释义</th>
+<th scope="col">条款</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><code>Fähigkeit der Selbstreflexion</code></th>
+<td>自我反思能力</td>
+<td>【Level 1：§4 Abs. 9，PDF p.14】</td>
+</tr>
+<tr><th scope="row"><code>theoretische Kenntnisse / Informiertheit über Kunst allgemein und über das Zeitgenössische</code></th>
+<td>对一般艺术及当代艺术的理论知识/信息掌握</td>
+<td>【Level 1：§4 Abs. 9，PDF p.14】</td>
+</tr>
+</tbody></table></div>
+<p><strong>边界说明：</strong> 谈话还会涉及申请动机、申请作品及现场作品，但 <code>Motivation</code> 在 §4 Abs. 8 是谈话内容；§4 Abs. 9 明列的附加“被评价”维度只有上表两项。因此不能把动机擅自升级成与六项并列的正式打分维度。【Level 1：§4 Abs. 8–9，PDF pp.13–14】</p>
+<h5 id="portfolio--d-具体分值-等级与计算">D. 具体分值、等级与计算</h5>
+<ul>
+<li><strong>没有公开百分制、总分、单项分、权重或数值换算。</strong> Bildende Kunst 的专项条款使用二元谓词 <code>bestanden</code> / <code>nicht bestanden</code> 和多数表决。【Level 1：§4 Abs. 6、9，PDF pp.13–14】</li>
+<li>一般条款允许考试采用二元谓词，或在其他适用场景使用 1（sehr gut）至 5（ungenügend）的五级分数；但 Bildende Kunst 的专项条款明确采用 <code>bestanden</code>，不能据一般条款推断本专业暗中使用 1–5 计分。【Level 1：§3 Abs. 9，PDF p.8；§4 Abs. 6、9】</li>
+<li><strong>作品集预选的操作规则：</strong> 申请人的作品须证明至少满足四项中的三项；之后必须有超过半数评委给出 <code>bestanden</code>。【Level 1：§4 Abs. 6】</li>
+<li>法规未公开每项内部的档位描述，也未写明单个评委怎样把“三项达标”转换为其个人的 <code>bestanden</code>；故不能制作伪量表。【Level 1：条文缺项核查，§4 Abs. 6】</li>
+</ul>
+<h5 id="portfolio--e-通过线-4">E. 通过线</h5>
+<h6 id="portfolio--e1-作品集预选">E1. 作品集预选</h6>
+<ol>
+<li>至少满足四项正式维度中的三项；且</li>
+<li>超过半数评委给作品集 <code>bestanden</code>。</li>
+</ol>
+<p>两项均见同一条款。【Level 1：§4 Abs. 6，PDF p.13】</p>
+<h6 id="portfolio--e2-终试">E2. 终试</h6>
+<ol>
+<li>现场作品须满足四项中的至少三项；</li>
+<li>谈话须证明满足两项谈话标准；</li>
+<li>对现场作品与谈话的综合评价中，超过半数评委给 <code>bestanden</code>。</li>
+</ol>
+<p>条文没有公开两个终试部分的权重，也没有说要对两个部分分别形成一次多数票；最稳妥的表述是“评委对两部分形成一个法定多数通过决定”。【Level 1：§4 Abs. 9，PDF p.14】</p>
+<h6 id="portfolio--e3-besondere-kunstlerische-eignung-的例外路径">E3. <code>besondere künstlerische Eignung</code> 的例外路径</h6>
+<ul>
+<li>无通常高校入学资格者，若具有 <code>besondere künstlerische Eignung</code>，可免通常资格，但最低仍须有 mittlerer Schulabschluss / Mittlere Reife。【Level 1：§2 Abs. 9，PDF p.4】</li>
+<li>此类申请人的考试表现须另外被判断为 <code>besonders künstlerisch geeignet</code> 或 <code>ohne besondere künstlerische Eignung</code>。【Level 1：§3 Abs. 5 Nr.2、§3 Abs. 9，PDF pp.7–8】</li>
+<li>法规没有为这个附加判断另列分数、权重或高于普通路径的具体作品集阈值；不能把普通“三项达标”自行换算成“特殊天赋”。【Level 1：相关条文缺项核查】</li>
+</ul>
+<h5 id="portfolio--f-评审人员-表决与记录-4">F. 评审人员、表决与记录</h5>
+<h6 id="portfolio--f1-评审组织">F1. 评审组织</h6>
+<ul>
+<li>Zulassungskommission 由该专业的全体艺术教授组成；也可有学术工作人员和学生，但此时教授必须拥有票数多数。【Level 1：§4 Abs. 4，PDF p.12】</li>
+<li>作品集预选评委由 Zulassungskommission 从其成员中委任；可组多个 Prüfungskommissionen。评委可为该专业所有艺术教授及艺术工作人员，教授必须占票数多数；至少一名学生以<strong>仅咨询票</strong>参加。【Level 1：§4 Abs. 5，PDF pp.12–13】</li>
+<li>终试评委同样由 Zulassungskommission 委任，可组多个委员会；除艺术教授/艺术工作人员外，还必须至少有一名来自 Allgemeine Kunstgeschichte、Kunstgeschichte des 20. und 21. Jahrhunderts 或 Philosophie/Ästhetik 的教授；至少一名学生仅咨询。其他本专业艺术教授若不是评委，可咨询参与。【Level 1：§4 Abs. 7，PDF p.13】</li>
+<li>每项考试表现至少由两名评委评价。【Level 1：§3 Abs. 9，PDF p.8】</li>
+</ul>
+<h6 id="portfolio--f2-表决">F2. 表决</h6>
+<ul>
+<li>Zulassungskommission 原则上按已投票的多数决定，禁止弃权；Bildende Kunst 预选和终试另明确要求“超过半数评委”给 <code>bestanden</code>。【Level 1：§3 Abs. 5，PDF p.7；§4 Abs. 6、9】</li>
+</ul>
+<h6 id="portfolio--f3-记录-公开性与查阅">F3. 记录、公开性与查阅</h6>
+<ul>
+<li>初选和终试分别制作记录，载明委员会成员、申请人、程序起止和所给评价，并由委员会主席及记录人签字。【Level 1：§3 Abs. 11，PDF pp.8–9】</li>
+<li>程序不公开。【Level 1：§3 Abs. 10，PDF p.8】</li>
+<li>录取决定公布后，申请人可在六周内申请查阅考试结果和考试记录。【Level 1：§30，PDF p.41】</li>
+</ul>
+<h5 id="portfolio--g-现场考试及其评价">G. 现场考试及其评价</h5>
+<ul>
+<li>终试为一日制实践艺术考试：用 <strong>至少 5、至多 10 小时</strong>完成给定艺术任务；随后进行 <strong>至少 10、至多 60 分钟</strong>的考试谈话。【Level 1：§4 Abs. 8，PDF p.13】</li>
+<li>实践任务按与作品集相同的四项判断，并须至少满足三项；谈话另评自我反思和艺术理论/当代艺术信息掌握。【Level 1：§4 Abs. 9，PDF pp.13–14】</li>
+<li>申请作品原作必须带到谈话；谈话内容也涉及申请作品、现场作品和动机。【Level 1：§4 Abs. 2、8】</li>
+<li>艺术工作手段原则上都允许，但不得由第三方部分或全部完成，也不得使用会让第三方介入完成考试表现的技术手段。【Level 1：§4 Abs. 10，PDF p.14】</li>
+</ul>
+<h5 id="portfolio--h-正式文件-版本-链接与定位">H. 正式文件、版本、链接与定位</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 13" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 13</caption>
+<thead>
+<tr>
+<th scope="col">文件</th>
+<th scope="col">版本/状态（基准日）</th>
+<th scope="col">关键位置</th>
+<th scope="col">官方链接</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><strong>Ordnung über die Auswahl der Studienbewerberinnen und Studienbewerbern, die Eignungsfeststellung, Zulassung und Immatrikulation … (Immatrikulationsordnung)</strong></th>
+<td>vom <strong>29.10.2025</strong>；官方 Ordnungen 页当前列示版本</td>
+<td>一般委员会、评价、记录：§3 Abs. 4–12，PDF pp.6–9；Bildende Kunst：§4 Abs. 1–11，PDF pp.12–14；查阅：§30，PDF p.41</td>
+<td><a href="https://www.hfbk-dresden.de/fileadmin/user_upload/Downloads/Hochschule/Organisation/Ordnungen/Immatrikulationsordnung_29.10.25.pdf" target="_blank" rel="noopener noreferrer">官方 PDF</a>；<a href="https://www.hfbk-dresden.de/hochschule/organisation/ordnungen/" target="_blank" rel="noopener noreferrer">官方规章目录</a></td>
+</tr>
+<tr><th scope="row"><strong>Bewerbungsformalia Bildende Kunst</strong></th>
+<td>2026-09-29 在线页</td>
+<td><code>Bewerbungsmappe</code>、<code>Vorauswahl</code>、<code>Eignungsprüfung</code>、<code>Zulassung</code></td>
+<td><a href="https://www.hfbk-dresden.de/bewerbung-bildende-kunst" target="_blank" rel="noopener noreferrer">官方申请页</a></td>
+</tr>
+</tbody></table></div>
+<h5 id="portfolio--i-事实结论-4">I. 事实结论</h5>
+<ul>
+<li><strong>HfBK Dresden 是 A 型。</strong> 其公开透明度不仅到“看什么”，而且到“至少满足几项”和“需要多少评委同意”。【Level 1】</li>
+<li><strong>作品集只是第一道艺术门槛，不等于最终录取考试。</strong> 数字作品集过关后仍须参加现场实践与谈话。【Level 1–Level 2】</li>
+<li>官方没有数值分、权重或作品风格偏好；最严谨的策略性读法只能是：让作品集可被识别为至少在四项中的三项达标，而不是杜撰百分比或“教授喜好”。【Level 1】</li>
+<li>提交个人发展/学习愿望说明是材料要求；现行作品集预选条款没有把该说明列入四项正式作品集标准。【Level 1】</li>
+</ul>
+<h6 id="portfolio--目前无法确认-4">【目前无法确认】</h6>
+<ul>
+<li>四个维度各自的内部等级描述、最低质量锚点、权重和评审表。【Level 1–Level 2 已查无】</li>
+<li>单个评委如何记录每一项是否达标，以及“三项达标”与个人 <code>bestanden</code> 的具体勾稽表。【Level 1 已查无】</li>
+<li>初选通过后，原作品集是否在终试中被重新独立评价或计入某种总结果；法规只确认它是谈话内容。【Level 1 已查无】</li>
+<li>当合格人数超过空余学位时的排名、同分/同票处理或候补公式。【Level 1–Level 2 已查无】</li>
+<li><code>besondere künstlerische Eignung</code> 附加判断的具体高阶量表。【Level 1 已查无】</li>
+<li>每年实际评委名单、分组、单组人数与录取率。【Level 1–Level 2 已查无】</li>
+</ul>
+<h6 id="portfolio--教授个人倾向-不等于正式标准">教授个人倾向（不等于正式标准）</h6>
+<p>截至基准日，在本次检查的 HfBK 官方申请页、规章目录、Bildende Kunst 页面及面向申请人的咨询页面中，<strong>未发现可核实的具体教授个人作品集偏好</strong>。学校提供 Mappenberatung/开放日，但公开页面没有把个别教授偏好写成标准。【Level 2：面向申请人页面；“未发现”不是“所有教授均无偏好”】</p>
+<h6 id="portfolio--d-型检索记录">D 型检索记录</h6>
+<p>本校最终不是 D 型，而是 A 型。为防止遗漏，已检索：<a href="https://www.hfbk-dresden.de/hochschule/organisation/ordnungen/" target="_blank" rel="noopener noreferrer">官方规章目录</a>、现行 Immatrikulationsordnung 29.10.2025（全文 41 页）、<a href="https://www.hfbk-dresden.de/bewerbung-bildende-kunst" target="_blank" rel="noopener noreferrer">Bildende Kunst 申请页</a>、<a href="https://www.hfbk-dresden.de/studium/bewerbung/termine" target="_blank" rel="noopener noreferrer">Termine &amp; Fristen</a>、<a href="https://www.hfbk-dresden.de/studium/bewerbung/angebot-fuer-studieninteressierte" target="_blank" rel="noopener noreferrer">Angebot für Studieninteressierte</a>，以及当前列示的 <a href="https://www.hfbk-dresden.de/fileadmin/user_upload/Downloads/Hochschule/Organisation/Ordnungen/Studien-_und_Pruefungsordnungen_Bildende_Kunst_05.03.26.pdf" target="_blank" rel="noopener noreferrer">Studien-/Prüfungsordnung 修改令 05.03.2026</a>；后者调整的是入学后的考试/换班规定，没有新增入学作品集量表。【Level 1–Level 2】</p>
+<hr>
+<h4 id="portfolio--5-adbk-munchen-diplom-freie-kunst">5. AdBK München — Diplom Freie Kunst</h4>
+<p><strong>2027/28 状态：</strong> 目标周期年度执行说明尚未公布；正式机制依据自 2026-01-30 生效的现行 Qualifikationssatzung，并以当前官网对 Freie Kunst 取消实践/口试的说明作交叉核对；2027 前如修法须更新。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集的作用-2">A. 作品集的作用</h5>
+<ul>
+<li><strong>Freie Kunst 的 Eignungsprüfung 完全以随申请提交的艺术作品为基础。</strong> 实践考试和口试明确取消。【Level 1：Qualifikationssatzung §7 Abs. 1a，PDF p.6】</li>
+<li>学校当前申请页也明确：Freie Kunst 不举行 practical/oral examination，录取基于寄交的艺术作品。【Level 2：<code>Praktische und mündliche Prüfung</code> 页面】</li>
+<li>因而，作品集不是“先筛后考”的普通预审材料，而是本专业唯一公开的艺术能力评价载体；但最终入学仍需满足学历、实习、语言等非艺术形式条件。【Level 1：§1 Abs. 4；§3；§7 Abs. 1a】</li>
+<li>申请人必须选择一个 Klasse / Klassenwunsch，但正式规章只规定按 Fachrichtung 成立 Prüfungskommission，未规定由所选班级教授单独决定。【Level 1：§2 Abs. 3；§5；Level 2：Bewerbungscheckliste】</li>
+</ul>
+<h6 id="portfolio--必须区分的四层-2">必须区分的四层</h6>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 14" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 14</caption>
+<thead>
+<tr>
+<th scope="col">层次</th>
+<th scope="col">官方规定</th>
+<th scope="col">证据</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">提交要求</th>
+<td>独立完成的艺术作品，例如素描、方案、速写本、油画、雕塑照片，也可补充学术作品；实体册，不收卷筒；外形宜不超过 90×90×10 cm；与书面申请一起提交</td>
+<td>【Level 1：§2 Abs. 3–4，PDF pp.3–4】</td>
+</tr>
+<tr><th scope="row">评价维度</th>
+<td>§9 Abs. 1 Nr.1 列八组、且以 <code>insbesondere</code> 表明非封闭式列举</td>
+<td>【Level 1：PDF pp.7–8】</td>
+</tr>
+<tr><th scope="row">评分/决策方法</th>
+<td>没有 Freie Kunst 作品集专用分值、等级、权重或维度汇总公式；委员会的一般决议采用多数票</td>
+<td>【Level 1：§5 Abs. 4；§7 Abs. 1a；§9】</td>
+</tr>
+<tr><th scope="row">录取规则</th>
+<td>艺术资格只依据提交作品；无现场实践/口试；结果以书面决定通知，未通过须说明理由</td>
+<td>【Level 1：§7 Abs. 1a、§12；Level 2：考试说明页】</td>
+</tr>
+</tbody></table></div>
+<p>通过结果原则上用于紧接着的冬季学期；若证明存在 <code>triftige Gründe</code>，学位可保留一年。通过艺术资格之外，仍须满足 §3 的其他入学条件。【Level 1：§1 Abs. 3–4，PDF p.3】</p>
+<h5 id="portfolio--b-类型判断-2">B. 类型判断</h5>
+<p><strong>B 型。</strong> 学校公布了明确且很细的评价维度，但没有公布 Freie Kunst 作品集的分数、等级档、权重、每项最低线，或这些维度如何聚合成通过结果。委员会一般多数决不等于公开的作品集评分表。【Level 1：§5、§7 Abs. 1a、§9】</p>
+<h5 id="portfolio--c-官方评价维度-原词-中文-2">C. 官方评价维度（原词＋中文）</h5>
+<p>现行 Satzung 说以下是评价 Freie Kunst 考试表现的标准，且用 <strong><code>insbesondere</code></strong>（尤其包括），所以不是可断言穷尽的封闭清单。【Level 1：§9 Abs. 1 Nr.1，PDF pp.7–8】</p>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 15" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 15</caption>
+<thead>
+<tr>
+<th scope="col">官方德文原词</th>
+<th scope="col">中文释义</th>
+<th scope="col">证据</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><code>Intensität des künstlerischen Arbeitens</code></th>
+<td>艺术工作的投入强度/持续深入程度</td>
+<td>【Level 1】</td>
+</tr>
+<tr><th scope="row"><code>Vielfalt des experimentellen Vorgehens und der Lösungssuche</code></th>
+<td>实验方法与寻找解决路径的多样性</td>
+<td>【Level 1】</td>
+</tr>
+<tr><th scope="row"><code>Entwickeln eigenständiger Ideen und Bildfindungen</code></th>
+<td>发展独立想法与自主视觉构想/图像生成</td>
+<td>【Level 1】</td>
+</tr>
+<tr><th scope="row"><code>Raumerfassung, Komposition und Gestalten im Raum</code></th>
+<td>空间把握、构图与空间中的塑造</td>
+<td>【Level 1】</td>
+</tr>
+<tr><th scope="row"><code>Abstraktionsfähigkeit, Kreativität und Improvisationsfähigkeit</code></th>
+<td>抽象能力、创造力与即兴能力</td>
+<td>【Level 1】</td>
+</tr>
+<tr><th scope="row"><code>Motivation und Sensibilität</code></th>
+<td>动机与敏感度</td>
+<td>【Level 1】</td>
+</tr>
+<tr><th scope="row"><code>Phantasie und Vorstellungsvermögen</code></th>
+<td>想象力与表象/构想能力</td>
+<td>【Level 1】</td>
+</tr>
+<tr><th scope="row"><code>Technisches Vermögen und Verständnis</code></th>
+<td>技术能力与理解力</td>
+<td>【Level 1】</td>
+</tr>
+</tbody></table></div>
+<p>这些维度依据 §7 Abs. 1a 适用于随申请提交的艺术作品；不能因为 §9 的标题是“Prüfungsleistungen”就误认为 Freie Kunst 还另有现场考试。【Level 1】</p>
+<h5 id="portfolio--d-具体分值-等级与计算-2">D. 具体分值、等级与计算</h5>
+<ul>
+<li><strong>没有公开数值分数、百分比、权重、总分公式或逐项等级档。</strong>【Level 1：§7 Abs. 1a、§9 全条核查】</li>
+<li>§9 Abs. 2–4 对“实践考试”和“口试”规定 <code>mit Erfolg abgelegt</code> / <code>ohne Erfolg abgelegt</code>；§10 也说实践与口试均成功才通过。但 Freie Kunst 被 §7 Abs. 1a 明确免除这两项，所以不能把这些类别直接冒充为 Freie Kunst 作品集的公开评分等级。【Level 1：§7 Abs. 1a；§9 Abs. 2–4；§10，PDF pp.6、8–9】</li>
+<li>委员会一般以已投票多数作决定，票数相同由主席票决定；这只公开了组织决策程序，没有公开“八组维度→每位评委投票”的转换规则。【Level 1：§5 Abs. 4，PDF p.6】</li>
+</ul>
+<h5 id="portfolio--e-通过线-5">E. 通过线</h5>
+<h6 id="portfolio--e1-常规-freie-kunst-申请">E1. 常规 Freie Kunst 申请</h6>
+<ul>
+<li>当前 Satzung 没有写出作品集专用的总分/单项门槛或“满足几项即通过”。【Level 1】</li>
+<li>§8 Abs. 1 的一般预选文字称，具备其他入学资格者的作品须使其“<code>als geeignet erscheinen</code>”（显得适合）；但同条仍沿用“获准参加实践考试”的一般措辞，而 Freie Kunst 的实践/口试已由 §7 Abs. 1a 取消。因此可确认的是<strong>适合性为定性门槛</strong>，不能据此虚构第二阶段或量化线。【Level 1：§7 Abs. 1a；§8 Abs. 1】</li>
+<li>正式委员会按一般多数规则作决定，学校书面通知通过或不通过；未通过通知须说明理由。【Level 1：§5 Abs. 4；§12】</li>
+</ul>
+<h6 id="portfolio--e2-aussergewohnliche-kunstlerische-begabung-的无-hzb-例外">E2. <code>außergewöhnliche künstlerische Begabung</code> 的无 HZB 例外</h6>
+<ul>
+<li>若在 Eignungsprüfung 证明 <code>außergewöhnliche künstlerische Begabung</code>，学校可豁免通常 Hochschulreife，最低须证明已完成法定义务教育。【Level 1：§3 Abs. 2，PDF p.5】</li>
+<li>此类申请人在一般预选条款中须由作品显得 <code>außergewöhnlich geeignet</code>，而不是普通 <code>geeignet</code>。【Level 1：§8 Abs. 1，PDF p.7】</li>
+<li>法规没有公开“außergewöhnlich”与普通“geeignet”之间的分数差、逐项高阶描述或票数加严规则。【Level 1：相关条文缺项核查】</li>
+</ul>
+<h5 id="portfolio--f-评审人员-表决与记录-5">F. 评审人员、表决与记录</h5>
+<h6 id="portfolio--f1-评委构成">F1. 评委构成</h6>
+<ul>
+<li>每个 Fachrichtung 原则上设一个 Prüfungskommission。【Level 1：§5 Abs. 1，PDF p.6】</li>
+<li>委员会由 <strong>5 名教授</strong>（至少一名来自所选方向）和 <strong>2 名全职艺术或科学工作人员</strong>组成；由校 Senat 任命，可连任。【Level 1：§5 Abs. 2–3】</li>
+<li>委员会从教授中选主席。【Level 1：§5 Abs. 4】</li>
+<li>现行条文没有规定学生评委/学生咨询席，也没有规定所选 Klasse 的 Klassenleiter 必须单独同意一年级常规录取；不能把班级选择误写成教授个人否决制。【Level 1：§5；与 §7 Abs. 2 的高年级转学特殊规则对照】</li>
+</ul>
+<h6 id="portfolio--f2-法定人数与表决">F2. 法定人数与表决</h6>
+<ul>
+<li>多数成员出席方有决议能力，且在场者中至少三人必须是教授；按已投票多数决定；平票由主席票决定。【Level 1：§5 Abs. 4】</li>
+<li>禁止弃权、秘密投票和委托投票；紧急程序问题可由主席单独决定。【Level 1：§5 Abs. 4】</li>
+</ul>
+<h6 id="portfolio--f3-记录">F3. 记录</h6>
+<ul>
+<li>每次程序须制作 Niederschrift，写明考试各部分的日期、地点、委员姓名、申请人姓名、评价对象、评价（包括主要决定理由）及总结果，并由主席签字。【Level 1：§6，PDF p.6】</li>
+<li>结果以书面 Bescheid 通知；不通过或视为不通过须载明理由。【Level 1：§12，PDF p.9】</li>
+</ul>
+<h5 id="portfolio--g-现场考试及其评价-2">G. 现场考试及其评价</h5>
+<ul>
+<li><strong>Freie Kunst 没有现场实践考试和口试。</strong> 评价仅基于随申请提交的艺术作品。【Level 1：§7 Abs. 1a，PDF p.6；Level 2：官方考试说明页】</li>
+<li>官方申请说明页明确称 Freie Kunst 的 practical/oral examinations 不举行，录取基于寄交艺术作品；这也防止把其他专业的流程误套过来。【Level 2】</li>
+<li>现行合订 Satzung 的 §15 仍保留“Freie Kunst 8 小时实践＋约 10 分钟谈话”的一般旧式条文，但 §7 Abs. 1a 是后来专门加入并明确写出两项取消；校方当前网页也确认取消。因此，2026-09-29 的可执行结论是<strong>无现场考试</strong>，不能摘录 §15 单独得出相反结论。【Level 1：§7 Abs. 1a 与 §15 的体系解释；Level 2：官方考试说明页】</li>
+</ul>
+<h5 id="portfolio--h-正式文件-版本-链接与定位-2">H. 正式文件、版本、链接与定位</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 16" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 16</caption>
+<thead>
+<tr>
+<th scope="col">文件</th>
+<th scope="col">版本/状态（基准日）</th>
+<th scope="col">关键位置</th>
+<th scope="col">官方链接</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><strong>Satzung über die Qualifikation für ein Studium an der Akademie der Bildenden Künste München</strong></th>
+<td>Bekanntmachung der Neufassung；<strong>seit 30.01.2026 geltende Fassung</strong>，含第 15 次修订</td>
+<td>目的/申请：§§1–3，PDF pp.3–5；委员会/记录：§§5–6，p.6；Freie Kunst 纯作品集路径：§7 Abs. 1a，p.6；一般预选：§8，p.7；评价维度：§9 Abs.1 Nr.1，pp.7–8；结果：§12，p.9</td>
+<td><a href="https://www.adbk.de/de/component/phocadownload/category/1-studium/62-satzungen.html?Itemid=101&download=866%3Alesefassung-vom-30-1-2026-satzung-ueber-die-qualifikation-fuer-ein-studium-an-der-adbk-muenchen" target="_blank" rel="noopener noreferrer">官方 PDF</a>；<a href="https://www.adbk.de/de/studium/satzungen-und-ordnungen.html" target="_blank" rel="noopener noreferrer">官方规章目录</a></td>
+</tr>
+<tr><th scope="row"><strong>Bewerbungscheckliste — Freie Kunst 等</strong></th>
+<td>2026-09-29 在线页；页面仍含 2026 年具体收件安排，评价机制部分须以现行 Satzung 为准</td>
+<td><code>Wahl der Klasse</code>、<code>Mappe</code>、完整材料说明</td>
+<td><a href="https://www.adbk.de/de/studium/bewerbung/bewerbungscheckliste/bewerbungscheckliste-fuer-die-nachfolgende-studiengaengen.html" target="_blank" rel="noopener noreferrer">官方清单</a></td>
+</tr>
+<tr><th scope="row"><strong>Praktische und mündliche Prüfung</strong></th>
+<td>2026-09-29 在线页</td>
+<td>明确 Freie Kunst 不举行现场实践/口试，按寄交作品录取</td>
+<td><a href="https://www.adbk.de/de/component/content/article/praktische-und-muendliche-pruefung.html?Itemid=101&catid=9" target="_blank" rel="noopener noreferrer">官方说明</a></td>
+</tr>
+<tr><th scope="row"><strong>Mappenberatung</strong></th>
+<td>2026-09-29 在线页</td>
+<td>明确咨询非录取条件；列部分教授联系时希望先看的材料</td>
+<td><a href="https://www.adbk.de/de/studium/bewerbung/mappenberatung.html" target="_blank" rel="noopener noreferrer">官方咨询页</a></td>
+</tr>
+</tbody></table></div>
+<h5 id="portfolio--i-事实结论-5">I. 事实结论</h5>
+<ul>
+<li><strong>AdBK München 为 B 型。</strong> 它把 Freie Kunst 的八组正式评价维度公开得很充分，但不公开分值、权重、逐项门槛或聚合公式。【Level 1】</li>
+<li><strong>作品集就是本专业唯一公开的艺术考试载体。</strong> 没有第二轮现场实践或口试；这与 HfBK Dresden 的两阶段制度根本不同。【Level 1–Level 2】</li>
+<li>委员会构成、法定人数、一般多数票和平票规则均公开；但“委员如何依据八组维度投出通过/不通过票”仍不公开。【Level 1】</li>
+<li><code>außergewöhnliche künstlerische Begabung</code> 只适用于无通常 Hochschulreife 的例外路径；不能把它写成所有申请人必须达到的统一标签。【Level 1】</li>
+</ul>
+<h6 id="portfolio--目前无法确认-5">【目前无法确认】</h6>
+<ul>
+<li>八组维度的权重、逐项分值/等级、最低满足项数及总分公式。【Level 1–Level 2 已查无】</li>
+<li>Freie Kunst 作品集最终使用何种正式谓词、每名委员是否逐项记录、以及怎样从八组维度转换成投票。【Level 1 已查无】</li>
+<li>§8 的 <code>geeignet erscheinen</code> 在无现场考试路径中是否另形成一次独立结果，还是与最终作品集决定合并操作；现行文本没有消除这一程序措辞上的遗留不清。【Level 1 已查无】</li>
+<li>所选 Klasse / Klassenwunsch 对委员会分组、席位分配或最终结果的具体作用；法规只保证至少一名教授来自所选 Fachrichtung，不保证所选班级教授参加或拥有否决权。【Level 1–Level 2 已查无】</li>
+<li>作品集总件数下限/上限；官方只列示例、实体规格及“油画不超过三件”，未给作品总量数字。【Level 1–Level 2 已查无】</li>
+<li>普通 <code>geeignet</code> 与无 HZB 例外的 <code>außergewöhnlich geeignet</code> 之间的量化差异。【Level 1 已查无】</li>
+<li>年度实际评委名单、每类作品录取率、候补/同票之外的排序公式。【Level 1–Level 2 已查无】</li>
+</ul>
+<h6 id="portfolio--教授个人倾向-明确不等于正式标准">教授个人倾向（明确不等于正式标准）</h6>
+<ul>
+<li>学校的 Mappenberatung 页面首先明确：咨询是<strong>非约束性服务，不是录取条件</strong>。【Level 2】</li>
+<li>该页说，许多 Klassenleiter 在咨询联系时会要求约 15 张图的数字作品集、CV，部分还要简短动机；并举例 Prof. Thomas Eggerer 会要求最多一页 A4 的文字，说明申请人如何看待自己与前现代、现代及当代艺术的关系。【Level 2：官方 Mappenberatung 页】</li>
+<li>上述只是咨询/联系材料偏好，不是 §9 的正式评价标准，也不是常规申请包必须追加的统一材料；不能据此推断该教授或全校的录取权重。【Level 1 与 Level 2 的边界】</li>
+</ul>
+<h6 id="portfolio--d-型检索记录-2">D 型检索记录</h6>
+<p>本校最终不是 D 型，而是 B 型。为确认没有另藏评分表，已检索：<a href="https://www.adbk.de/de/studium/satzungen-und-ordnungen.html" target="_blank" rel="noopener noreferrer">官方规章目录</a>、现行 Qualifikationssatzung 30.01.2026（全文 11 个 PDF 页面）、<a href="https://www.adbk.de/de/component/phocadownload/category/1-studium/62-satzungen.html?Itemid=101&download=646%3Azwoelfte-satzung-zur-aenderung-der-satzung-ueber-die-qualifikation-fuer-ein-studium-vom-08-12-2022" target="_blank" rel="noopener noreferrer">第 12 次修订令 08.12.2022</a>（其新增 Freie Kunst 纯作品集条款）、<a href="https://www.adbk.de/de/component/phocadownload/category/1-studium/62-satzungen.html?Itemid=101&download=341%3Aspo-diplomstudiengang-freie-kunst-vom-4-10-2018" target="_blank" rel="noopener noreferrer">Freie Kunst 学习/考试条例 04.10.2018</a>（属于入学后培养与考试，并未补充入学作品集量表）、<a href="https://www.adbk.de/de/studium/bewerbung/bewerbungscheckliste/bewerbungscheckliste-fuer-die-nachfolgende-studiengaengen.html" target="_blank" rel="noopener noreferrer">Bewerbungscheckliste</a>、<a href="https://www.adbk.de/de/studium/bewerbung/ueberblick.html" target="_blank" rel="noopener noreferrer">Bewerbung Überblick</a>、<a href="https://www.adbk.de/de/component/content/article/praktische-und-muendliche-pruefung.html?Itemid=101&catid=9" target="_blank" rel="noopener noreferrer">Praktische und mündliche Prüfung</a>、<a href="https://www.adbk.de/de/studium/bewerbung/mappenberatung.html" target="_blank" rel="noopener noreferrer">Mappenberatung</a> 和官方 Klassen/教授页检索。【Level 1–Level 3】</p>
+<hr>
+<h4 id="portfolio--6-staatliche-akademie-der-bildenden-kunste-stuttgart-abk-stuttgart">6. Staatliche Akademie der Bildenden Künste Stuttgart（ABK Stuttgart）</h4>
+<p><strong>对应专业：</strong> Bildende Kunst（Diplom）<br><strong>2027/28 状态：</strong> 2027/28 的当年流程尚未公布；以下正式评价机制来自目前有效的《Zulassungs- und Immatrikulationssatzung（ZIS）》2025 年 2 月 1 日版。2026/27 专业招生页仅用于核对实际流程。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集在申请中的作用">A. 作品集在申请中的作用</h5>
+<ul>
+<li>法规把入学程序拆成 <strong>Vorauswahl（预选）＋ Eignungsprüfung（艺术适合性考试）</strong>；没有通常学历、以特殊艺术天赋取得入学资格者则为 <strong>Vorauswahl＋Begabtenprüfung</strong>。作品集是预选的依据，而非最终录取的唯一依据。《ZIS》§3、§11。【Level 1】</li>
+<li>Bildende Kunst 当前招生页明确：委员会根据按时提交的数字作品集决定是否准予参加 Aufnahmeprüfung；预选通过后随通知发出 Hausaufgabe。因此作用属于“决定能否进入下一轮考试”。【Level 2】</li>
+<li>法规要求艺术类专业数字程序提交约 20 件作品；当前专业页说明这些作品应让申请人的 <code>Arbeitsweise</code>、<code>Arbeitsvorgehen</code>、<code>Arbeitsschwerpunkte</code> 可被理解。这是<strong>提交内容/展示目的</strong>，不是额外评分项，也没有另列权重。《ZIS》§8(3)，专业招生页“内容/预选”段。【Level 1 / Level 2】</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准">B. 是否存在官方评分标准</h5>
+<p><strong>类型 A：有明确分值、维度、分档和通过线。</strong></p>
+<ul>
+<li>预选和后续 Eignungsprüfung/Begabtenprüfung 均采用 0–100 分制。</li>
+<li>法规同时公开三个评价维度及上限、分数区间含义、进入下一轮与通过的最低分。</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度">C. 官方评价维度</h5>
+<p>《ZIS》§11(3)（预选）与 §17(1)（实践＋口试）规定相同三项：【Level 1】</p>
+<ol>
+<li><code>Künstlerische Gestaltungsfähigkeit in malerischer und/oder grafischer und/oder plastischer/räumlicher Hinsicht</code>——绘画、图像/版画和/或雕塑—空间方面的艺术造型能力，最高 <strong>50 分</strong>。</li>
+<li><code>Manuelle Fähigkeiten in malerischer und/oder grafischer und/oder plastischer/räumlicher Hinsicht</code>——上述领域的手工/实际制作能力，最高 <strong>30 分</strong>。</li>
+<li><code>Interessenslage sowie Reflexions- und verbales Darstellungsvermögen</code>——兴趣取向，以及反思与口头表达能力，最高 <strong>20 分</strong>。</li>
+</ol>
+<p><strong>边界说明：</strong></p>
+<ul>
+<li>法规明确把“手工能力”列为评价依据；可以确认其上限为 30 分，但不能据此扩写为某种特定写实技巧或特定媒介技术。</li>
+<li>法规没有使用 <code>Eigenständigkeit</code>、<code>Entwicklungspotential</code> 或 <code>Experimentierfähigkeit</code> 作为独立计分项；这些项目在本次检索中只能填“未确认”，不能填“否”。</li>
+<li>“约 20 件作品”、标题/材料/尺寸/年月等属于提交要求，不是计分维度。</li>
+</ul>
+<h5 id="portfolio--d-具体分值-2">D. 具体分值</h5>
+<p><strong>预选（作品集），《ZIS》§11(3)、§12，PDF 印刷页 14–15：【Level 1】</strong></p>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 17" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 17</caption>
+<thead>
+<tr>
+<th scope="col">项目</th>
+<th align="right">最高分</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">艺术造型能力</th>
+<td align="right">50</td>
+</tr>
+<tr><th scope="row">手工能力</th>
+<td align="right">30</td>
+</tr>
+<tr><th scope="row">兴趣取向、反思与口头表达</th>
+<td align="right">20</td>
+</tr>
+<tr><th scope="row">合计</th>
+<td align="right">100</td>
+</tr>
+</tbody></table></div>
+<p>预选总分区间：</p>
+<ul>
+<li>90–100：艺术—专业适合性达到也适宜参加 Begabtenprüfung 的程度；</li>
+<li>70–89：艺术—专业适合性达到适宜参加 Eignungsprüfung 的程度；</li>
+<li>40–69：不充分；</li>
+<li>0–39：不足。</li>
+</ul>
+<p><strong>后续考试，《ZIS》§17(1)、§18，PDF 印刷页 18–20：【Level 1】</strong></p>
+<ul>
+<li>仍为上述 50＋30＋20＝100 分。</li>
+<li>90–100：<code>hervorragende künstlerisch-fachliche Eignung</code>；80–89：预期可良好完成学习；70–79：尚可预期达到学习目标；0–69：不足以预期达到学习目标。</li>
+<li>法规没有公开“实践考试占多少、口试占多少”的拆分；三项标准是对实践＋口试整体适用，不能自行分配环节权重。</li>
+</ul>
+<h5 id="portfolio--e-通过标准">E. 通过标准</h5>
+<ul>
+<li>预选进入普通 Eignungsprüfung：至少 <strong>70/100</strong>；进入 Begabtenprüfung：至少 <strong>90/100</strong>。《ZIS》§11(2)。【Level 1】</li>
+<li>普通 Eignungsprüfung 证明“besondere künstlerische Eignung”：至少 <strong>70/100</strong>；Begabtenprüfung 证明“hervorragende künstlerische Begabung”并另证一般教育程度：至少 <strong>90/100</strong>。《ZIS》§13(1)、§18。【Level 1】</li>
+<li>无正当理由退出已开始的后续考试、作弊或使用未允许辅助工具会按法规导致不通过/排除。《ZIS》§§19–20。【Level 1】</li>
+</ul>
+<h5 id="portfolio--f-评审人员">F. 评审人员</h5>
+<ul>
+<li>Vorauswahl、Eignungsprüfung、Begabtenprüfung 均由 <code>Auswahlkommission</code> 实施；委员会有 <strong>3–4 名有表决权成员</strong>，另可有最多 2 名专业人士提供咨询。《ZIS》§21(1)–(2)。【Level 1】</li>
+<li>对 Bildende Kunst，法规原则是只有全职教授可任有表决权成员；修复、纺织设计等例外不应套用于本专业。《ZIS》§21(3)。【Level 1】</li>
+<li>委员会以简单多数作决定，票数相同由主席票决定。《ZIS》§21(6)。【Level 1】</li>
+<li>必须形成记录，写明各阶段日期地点、委员、申请人、时长、所得分数和特殊事项。《ZIS》§22。【Level 1】</li>
+<li>法规没有公开：每位委员是否分别给三项分、个人分如何合成为最终数值。多数决规则与数值如何衔接，公开文本未进一步说明。</li>
+</ul>
+<h5 id="portfolio--g-现场考试">G. 现场考试</h5>
+<ul>
+<li>Eignungsprüfung/Begabtenprüfung由 <strong>实践考试＋口试</strong>构成。《ZIS》§13(2)。【Level 1】</li>
+<li>实践考试：一项或多项与专业有关的视觉—实践任务，由委员会出题；可在校完成，也可作为在家完成的 Hausaufgabe。若在家完成，须在口试日提交并解释。《ZIS》§14(1)。【Level 1】</li>
+<li>口试 15–20 分钟，考查专业知识；可讨论预选作品及实践考试结果。Begabtenprüfung 还核查与专业有关的一般教育程度，包括尤其当代在内的风格概览和基础专业知识。《ZIS》§15。【Level 1】</li>
+<li>现场考试使用与作品集预选相同的三个维度和 50/30/20 上限；普通路线 70 分通过，特殊天赋路线 90 分通过。《ZIS》§§17–18。【Level 1】</li>
+<li>2026/27 专业页显示预选通过者会收到 Hausaufgabe，支持当年度采用在家实践任务的流程；但 2027/28 是否相同尚未公布。【Level 2】</li>
+</ul>
+<h5 id="portfolio--h-官方文件">H. 官方文件</h5>
+<ol>
+<li><a href="https://www.abk-stuttgart.de/wp-content/uploads/2024/09/abk_Zulassungs-Immatrikulationssatzung_2025.pdf" target="_blank" rel="noopener noreferrer">《Zulassungs- und Immatrikulationssatzung（ZIS）》vom 1. Februar 2025</a>【Level 1】  <ul>
+<li>PDF 印刷页 5–6：§§3–4，程序与普通/特殊天赋路线；</li>
+<li>PDF 印刷页 10–12：§8，作品集形式（提交要求）；</li>
+<li>PDF 印刷页 14–16：§§11–14，预选、分值、后续实践考试；</li>
+<li>PDF 印刷页 17–20：§§15、17–18，口试、评价维度、分档及通过线；</li>
+<li>PDF 印刷页 21–22：§§21–22，委员会、表决和记录。</li>
+</ul>
+</li>
+<li><a href="https://www.abk-stuttgart.de/bewerbung/aufnahmeverfahren/bewerbung-kunst-diplom/" target="_blank" rel="noopener noreferrer">Bildende Kunst Diplom：Bewerbung（2026/27 页面）</a>【Level 2】  <ul>
+<li>“Inhalt der Arbeitsprobe”“Vorauswahl”：约 20 件数字作品及预选决定参加考试资格；预选通过发 Hausaufgabe。</li>
+</ul>
+</li>
+</ol>
+<h5 id="portfolio--i-研究结论">I. 研究结论</h5>
+<p>根据当前有效的官方法规，可以确认 ABK Stuttgart 是公开机制较完整的<strong>类型 A</strong>：作品集预选有三项维度、明确上限、100 分总分、70/90 两条路线门槛；后续实践＋口试复用同一评价结构。可以把“艺术造型能力、实际制作能力、兴趣/反思/口头表达”视为正式标准，但不能把法规没有列出的“原创性、潜力、跨媒介实验”自行加入计分表，也不能推算实践与口试权重。</p>
+<h6 id="portfolio--目前无法确认-6">【目前无法确认】</h6>
+<ul>
+<li>2027/28 是否继续采用 2025 ZIS、是否另有修订；</li>
+<li>每位委员的分数如何合成为委员会最终 0–100 分；</li>
+<li>实践任务与口试在 100 分中的内部权重；</li>
+<li>三项标准在不同教授/不同工作室之间是否另有内部细则；</li>
+<li>是否存在未公开的逐项 <code>Bewertungsbogen</code>；</li>
+<li>2027/28 的实践任务究竟在校还是 Hausaufgabe；</li>
+<li><code>Eigenständigkeit</code>、发展潜力、实验性是否被内部考虑（公开正式标准未单列）。</li>
+</ul>
+<h6 id="portfolio--教授个人教学-选拔倾向">【教授个人教学 / 选拔倾向】</h6>
+<p>本次在学校官方教授/Klasse 页面与招生页中未找到可核实、且明确谈到“我如何选择申请人”的教授个人陈述；因此不以教学理念替代法规评分标准。</p>
+<hr>
+<h4 id="portfolio--7-hochschule-fur-kunste-bremen-hfk-bremen">7. Hochschule für Künste Bremen（HfK Bremen）</h4>
+<p><strong>对应专业：</strong> Freie Kunst（Diplom）<br><strong>2027/28 状态：</strong> 2027/28 专版尚未公布。正式机制依据 2016 年《Aufnahmeprüfungsordnung》、纳入 2021-12-08 与 2023-05-17 修订的官方合并阅读版；2026 申请页用于核对目前实际流程。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-2">A. 作品集在申请中的作用</h5>
+<ul>
+<li>作品集是第一阶段的量化预选：提交作品经评价达到至少 60 分，才获准参加后续 Aufnahmeprüfung。《Aufnahmeprüfungsordnung》§2(3)、§3(1)。【Level 1】</li>
+<li>当前申请页把流程明列为“Teil 1 数字作品集 → 作品集审阅结果 → Teil 2 到校 Fachgespräch → 考试结果 → 名额分配”。因此作品集不是辅助材料，也不是单独等同最终录取；它决定是否进入面试。【Level 2】</li>
+<li>当前申请页称作品集应让委员会了解申请人迄今的 <code>Arbeitsweise</code> 和 <code>Kunstauffassung</code>，申请人希望的专业重点应体现在样本的选择与权重中。这是官方提交指导/材料功能说明；正式计分仍以法规 §4 三维为准，不能把“约 20 件”或媒介种类当作额外评分项。【Level 2】</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-2">B. 是否存在官方评分标准</h5>
+<p><strong>类型 A：有明确的 100 分制、三项等权评价维度、算术平均与通过线。</strong></p>
+<p>需要同时提示一项官方文本冲突：</p>
+<ul>
+<li>2023 合并阅读版 §3(2) 明确 <code>Die Anfertigung künstlerisch-gestalterischer Arbeiten entfällt</code>，即取消现场实践制作，只进行到校专业面谈；2026 当前申请页亦只列面谈。【Level 1 / Level 2】</li>
+<li>同一合并阅读版 §4(1)–(3)仍保留“在考试中制作的作品”参与评价的旧表述。当前公开资料因此没有完全说明取消实践制作后第二阶段 100 分究竟如何在作品集与面谈间形成。该冲突不能由研究者自行消解。</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-2">C. 官方评价维度</h5>
+<p>《Aufnahmeprüfungsordnung》§4(2)，PDF 第 3 页，三项<strong>同等权重</strong>：【Level 1】</p>
+<ol>
+<li><code>Wahrnehmungsvermögen</code>——感知/观察能力：精确观察环境的物体性、图像性、形式性，以及具有社会与文化意义的方面。</li>
+<li><code>Darstellungsvermögen</code>——呈现/艺术转化能力：把感知发展为富想象力、创造性与原创性的艺术实现。</li>
+<li><code>Reflexionsvermögen</code>——反思能力：反思艺术内容与自身工作过程，把它置于历史视角中，并能选择、组织及表达。</li>
+</ol>
+<p>法规另规定评价以 <code>jeweiliger künstlerischer Gesamteindruck</code>（各阶段的艺术总体印象）为决定性总体框架。三维等权并取算术平均。【Level 1】</p>
+<p><strong>对用户关注维度的对应：</strong></p>
+<ul>
+<li>创造力/原创性：明确属于 <code>Darstellungsvermögen</code> 的定义；</li>
+<li>反思/历史定位/表达：明确属于 <code>Reflexionsvermögen</code>；</li>
+<li>观察/感知：明确；</li>
+<li>技术/手工、<code>Eigenständigkeit</code>、<code>Entwicklungspotential</code>、媒介实验：未作为独立正式维度公开，均应写“未确认”，而不是“学校不看”。</li>
+</ul>
+<h5 id="portfolio--d-具体分值-3">D. 具体分值</h5>
+<ul>
+<li>法规 §4(1)规定，对随申请提交的作品以及考试阶段作品（但后者已出现修订冲突），在考虑专业面谈后，<code>jeweils bis zu 100 Punkte</code>；即每一评价对象/阶段最高 100 分。【Level 1】</li>
+<li>三项标准等权，并形成算术平均；委员会各考官独立决定，最终结果也是各考官给分的算术平均。§4(2)、§6(4)。【Level 1】</li>
+<li>法规未把三维转换成各 33⅓ 分的明确表格；报告只写“等权并取算术平均”，不自行制造分值。</li>
+</ul>
+<h5 id="portfolio--e-通过标准-2">E. 通过标准</h5>
+<ul>
+<li>作品集初筛：至少 <strong>60/100</strong> 才进入 Aufnahmeprüfung。§2(3)、§3(1)。【Level 1】</li>
+<li>证明 <code>besondere künstlerische Befähigung</code> 的路线：最终至少 <strong>80/100</strong>；证明一般 <code>künstlerische Befähigung</code> 的路线：至少 <strong>60/100</strong>。§1(1)–(2)、§4(4)。【Level 1】</li>
+<li>缺席/无正当理由退出或委员会确认作弊，考试视为不通过。§5。【Level 1】</li>
+<li>通过 Aufnahmeprüfung 只是具备艺术入学能力证明；当前招生页明确之后仍进入有限名额的 <code>Vergabeverfahren</code>，不能把“考试通过”写成必然获得学位名额。【Level 2】</li>
+</ul>
+<h5 id="portfolio--f-评审人员-2">F. 评审人员</h5>
+<ul>
+<li>最新可读的 2023 合并阅读版：委员会至少由 <strong>3 名 Freie Kunst 高校教师/教授考官</strong>及 <strong>2 名仅有咨询权的学生</strong>组成；其中一位教师可为参与该专业教学的一般科学课程代表。委员由 Fachbereichsrat 选出，教师任期两年、学生一年。§6(1)–(3)。【Level 1】</li>
+<li>每位考官独立判断；总结果取各考官给分的算术平均。§6(4)。【Level 1】</li>
+<li>必须有 Prüfungsprotokoll，记载日期地点、委员、申请人及评价；未通过通知列出给分结果，申请人可在结果公布后一年内申请查阅记录。§§7–8。【Level 1】</li>
+<li><strong>版本冲突：</strong> HfK 新站法规目录目前链接的扫描版仍写“至少 4 名教授”，没有 2 名学生；官方 2023 合并阅读版写“至少 3 名教授＋2 名咨询学生”。由于合并阅读版明确已纳入后续修订，本文以其为当前规则，同时把新站错链/旧版并存列为待校方确认事项。</li>
+</ul>
+<h5 id="portfolio--g-现场考试-2">G. 现场考试</h5>
+<ul>
+<li>根据纳入 2023 修订的合并阅读版 §3(2)，不再制作现场艺术任务，只进行到校 <code>fachliches Gespräch</code>；2026 招生页相同，称面谈用于补充和深化作品集已经提供的认识。【Level 1 / Level 2】</li>
+<li>评价三维仍为感知、呈现和反思，等权、算术平均；最终门槛依申请人的入学资格路线为 80 或 60 分。§4。【Level 1】</li>
+<li>但是 §4(1)、(3)仍指向“考试中制作的作品＋面谈”，与已修订 §3(2)冲突。因此目前不能可靠说明第二阶段是“仅对面谈单独给 100 分”、还是“把作品集与面谈合并评价”；也不能声称面谈在最终成绩中的百分比。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-2">H. 官方文件</h5>
+<ol>
+<li><a href="https://www.hfk-bremen.de/media/filer_public/1a/31/1a31a57e-67d2-4efb-826a-1e3fa4450cc4/hfk_bremen-aufnahmepruefungsordnung-freie_kunst-20160413.pdf" target="_blank" rel="noopener noreferrer">《Aufnahmeprüfungsordnung für den Studiengang Freie Kunst》：官方合并阅读版（2016；纳入 2021-12-08、2023-05-17 修订）</a>【Level 1】  <ul>
+<li>PDF 第 1–2 页：§§1–3，能力概念、作品集 60 分初筛、取消实践制作、现场面谈；</li>
+<li>PDF 第 3 页：§4，艺术总体印象、三维等权、算术平均及 80/60 终试线；</li>
+<li>PDF 第 4 页：§§6–8，委员会、独立给分/算术平均、记录与查阅。</li>
+</ul>
+</li>
+<li><a href="https://www.hfk-bremen.de/de/ueber-die-hochschule/gesetze-erlasse-verordnungen" target="_blank" rel="noopener noreferrer">HfK 法规目录</a>及其当前所链<a href="https://www.hfk-bremen.de/sites/default/files/media/aufnahmepruefungsordnung_freiekunst_160413.pdf" target="_blank" rel="noopener noreferrer">扫描版《Aufnahmeprüfungsordnung – Freie Kunst》</a>【Level 1】  <ul>
+<li>扫描版第 2–4 页仍保留现场实践任务、至少 4 名教授的旧表述；与后期合并版冲突。</li>
+</ul>
+</li>
+<li><a href="https://www.hfk-bremen.de/de/bewerbung/bewerbung-im-freie-kunst-diplom/4" target="_blank" rel="noopener noreferrer">Freie Kunst（Diplom）当前申请页，2026 周期</a>【Level 2】  <ul>
+<li>“Aufnahmeprüfung”“Bewerbungsverfahren”段：数字作品集第一阶段、现场面谈第二阶段、作品集展示目的和名额分配。</li>
+</ul>
+</li>
+</ol>
+<h5 id="portfolio--i-研究结论-2">I. 研究结论</h5>
+<p>HfK Bremen 属于<strong>类型 A</strong>。可以正式确认：作品集以 100 分制评价，60 分进入第二阶段；感知、艺术转化/呈现、反思三项等权；考官独立给分并取算术平均；最终依据资格路线分别以 80 或 60 分证明“特殊艺术能力/艺术能力”。同时，2023 合并阅读版取消了现场实践制作，却未同步清除 §4 的旧计分措辞；学校当前申请页只确认“作品集＋面谈”的实际流程，未解释修订后的第二阶段计分对象。该处必须保留为官方文本冲突，而不能研究推断。</p>
+<h6 id="portfolio--目前无法确认-7">【目前无法确认】</h6>
+<ul>
+<li>2027/28 是否继续适用当前分值与两阶段流程；</li>
+<li>HfK 新站法规目录为何链接到未纳入 2021/2023 修订的旧扫描版；</li>
+<li>取消现场实践制作后，最终 100 分究竟基于面谈、作品集＋面谈，还是其他内部表；</li>
+<li>作品集分是否带入最终结果、占最终结果多少比例；</li>
+<li>三个等权维度是否各以 0–100 单独评分后再取平均（法规只写等权与算术平均，未给公开空白评分表）；</li>
+<li>是否存在未公开 <code>Bewertungsbogen</code>；</li>
+<li><code>Eigenständigkeit</code>、发展潜力、技术能力、媒介实验是否由个别评委内部考虑；</li>
+<li>不同工作室教授是否采用附加的未公开判断。</li>
+</ul>
+<h6 id="portfolio--教授个人教学-选拔倾向-2">【教授个人教学 / 选拔倾向】</h6>
+<p>本次未在 HfK 官方教授/Klasse 页面中找到明确说明“某位教授如何选择申请人”的可靠材料。学校招生页关于 <code>Arbeitsweise</code>、<code>Kunstauffassung</code> 与预期专业重点，是学校层面的材料指导【Level 2】，不应改写成个别教授偏好。</p>
+<hr>
+<h4 id="portfolio--8-akademie-der-bildenden-kunste-nurnberg-adbk-nurnberg">8. Akademie der Bildenden Künste Nürnberg（AdBK Nürnberg）</h4>
+<p><strong>对应专业：</strong> Bildende Kunst mit Schwerpunkt Freie Kunst（Diplom）<br><strong>2027/28 状态：</strong> 当前学校页已公布下一轮申请期为 2027-03-15 至 2027-04-15，但详细 2027 手册尚未发布。当前专业页与 2026 手册一致采用“数字作品集预选＋口试”。官方《Qualifikationssatzung（QualS）》标为 2023-11-30 重订、2024-05-08 第一次修订；其官方原始 PDF 在研究日返回 404，故正文可依据官方索引缓存核验，<strong>但无法从当前法规下载区独立确认有无更新替代文本</strong>。【Level 1 可访问性缺口 / Level 2】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-3">A. 作品集在申请中的作用</h5>
+<ul>
+<li>作品集是 <code>Vorauswahl</code> 的正式考试材料；只有预选成功者进入口试。当前专业页称提交作品构成委员会预选的基础，作品应反映申请人的个人兴趣，以及对自选内容与主题的深入投入。【Level 2】</li>
+<li>2026 官方手册要求一份数字化艺术作品集，至少 <strong>20 件</strong>；时间性数字作品可经上传功能另行提交，并须附独立完成声明。当前网页同时强调：若原作为实体作品，数字申请应是对实体作品集的数字化，而不是把“数字排版效果”本身误当评价对象。【Level 2】</li>
+<li>QualS §3(5) 的法规口径更宽：既有个人作品可包括绘画、草图、设计、油画、雕塑/物件、较大作品的照片记录、艺术—学术作品等；具体模拟/数字形式由学校另行公布。因此“至少 20 件、数字上传”属于当年度执行要求，“能判断艺术天赋与适合性”才是法规功能。【Level 1 / Level 2】</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-3">B. 是否存在官方评分标准</h5>
+<p><strong>类型 B：有明确但较宽的评价维度和二元通过规则，没有公开分数或权重。</strong></p>
+<ul>
+<li>QualS §3(1)把考试目标写为证明“显著的艺术—创造性天赋与适合性”，并明确考虑申请人表达自身艺术观念的能力。【Level 1】</li>
+<li>§3(6)的预选只使用 <code>mit Erfolg abgelegt / ohne Erfolg abgelegt</code>，没有分值；通常学历路线要求作品显示 <code>geeignet</code>，特殊入学路线要求 <code>außergewöhnlich geeignet</code>。【Level 1】</li>
+<li>当前申请页的“个人兴趣＋对自选内容/主题的深入投入”是学校层面的作品集指导，可作为可操作的补充观察轴，但不是公开计分表，也没有权重。【Level 2】</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-3">C. 官方评价维度</h5>
+<p>对作品集预选，可以确认的正式/准正式观察轴为：【Level 1 / Level 2】</p>
+<ol>
+<li><code>ausgeprägte künstlerisch-kreative Begabung und Eignung</code>——显著的艺术—创造性天赋与专业适合性；</li>
+<li><code>Fähigkeit zur Darstellung eigener künstlerischer Ideen</code>——表达自身艺术观念的能力；</li>
+<li><code>eigene Interessen</code>——个人兴趣在作品选择中可被识别；</li>
+<li><code>intensive Auseinandersetzung mit selbst gewählten Inhalten und Themen</code>——对自选内容与主题持续、深入地展开工作。</li>
+</ol>
+<p>后两项来自当前申请页，属于作品集展示指导，而不是 QualS 中独立打分的项目。法规没有公开把技术、手工、媒介跨度、潜力或作品数量设为单独评价维度；“至少 20 件”是提交要求。</p>
+<h5 id="portfolio--d-具体分值-4">D. 具体分值</h5>
+<ul>
+<li>**没有公开数字分值或权重。**QualS §3(6)把预选评为 <code>mit Erfolg abgelegt</code> 或 <code>ohne Erfolg abgelegt</code>，判断核心是是否可预期申请人达到所选专业的学习目标。【Level 1】</li>
+<li>口试同样只用上述二元谓词。§3(7)没有规定作品集与口试各占多少，也没有公开个人评委评分表。【Level 1】</li>
+<li>当前页允许在门户中按偏好列出 1–4 个 Klasse/教授；学校说明录取后分班还会考虑容量与其他因素。这是<strong>分班偏好/容量管理</strong>，不是作品集加分项。【Level 2】</li>
+</ul>
+<h5 id="portfolio--e-通过标准-3">E. 通过标准</h5>
+<ul>
+<li>通常学历路线：作品须使申请人显得 <code>geeignet</code>；没有通常学历、以例外艺术天赋入学者，作品须显得 <code>außergewöhnlich geeignet</code>。随后预选记为 <code>mit Erfolg abgelegt</code> 才进入口试。QualS §3(6)。【Level 1】</li>
+<li>整体 Eignungsprüfung 通过条件：预选与口试均为 <code>mit Erfolg abgelegt</code>。QualS §5。【Level 1】</li>
+<li>§5 同时规定，最终负面结果不能<strong>仅仅</strong>以口试表现为依据；这意味着作品集不是只在第一轮使用后完全失效，但法规仍未给出两部分权重。【Level 1】</li>
+<li>同一专业的 Eignungsprüfung 只可再重复一次；2026 手册与当前页均如此说明。【Level 2】</li>
+</ul>
+<h5 id="portfolio--f-评审人员-3">F. 评审人员</h5>
+<ul>
+<li>QualS §4(2)(a)：Bildende Kunst/Freie Kunst 与 Kunstpädagogik 的考试委员会由相关专业及 <code>Basislehre</code> 的全体教授，以及 2 名符合规定的专职艺术员工组成。【Level 1】</li>
+<li>委员会从教授中选主席；多数成员到场且至少 3 名教授到场方有表决能力；以已投票多数决定，平票由主席票决定，不许弃权、秘密表决或委托投票。§4(4)–(5)。【Level 1】</li>
+<li>预选与口试均须制作记录，包含日期地点、参加委员、申请人、口试事项、评定及主要决定理由、总结果。§4(6)。【Level 1】</li>
+<li>当前招生页称决定由委员会作出，与上述结构一致；但当前法规 PDF 已失效，委员会名单是否在未公开修订中变化，仍需学校确认。【Level 2】</li>
+</ul>
+<h5 id="portfolio--g-现场考试-3">G. 现场考试</h5>
+<ul>
+<li>当前流程<strong>没有实践制作考试</strong>；第二阶段为约 10 分钟个人口试，围绕艺术—专业问题，并再次查看数字作品集的原作。较大原作或交互作品可用申请人自有硬件展示。当前专业页及 2026 手册。【Level 2】</li>
+<li>QualS §3(7)公开的口试通过维度是：<ol>
+<li>能够参加德语授课；</li>
+<li>具备欧洲艺术史基础知识；</li>
+<li>能对自己的艺术项目与观念作适当反思。
+满足这些要求才评为 <code>mit Erfolg abgelegt</code>。【Level 1】</li>
+</ol>
+</li>
+<li>法规允许在有特殊理由时申请视频口试；通常原则仍为本人到校。§3(7)。【Level 1】</li>
+</ul>
+<h5 id="portfolio--h-官方文件-3">H. 官方文件</h5>
+<ol>
+<li>《Satzung über die Qualifikation für ein Studium an der AdBK Nürnberg（QualS）》vom 30.11.2023，in der Form der 1. Änderungssatzung vom 08.05.2024【Level 1；<strong>原 PDF 在最终外链核查时返回 404</strong>】  <ul>
+<li>PDF 第 3–5 页：§3(1)、(5)–(7)，考试目的、作品集、二元预选、口试及口试维度；</li>
+<li>PDF 第 5–6 页：§4，委员会组成、表决与记录；</li>
+<li>PDF 第 7 页：§5，两部分均须成功及不得只凭口试否定；</li>
+<li>说明：法规正文曾由学校官方域名公开并被官方搜索索引收录，研究阶段完成了条文核读；但最终交付前原文件已失效。请通过<a href="https://adbk-nuernberg.de/akademie/intern/downloads/" target="_blank" rel="noopener noreferrer">学校官方 Downloads 入口</a>或直接向校方索取现行文本复核。该可访问性缺口已计入本校“目前无法确认”，且本报告不提供失效链接作为可点击证据。</li>
+</ul>
+</li>
+<li><a href="https://adbk-nuernberg.de/bewerbung/bewerbung-und-aufnahmeverfahren/freie-kunst/" target="_blank" rel="noopener noreferrer">Bildende Kunst mit Schwerpunkt Freie Kunst：当前申请页</a>【Level 2】  <ul>
+<li>“Bewerbung”“Eignungsprüfung”：作品集功能、个人兴趣/深入投入、预选＋约 10 分钟口试、原作展示、Klasse 志愿。</li>
+</ul>
+</li>
+<li><a href="https://adbk-nuernberg.de/site/assets/files/3267/2026_infoblatt_studienbewerberinnen_de.pdf" target="_blank" rel="noopener noreferrer">《2026 Infoblatt Studienbewerber:innen》</a>【Level 2】  <ul>
+<li>PDF 第 9–10 页：至少 20 件数字作品、预选与口试、原作要求；</li>
+<li>PDF 第 12 页附近：八周 Vorpraktikum 说明（属于入学条件，不是作品集评价项）。</li>
+</ul>
+</li>
+<li><a href="https://adbk-nuernberg.de/site/assets/files/3267/2026_digitale_bewerbung_de-1.pdf" target="_blank" rel="noopener noreferrer">《2026 digitale Bewerbung》</a>【Level 2】  <ul>
+<li>PDF 第 2 页：流程清单与上传材料。</li>
+</ul>
+</li>
+</ol>
+<h5 id="portfolio--i-研究结论-3">I. 研究结论</h5>
+<p>AdBK Nürnberg 可判为<strong>类型 B</strong>：官方材料公开了作品集要展示的核心能力——艺术—创造性天赋、表达自身艺术观念、个人兴趣及对自选主题的深入投入；口试又公开了艺术史基础与自我反思要求。但学校没有公开数字分数、项目权重或逐项评分表，预选和口试均为二元谓词。最重要的证据限制是：2024 QualS 的官方原 PDF 当前失效；当前申请页和 2026 手册仍完整复现其两阶段结构，但不足以证明截至研究日不存在另一份修订法规。</p>
+<h6 id="portfolio--目前无法确认-8">【目前无法确认】</h6>
+<ul>
+<li>2024 QualS 是否仍是研究日唯一有效文本，还是存在尚未公开/未被索引的后续修订；</li>
+<li>失效 PDF 是否会恢复，当前法规下载区为何不再显示该文件；</li>
+<li>预选委员如何把多个观察轴合成为 <code>mit Erfolg/ohne Erfolg</code>；</li>
+<li>是否存在内部 <code>Bewertungsbogen</code>、排序规则或名额竞争阶段；</li>
+<li><code>geeignet</code> 与 <code>außergewöhnlich geeignet</code> 在实践中的可操作区分；</li>
+<li>2027/28 是否仍要求至少 20 件、文件大小及时间性作品上传参数；</li>
+<li>Klasse 志愿、教授容量与最终分班“其他因素”的具体处理方式；</li>
+<li>各 Klasse 教授是否在正式维度外使用未公开的媒介、主题或工作方法偏好。</li>
+</ul>
+<h6 id="portfolio--教授个人教学-选拔倾向-3">【教授个人教学 / 选拔倾向】</h6>
+<p>当前申请页只建议申请人在门户中研究并排序 1–4 个 Klasse/教授，未给出任何教授个人的录取打分标准。本次在官方招生材料中未找到可归因于某位教授、明确说明“我如何筛选作品集”的陈述；因此不能把 Klasse 的媒介方向或教学介绍写成招生评价机制。</p>
+<hr>
+<h4 id="portfolio--9-hochschule-fur-bildende-kunste-braunschweig-hbk-braunschweig">9. Hochschule für Bildende Künste Braunschweig（HBK Braunschweig）</h4>
+<p><strong>对应专业：</strong> Freie Kunst（Diplom）<br><strong>2027/28 状态：</strong> 当前正式机制来自 2025-12-08 发布的《Feststellungsordnung》重订文本（原始文本 2024-02-28，2025-11-26 经参议院修订）。它属于本报告采用的较新法规文本，且对机制规定较完整。【Level 1】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-4">A. 作品集在申请中的作用</h5>
+<ul>
+<li>正式程序为 <code>Mappendurchsicht → Aufnahmegespräch → Feststellung</code>。作品集先以 0–10 分评价；达到阶段门槛才进入面谈。§§4–6。【Level 1】</li>
+<li>Freie Kunst 附件明确，作品集与面谈都进入最终成绩，权重为 <strong>作品集 40%＋面谈 60%</strong>。因此作品集不是单纯淘汰门槛，也会影响最终总评。【Level 1】</li>
+<li>法规要求通常提交 20–30 件自制艺术作品，可选绘画、素描、版画、雕塑、拼贴、摄影、影像、数字印刷、声学媒介等；Film/Video 和 Klang 申请重点有特殊数量规则。这些属于提交范围，不是独立计分项。附件 a)，公报印刷页 164。【Level 1】</li>
+<li>当前招生页将当年操作明确为数字作品集上传，要求一个 PDF（最大 50 MB）及合并的 MP4（最大 250 MB）等，并提示作品应表现“什么在推动你”“当前正在处理什么主题”，鼓励发展偏离标准答案的个人艺术路径。这是材料指导，不改变 §7 正式评分维度。【Level 2】</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-4">B. 是否存在官方评分标准</h5>
+<p><strong>类型 A：有 0–10 分制、阶段门槛、40/60 权重、总评通过线和正式评价维度。</strong></p>
+<ul>
+<li>§4(3)规定，作品集与面谈均使用上升的 <strong>0–10 分</strong>量表。【Level 1】</li>
+<li>§5(2)、§6(4)均要求委员会依据 §7(1)标准作评价，并由有表决权委员以多数决定统一到一个分数。【Level 1】</li>
+<li>Freie Kunst 附件 b)规定 40/60；§7(3)规定按附件权重形成总评。法规 §7(3)文字误写为附件字母 d)，而实际表格中权重列是 b)；这是正式 PDF 内部交叉引用的不一致，不应改写为“委员会组成 d) 决定权重”。【Level 1】</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-4">C. 官方评价维度</h5>
+<p>《Feststellungsordnung》§7(1)将决定性基础写为作品的<strong>艺术总体印象</strong>，并列出：【Level 1】</p>
+<ol>
+<li><code>Bildverständnis</code>——作品所显现的图像/视觉理解；</li>
+<li><code>Fähigkeiten zur Realisation und eigenständigen künstlerischen Artikulation</code>——把观念实现出来并进行独立艺术表达的能力；</li>
+<li><code>Intensität der Auseinandersetzung</code>——投入与探究的强度；</li>
+<li><code>Selbständigkeit</code>——独立性；</li>
+<li><code>Originalität</code>——原创性。</li>
+</ol>
+<p>这些标准经 §5(2)明确用于作品集，也经 §6(4)用于面谈。法规没有把媒介种类、A0 尺寸、20–30 件数量或视频时长列为分值维度；它们是提交要求。</p>
+<h5 id="portfolio--d-具体分值-5">D. 具体分值</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 18" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 18</caption>
+<thead>
+<tr>
+<th scope="col">环节</th>
+<th align="right">评分</th>
+<th align="right">最终权重</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">Mappe / Mappendurchsicht</th>
+<td align="right">0–10</td>
+<td align="right">40%</td>
+</tr>
+<tr><th scope="row">Aufnahmegespräch</th>
+<td align="right">0–10</td>
+<td align="right">60%</td>
+</tr>
+<tr><th scope="row">Gesamtwertung</th>
+<td align="right">0–10 的加权结果</td>
+<td align="right">100%</td>
+</tr>
+</tbody></table></div>
+<p>【Level 1：§4(3)、§§5–7、附件 Freie Kunst b)，PDF 第 4–5、9 页；公报印刷页 159–160、164】</p>
+<ul>
+<li>可据法规写出计算结构 <code>0.4 × Mappe + 0.6 × Gespräch</code>；法规没有说明出现小数时如何舍入，也未公开每项维度各占多少分。</li>
+<li>每一环节不是先由每位委员独立给分再求平均；公开规则是有表决权委员以多数决定形成该环节的一项分数，平票由主席决定。§5(2)、§6(4)。【Level 1】</li>
+</ul>
+<h5 id="portfolio--e-通过标准-4">E. 通过标准</h5>
+<ul>
+<li>通常路线：作品集至少 <strong>5/10</strong> 才进入面谈。§6(1)。【Level 1】</li>
+<li>Freie Kunst 无 §18 NHG 通常 Hochschulzugangsberechtigung 的申请人：作品集至少 <strong>8/10</strong> 才进入面谈。§6(1)。【Level 1】</li>
+<li><code>besondere künstlerische Befähigung</code>：40/60 加权总评至少 <strong>5/10</strong>。§7(3)。【Level 1】</li>
+<li>无通常 HZB 路线要取得 <code>überragende künstlerische Befähigung</code>：加权总评至少 <strong>9/10</strong>，并且整体表现确属突出。§7(4)。【Level 1】</li>
+<li>能力证明有效于其后三个入学时间点；通过能力认定后仍需按名次取得实际名额，不能把 5 分简单等同“保证录取”。§10(2)及当前总申请页的名额排序说明。【Level 1 / Level 2】</li>
+</ul>
+<h5 id="portfolio--f-评审人员-4">F. 评审人员</h5>
+<ul>
+<li>Freie Kunst 委员会：<strong>4 名高校教师/教授＋2 名艺术员工</strong>为有表决权成员，另有 <strong>2 名学生</strong>以咨询身份参加；影像或声音方向如未被教师委员覆盖，可增列咨询成员。附件 d)。【Level 1】</li>
+<li>面谈可拆为多个 3 人考试小组；主席把小组主持权交给其中一名教师。需要更多考官时，须是相关高校教师/教授代理或本专业艺术/学术员工与教师。附件 d)。【Level 1】</li>
+<li>委员会以多数决形成分数，平票由主席票决定。§3(2)、§§5–6。【Level 1】</li>
+<li>程序须形成书面记录；申请人有权在结果通知后三年内查看考试档案。§§9、11。【Level 1】</li>
+</ul>
+<h5 id="portfolio--g-现场考试-4">G. 现场考试</h5>
+<ul>
+<li>Freie Kunst 第二阶段不是实践制作，而是约 <strong>10 分钟</strong>的个人 <code>Aufnahmegespräch</code>；谈话围绕提交的艺术作品，并记录主要谈话事项。§6(3)。【Level 1】</li>
+<li>面谈使用 0–10 分，并按 §7(1)的总体艺术印象、图像理解、实现与独立艺术表达、投入强度、独立性、原创性评价；占最终总评 60%。§6(4)、§7、附件 b)。【Level 1】</li>
+<li>当前申请页要求获邀者携带作品集原作，在面谈中与委员会讨论作品；这与法规一致。【Level 2】</li>
+</ul>
+<h5 id="portfolio--h-官方文件-4">H. 官方文件</h5>
+<ol>
+<li><a href="https://www.hbk-bs.de/fileadmin/Studium/Downloads_fuer_alle_Studiengaenge/Feststellungsordnung.pdf" target="_blank" rel="noopener noreferrer">《Ordnung über den Nachweis einer besonderen künstlerischen Befähigung …（Feststellungsordnung）》；Verkündungsblatt 10/2025，2025-12-08</a>【Level 1】  <ul>
+<li>PDF 第 4 页／公报印刷页 159：§§4–6，0–10 分、作品集门槛、约 10 分钟面谈；</li>
+<li>PDF 第 5 页／印刷页 160：§7，正式评价维度、总评 5 分线、无 HZB 的 9 分线；</li>
+<li>PDF 第 9 页／印刷页 164：Freie Kunst 附件，作品集要求、40/60 权重、委员会。</li>
+</ul>
+</li>
+<li><a href="https://www.hbk-bs.de/studium/bewerben/freie-kunst-diplom/" target="_blank" rel="noopener noreferrer">Freie Kunst Diplom：当前申请页</a>【Level 2】  <ul>
+<li>“Die Mappe”“Aufnahmegespräch”：数字格式、学校层面的作品集指导、原作与面谈流程。</li>
+</ul>
+</li>
+<li><a href="https://www.hbk-bs.de/studium/bewerben/" target="_blank" rel="noopener noreferrer">HBK 总申请页</a>【Level 2】  <ul>
+<li>通过艺术能力认定后的名额排序与三个入学时间点规则说明。</li>
+</ul>
+</li>
+</ol>
+<h5 id="portfolio--i-研究结论-4">I. 研究结论</h5>
+<p>HBK Braunschweig 明确属于<strong>类型 A</strong>，且公开度很高：两个环节都用 0–10 分，作品集 40%、面谈 60%；通常路线作品集 5 分进面谈、总评 5 分证明特殊艺术能力；无通常 HZB 的路线则为作品集 8 分、总评 9 分并要求突出表现。正式评价围绕总体艺术印象、图像理解、实现与独立表达、投入强度、独立性和原创性。不能从 40/60 推断每个维度的内部权重，也不能把尺寸、件数、媒介格式当作评分项。</p>
+<h6 id="portfolio--目前无法确认-9">【目前无法确认】</h6>
+<ul>
+<li>0–10 分量表内部是否有书面的逐分描述；</li>
+<li>五个观察项是否等权或由委员会整体判断；</li>
+<li>多数决形成单一分数时的具体提案/投票程序；</li>
+<li>加权总评出现小数时的保留与舍入规则；</li>
+<li>§7(3)把权重列误写为附件 d) 是否会由学校勘误；</li>
+<li>“达到 5 分但名额不足”时 Freie Kunst 的具体排序及同分处理；</li>
+<li>不同面谈小组之间是否有标准化校准；</li>
+<li>2027/28 是否仍使用相同数字文件上限与截止日；</li>
+<li>各教授是否在正式五项之外使用未公开的 Klasse 偏好。</li>
+</ul>
+<h6 id="portfolio--教授个人教学-选拔倾向-4">【教授个人教学 / 选拔倾向】</h6>
+<p>当前申请页的“展示什么在推动你、你正在处理什么主题、发展不同于标准答案的个人路径”是学校层面的作品集建议【Level 2】，不能归因于个别教授。官方页面可确认教授参与 Mappenberatung，但本次未找到某位在任教授公开说明个人录取打分权重或明确“偏爱某媒介/主题”的招生陈述。</p>
+<hr>
+<h4 id="portfolio--10-weissensee-kunsthochschule-berlin">10. weißensee kunsthochschule berlin</h4>
+<p><strong>对应专业：</strong> Freie Kunst（Diplom），包括 Malerei、Bildhauerei、Bühnen- und Kostümbild<br><strong>2027/28 状态：</strong> 学校当前申请总页已公布 2027/28：2026-11-01 开放、2027-01-05 12:00 截止、2027 年 10 月开学。现行法规目录仍把 Mitteilungsblatt 215 列为 Freie Kunst 的 Zulassungsordnung；该文件发布于 2015-05-06，正文为 2014-12-03 版本。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-5">A. 作品集在申请中的作用</h5>
+<ul>
+<li>法规把程序拆为 <code>Vorauswahl＋Zugangsprüfung</code>。预选要求提交 <strong>15–20 件本人艺术作品</strong>，其结果直接决定能否参加后续考试。§§3、5。【Level 1】</li>
+<li>只有作品样本让委员会识别出目标专业所需的特殊艺术天赋，才进入 Zugangsprüfung。§5(2)。【Level 1】</li>
+<li>2025/26 Malerei 官方说明的当年执行方式为数字作品集：约 20 件，和在线申请一起上传；委员会据此决定是否邀请参加考试。当前 2027/28 页面确认申请周期，但精确文件参数仍以门户开放后的说明为准。【Level 2】</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-5">B. 是否存在官方评分标准</h5>
+<p><strong>类型 B：正式法规公开了较完整的评价维度，但没有数值、环节权重或逐项等级。</strong></p>
+<ul>
+<li>§6(2)把作品集与现场作品的艺术总体印象作为决定性依据，并列出七组判断维度。【Level 1】</li>
+<li>最终只公布 <code>geeignet / nicht geeignet</code>。§6(3)。【Level 1】</li>
+<li>这些标准用于整个进入考试后的艺术能力认定；法规未说明作品集在最终结果中占多少，也未给实践任务和面谈权重。</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-5">C. 官方评价维度</h5>
+<p>Mitteilungsblatt 215 §6(2)，PDF 第 3 页，明确列出（<code>u.a.</code> 表明列举非穷尽）：【Level 1】</p>
+<ol>
+<li><code>künstlerisches Verständnis für studienrichtungsbezogene Problemstellungen</code>——对目标专业相关问题的艺术理解；</li>
+<li><code>Vorstellungsvermögen</code>——想象/构想能力；</li>
+<li><code>Fähigkeiten der Realisierung</code>——把构想转化成作品的实现能力；</li>
+<li><code>Intensität der Auseinandersetzung mit unterschiedlichen Themen</code>——处理不同主题的投入强度；</li>
+<li><code>Selbständigkeit</code>——独立性；</li>
+<li><code>geistiges Reflexionsvermögen in Bezug auf die gewählte Studienrichtung</code>——围绕所选专业的思想反思能力；</li>
+<li><code>Originalität bei der Lösung der gestellten Aufgaben</code>——解决考试任务时的原创性。</li>
+</ol>
+<p>2025/26 Malerei 官方说明另建议：有意识地策展最强作品，呈现技术能力、创造性概念、媒介/表达多样性、连续性与投入强度；用简短文字解释观念、步骤、问题与技术，展示对工作方法的批判性反思；素描/草图本在各专业有较高价值。【Level 2】这些是申请指导，不能改写成 §6 的额外计分项或教授个人偏好。</p>
+<h5 id="portfolio--d-具体分值-6">D. 具体分值</h5>
+<ul>
+<li>法规没有数字分值、百分比权重或分项计分表。</li>
+<li>§6(3)只允许两个结果：<code>geeignet</code> 与 <code>nicht geeignet</code>。【Level 1】</li>
+<li>§8(6)–(7)规定委员会以简单多数决定，且预选、终试及录取决定均须取得全体委员多数；这是一种表决规则，不等于把每个评价维度量化。【Level 1】</li>
+</ul>
+<h5 id="portfolio--e-通过标准-5">E. 通过标准</h5>
+<ul>
+<li>预选：作品样本必须显示目标专业要求的 <code>besondere künstlerische Begabung</code>，方可参加后续考试。§5(2)。【Level 1】</li>
+<li>终试：委员会把结果评为 <code>geeignet</code> 才通过；拒绝决定须书面说明并附救济说明。§6(3)–(4)。【Level 1】</li>
+<li>通过后的艺术能力证明如果两年内未完成入学，学校可要求重新证明。§6(7)。【Level 1】</li>
+<li>当前 Malerei 说明称艺术能力证明有效三年，与 §6(7)“两年未入学可重新要求”的文字口径并非完全相同。二者可能是在解释同一时间窗口，也可能反映执行变化；不能在缺少修订法规时自行消解。【Level 1 / Level 2】</li>
+</ul>
+<h5 id="portfolio--f-评审人员-5">F. 评审人员</h5>
+<ul>
+<li>每个专业设自己的 Zulassungskommission。通常组成是 2 名全职教授＋1 名具有独立教学资格的学术员工；如无符合条件的员工，则以第 3 名全职教授替代。§8(1)–(4)。【Level 1】</li>
+<li>教授必须占表决多数；另有 2 名第二学习阶段学生参加会议并有发言权，但不列入表决成员。§8(3)。【Level 1】</li>
+<li>主席从委员会中的全职教授选出；简单多数决定、不得弃权，预选、终试和录取决定须获全体委员多数，会议不公开。§8(6)–(7)。【Level 1】</li>
+<li>每名参加预选和终试的申请人均须制作考试记录，并记录所有参与录取决定者姓名。§9。【Level 1】</li>
+</ul>
+<h5 id="portfolio--g-现场考试-5">G. 现场考试</h5>
+<ul>
+<li>正式法规：<code>Zugangsprüfung</code> 包括 <strong>2–3 天艺术考试</strong>和专业面谈。面谈通常围绕考试期间表现，以及申请人计划中的艺术和职业发展。§6(1)。【Level 1】</li>
+<li>评价看提交作品和考试制作作品的艺术总体印象，并按 §6(2)七组维度判断。最终只给 <code>geeignet / nicht geeignet</code>。【Level 1】</li>
+<li>2025/26 Malerei 说明称考试为 1–3 天，含实践任务与委员会谈话，谈话涉及作品集、专业发展和动机；这与正式法规的“2–3 天”存在一天差异。当前网页也使用“艺术/设计任务＋面谈”的概括表述。【Level 2】</li>
+<li>在未见更新后的 Zulassungsordnung 前，应把 <strong>2–3 天</strong>视为正式法定文本，把 <strong>1–3 天</strong>视为当年度执行说明，二者冲突列为待确认。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-5">H. 官方文件</h5>
+<ol>
+<li><a href="https://kh-berlin.de/fileadmin/_migrated/content_uploads/Mitteilungsblatt_215.pdf" target="_blank" rel="noopener noreferrer">Mitteilungsblatt Nr. 215，2015-05-06：《Zulassungsordnung … Freie Kunst》，2014-12-03 版本</a>【Level 1】  <ul>
+<li>PDF 第 2–3 页：§§3–6，15–20 件作品、预选、2–3 天考试、面谈、评价维度与二元结果；</li>
+<li>PDF 第 4 页：§§7–9，录取申请、委员会与记录；</li>
+<li>PDF 第 5 页：§10，高校转入者规则。</li>
+</ul>
+</li>
+<li><a href="https://kh-berlin.de/service/mitteilungsblaetter" target="_blank" rel="noopener noreferrer">学校当前 Mitteilungsblätter/法规目录</a>【Level 1】  <ul>
+<li>“Freie Kunst Studiengänge”仍列 Nr. 215 为 Zulassungsordnung。</li>
+</ul>
+</li>
+<li><a href="https://kh-berlin.de/studium/studienbewerbung" target="_blank" rel="noopener noreferrer">当前 Studienbewerbung 总页</a>【Level 2】  <ul>
+<li>2027/28 开放日、截止日、开学时间。</li>
+</ul>
+</li>
+<li><a href="https://kh-berlin.de/fileadmin/user_upload/Info-Malerei-2025.pdf" target="_blank" rel="noopener noreferrer">Malerei 官方申请说明 2025/26</a>【Level 2】  <ul>
+<li>PDF 第 5–6 页：数字作品集、约 20 件、材料选择建议、实践任务＋面谈及 1–3 天说明。</li>
+</ul>
+</li>
+<li><a href="https://kh-berlin.de/studium/studienbewerbung/bildhauerei" target="_blank" rel="noopener noreferrer">Bildhauerei 当前申请页</a>【Level 2】  <ul>
+<li>当前在线流程：数字作品集预选、校内任务、围绕作品集/发展/动机的面谈。</li>
+</ul>
+</li>
+</ol>
+<h5 id="portfolio--i-研究结论-5">I. 研究结论</h5>
+<p>weißensee 属于<strong>类型 B</strong>。其法规虽没有任何数字或权重，但 §6(2)给出较完整的非量化评价清单：艺术理解、想象、实现、投入强度、独立性、反思与原创性；最终采用 <code>geeignet / nicht geeignet</code>。作品集既是第一轮门槛，也与现场作品共同构成终试的艺术总体印象。2025/26 申请材料提供了更具体的策展与过程展示建议，但这些不能冒充法规评分项，更不能归因于个别教授。</p>
+<h6 id="portfolio--目前无法确认-10">【目前无法确认】</h6>
+<ul>
+<li>2014/2015 Zulassungsordnung 是否将在 2027/28 前修订；</li>
+<li>15–20 件法规要求与当前“约 20 件”数字作品集的精确文件格式、大小和数量边界；</li>
+<li>§6(2)七组维度是否等权，或是否存在内部评价表；</li>
+<li>作品集、实践任务和面谈在最终二元决定中的实际权重；</li>
+<li><code>u.a.</code> 所暗示的其他内部考虑因素；</li>
+<li>2025/26 手册“1–3 天”与法规“2–3 天”的原因；</li>
+<li>能力证明有效期究竟应按法规“两年未入学可重验”还是当前手册“三年有效”执行；</li>
+<li>不同专业委员会之间是否共用校准标准；</li>
+<li>2027/28 是否延续当前数字提交；</li>
+<li>各教授是否使用未公开的个人媒介/议题偏好。</li>
+</ul>
+<h6 id="portfolio--教授个人教学-选拔倾向-5">【教授个人教学 / 选拔倾向】</h6>
+<p>学校 <a href="https://kh-berlin.de/studium/fachgebiete/malerei/malerei" target="_blank" rel="noopener noreferrer">Malerei 专业页</a>强调教学旨在巩固学生的独立性，并把当代绘画的内容与绘画关联作为讨论资源【Level 2】；这是专业教学理念，不是某位教授的招生评分承诺。本次未找到可核实的在任教授个人“如何筛选作品集”陈述，故不把专业理念或学生作品风格反推为教授选拔偏好。</p>
+<hr>
+<h4 id="portfolio--11-kunsthochschule-kassel">11. Kunsthochschule Kassel</h4>
+<p><strong>对应专业：</strong> Bildende Kunst<br><strong>2027/28 状态：</strong> 当前 Bildende Kunst 下载目录继续列出 2014-06-18《Prüfungsordnung zur Feststellung der künstlerischen Begabung》。2024 年专业 Prüfungsordnung 修订也明确要求按该 2014 适合性考试规则证明艺术天赋，说明它仍是当前入学机制的正式基础。【Level 1】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-6">A. 作品集在申请中的作用</h5>
+<ul>
+<li>作品集是考试的第一部分，须包含申请人近年自行制作的作品。§3(1) Nr. 1。【Level 1】</li>
+<li>如果委员会仅凭作品集已经能够否定艺术天赋，可直接取消监督任务和专业面谈，即作品集具有独立淘汰功能。§3(2)。【Level 1】</li>
+<li>当前 Bildende Kunst 申请页说明，报名阶段不上传作品集，作品集在 Aufnahmeprüfung 时携带并呈交；个人展示建议约 <strong>15–20 件</strong>，二维、三维、草图、绘画、照片、设计、表演等形式原则上自由。【Level 2】</li>
+<li>当前页称理想作品集应让人理解申请人的人格、发展与知识；草稿、速写和前期设计往往比成品照片更能显示思考与方法。这是材料选择指导，不是 §2 之外的新权重。【Level 2】</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-6">B. 是否存在官方评分标准</h5>
+<p><strong>类型 A：有七项明确正式维度和三个可操作结果等级，但没有数字、权重或数值通过线。</strong></p>
+<ul>
+<li>2014 Prüfungsordnung §2逐项列出评价标准。【Level 1】</li>
+<li>§6对 Bildende Kunst 使用 <code>Bestanden / Mit Auszeichnung bestanden / Nicht bestanden</code> 三档；“Mit Auszeichnung”即证明法律意义上的 <code>hervorragende künstlerische Begabung</code>。【Level 1】</li>
+<li>法规没有说明七项是否等权，也没有说明三个考试部分如何合成最终等级。</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-6">C. 官方评价维度</h5>
+<p>《Prüfungsordnung zur Feststellung der künstlerischen Begabung》§2，PDF 第 1 页／公报印刷页 227：【Level 1】</p>
+<ol>
+<li><code>Abstraktionsfähigkeit</code>——抽象能力；</li>
+<li><code>Fähigkeit zur Darstellung eigener künstlerischer Ideen</code>——表达自身艺术观念的能力；</li>
+<li><code>Fähigkeit zur differenzierten Beobachtung</code>——细致、分化地观察的能力；</li>
+<li><code>Kreativität und Improvisationsfähigkeit</code>——创造力与即兴能力；</li>
+<li><code>Motivation und Sensibilität</code>——动机与敏感性；</li>
+<li><code>Phantasie und Vorstellungsvermögen</code>——幻想与想象/构想能力；</li>
+<li><code>technisches Vermögen und Verständnis</code>——技术能力与理解。</li>
+</ol>
+<p>当前申请页还说学校关注艺术概念、个人动机，以及对当代艺术发展与趋势的投入。这是学校公开的作品集/呈现关注点【Level 2】，与 §2 的“动机、观念表达、理解”相互呼应，但法规未把“当代艺术知识”列成第八项独立评分。</p>
+<h5 id="portfolio--d-具体分值-7">D. 具体分值</h5>
+<ul>
+<li><strong>没有公开分值、百分比或项目权重。</strong></li>
+<li>对 Bildende Kunst 的最终结果只有三档：<code>Bestanden</code>、<code>Mit Auszeichnung bestanden</code>、<code>Nicht bestanden</code>。§6(2)。【Level 1】</li>
+<li>不能把七项标准各自换算成 1/7，也不能从“专业面谈约 30 分钟”推算其权重。</li>
+</ul>
+<h5 id="portfolio--e-通过标准-6">E. 通过标准</h5>
+<ul>
+<li>持有通常 Hochschulzugangsberechtigung 的申请人须至少取得 <code>Bestanden</code>，证明艺术天赋。§1、§6及附件。【Level 1】</li>
+<li>无通常 HZB 的 Bildende Kunst 申请人可用 <code>hervorragende künstlerische Begabung</code> 代替；法规规定只有 <code>Mit Auszeichnung bestanden</code> 才构成这一证明。§6(3)及附件。【Level 1】</li>
+<li>若作品集已足以否定艺术天赋，委员会可不举行后两部分；若作品集＋监督任务已足以肯定或否定普通艺术天赋，面谈也可取消。§3(2)。【Level 1】</li>
+<li>但“优秀艺术天赋”只有完成监督任务和专业面谈后才能认定；无 HZB 路线不能只凭作品集获 <code>Mit Auszeichnung</code>。§3(2)。【Level 1】</li>
+<li>考试可重考一次；若天赋认定后三年以上才开始学习，重新申请时原则上须重考。§7。【Level 1】</li>
+</ul>
+<h5 id="portfolio--f-评审人员-6">F. 评审人员</h5>
+<ul>
+<li>Kunsthochschulrat 设 Prüfungsausschuss 并指定主席，主席必须是教授；该委员会按教授与 §18(2) 学术员工 <strong>2:1</strong> 构成。§5(1)。【Level 1】</li>
+<li>Prüfungsausschuss 为实际考试任命考试委员会；每个考试委员会至少 <strong>3 名有表决权考官</strong>，且教授必须占多数。教授组成员及承担法定任务的艺术/学术员工可以被任命。§5(2)。【Level 1】</li>
+<li>每场考试必须制作记录，并能看出委员会判断依据。§5(3)。【Level 1】</li>
+<li>法规没有公开表决多数、个人给分、同票处理或跨委员会校准方式。</li>
+</ul>
+<h5 id="portfolio--g-现场考试-6">G. 现场考试</h5>
+<ul>
+<li>正式考试三部分：<ol>
+<li>作品集；</li>
+<li>在监督下于一日或多日完成特别作品和指定任务；</li>
+<li>通常约 <strong>30 分钟</strong>的专业面谈。§3(1)。【Level 1】</li>
+</ol>
+</li>
+<li>§2七项标准适用于整体考试；法规没有为任务与面谈另列不同维度或权重。【Level 1】</li>
+<li>现场部分可因前面结果足以作普通天赋判断而取消，但无 HZB 申请人若要获得“优秀艺术天赋”，监督任务和面谈都不可省略。§3(2)。【Level 1】</li>
+<li>当前申请页只公布具体考试日期“另行通知”，没有公开固定题型或媒介限制。【Level 2】</li>
+</ul>
+<h5 id="portfolio--h-官方文件-6">H. 官方文件</h5>
+<ol>
+<li><a href="https://kunsthochschulekassel.de/fileadmin/presse/DOWNLOADS/BK/po_kuenstl_begab.pdf" target="_blank" rel="noopener noreferrer">《Prüfungsordnung der Kunsthochschule Kassel zur Feststellung der künstlerischen Begabung》vom 18.06.2014；发布于 Mitteilungsblatt 1/2015</a>【Level 1】  <ul>
+<li>PDF 第 1 页／公报页 227：§§1–3，七项维度、作品集、监督任务、面谈及阶段淘汰；</li>
+<li>PDF 第 2 页／公报页 228：§§4–6，报名、委员会、三档结果；</li>
+<li>PDF 第 3–4 页／公报页 229–230：§§7–8及附件，重考、适用专业、无 HZB 的优秀天赋路线。</li>
+</ul>
+</li>
+<li><a href="https://kunsthochschulekassel.de/bewerbung/bewerbungs-abc/bewerbung-bildende-kunst.html" target="_blank" rel="noopener noreferrer">Bildende Kunst：当前申请页</a>【Level 2】  <ul>
+<li>“Präsentation/Mappe”：约 15–20 件、媒介自由、人格/发展/知识、草图过程、概念/动机/当代艺术关注。</li>
+</ul>
+</li>
+<li><a href="https://kunsthochschulekassel.de/studium/downloads/bildende-kunst.html" target="_blank" rel="noopener noreferrer">Bildende Kunst 当前法规下载目录</a>【Level 1】  <ul>
+<li>当前仍列 2014 艺术天赋认定考试规则，并另列专业学习考试规则及历次修订。</li>
+</ul>
+</li>
+<li><a href="https://www.uni-kassel.de/hochschulverwaltung/files/Schnelleinstieg/Mitteilungsblatt/2024/19.Jahrgang_Nr_16_2024.pdf" target="_blank" rel="noopener noreferrer">第六次专业 Prüfungsordnung 修订，2024-06-19</a>【Level 1】  <ul>
+<li>PDF/公报页 726 附近，新的专业 §4(1)继续明确引用 2014 艺术天赋认定规则。</li>
+</ul>
+</li>
+</ol>
+<h5 id="portfolio--i-研究结论-6">I. 研究结论</h5>
+<p>Kunsthochschule Kassel 的 Bildende Kunst 属于<strong>类型 A</strong>。2014 正式法规明确列出抽象、个人观念表达、细致观察、创造与即兴、动机与敏感性、幻想与想象、技术能力与理解七项维度，并公开 <code>Bestanden / Mit Auszeichnung bestanden / Nicht bestanden</code> 三档结果。按本报告“公开可操作等级也属于 A 型”的统一口径，它归 A；但学校仍未公开数值分数、权重、逐项门槛或三档之间的合成算法。作品集具有强淘汰作用，普通申请人可能在作品集＋任务后无需面谈；无 HZB 路线则必须完成任务与面谈，才可能取得“优秀艺术天赋”。</p>
+<h6 id="portfolio--目前无法确认-11">【目前无法确认】</h6>
+<ul>
+<li>七项正式维度的权重、等级描述或内部评分表；</li>
+<li>作品集、监督任务和面谈如何合成最终三档结果；</li>
+<li>何种证据足以在作品集阶段直接否定天赋；</li>
+<li>何种标准区分 <code>Bestanden</code> 与 <code>Mit Auszeichnung bestanden</code>；</li>
+<li>各考试委员会是否使用统一题目、统一校准或共同复核；</li>
+<li>表决方式、同票处理及个别考官意见如何记录；</li>
+<li>当前页的 15–20 件是否对所有考试场次均为硬性上限，还是建议范围；</li>
+<li>2027/28 的具体考试日期、任务形式和媒介限制；</li>
+<li>各教授是否在正式七项之外使用未公开的 Klasse 偏好。</li>
+</ul>
+<h6 id="portfolio--教授个人教学-选拔倾向-6">【教授个人教学 / 选拔倾向】</h6>
+<p><a href="https://kunsthochschulekassel.de/studium/bildende-kunst/klasse-spehr.html" target="_blank" rel="noopener noreferrer">Klasse Spehr 官方页</a>强调独立、个体艺术立场、开放性、实验意愿与对市场压力的批判距离【Level 2】；这是 Johannes Spehr 的班级教学理念，不是 Aufnahmeprüfung 的法定评分表，也不能据此断言他本人必然参与每届入学委员会或为这些倾向设置额外权重。本次未找到在任教授公开说明个人招生打分方法的材料。</p>
+<hr>
+<h4 id="portfolio--12-hochschule-fur-gestaltung-offenbach-bfa-kunst">12. Hochschule für Gestaltung Offenbach — BFA Kunst</h4>
+<p><strong>2027/28 状态：</strong> 学校当前申请页已公布下一轮 2027 申请窗口；评价机制仍以 2024 现行 Aufnahmesatzung 为准，尚未发现专门替代它的 2027 评价文件。2023 年的 50/50 只作历史对照。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-项目与结论等级">A. 项目与结论等级</h5>
+<ul>
+<li>项目：Bachelor of Fine Arts Kunst。</li>
+<li><strong>结论等级：A</strong>。现行《Aufnahmesatzung BFA und MFA Kunst》（最后修订 23.01.2024）明确九项评价维度、考试日构成、成绩档位与通过线。</li>
+<li><strong>关键版本核验：现行 2024 版不是“Mappe 50% + Prüfungstag 50%”。</strong> 50/50 是 06.02.2023 版 §4(2) 的文字；23.01.2024 版同一处已改为“Die Bewertung entspricht der Bewertung des Prüfungstages”（最终评价等同考试日评价）。因此，若数据库记录“50/50”，必须标注为<strong>历史规则（2023），非官网当前列示规则（2024）</strong>。</li>
+</ul>
+<h5 id="portfolio--b-现行法源与适用范围">B. 现行法源与适用范围</h5>
+<ul>
+<li><a href="https://www.hfg-offenbach.de/system/downloads/files/65ba517c6866670b740c0000/original/aufnahmesatzung_bfa_und_mfa_kunst_hfg_24.pdf?1706709370=" target="_blank" rel="noopener noreferrer">《Aufnahmesatzung für die Studiengänge BFA Kunst und MFA Kunst》，最后修订 23.01.2024</a>，封面/第1页，§1；学校<a href="https://www.hfg-offenbach.de/de/pages/verwaltung" target="_blank" rel="noopener noreferrer">规章总页</a>将其列为当前“Aufnahmesatzung BFA und MFA Kunst 2024”。证据：Level 1。</li>
+<li><a href="https://www.hfg-offenbach.de/de/pages/bewerben-an-der-hfg" target="_blank" rel="noopener noreferrer">学校当前申请与咨询页</a>显示下一轮申请为 01.–15.04.2027，并指向 BFA Kunst；具体材料与评价仍以规章为准。证据：Level 2。</li>
+<li>对照文本：2023 版 Aufnahmesatzung（最后修订 06.02.2023）曾在学校官方域名公开；最终外链核查时旧 PDF 已失效。它只用于说明 50/50 曾是历史规则，<strong>不作为当前规则依据</strong>。现行结论完全以可访问的 2024 版 §4 为准。</li>
+</ul>
+<h5 id="portfolio--c-提交要求-不等同于评价维度">C. 提交要求（不等同于评价维度）</h5>
+<p>依据现行 2024 版第2页 §2(4)：</p>
+<ul>
+<li>自制艺术/设计作品的 Mappe，<strong>至少30件作品与草图（可更多）</strong>；按 HfG 指定形式提交；若先数字提交，后续在可行范围内出示原作。</li>
+<li>合作作品或混合作者作品必须说明。</li>
+<li>动机信、大学入学资格证书的数字版本（或最后一份离校证书）、详细简历、语言证明；特定国家申请人另需 APS 等级证明。</li>
+<li>这些是形式与材料门槛；规章没有说“作品数量越多分数越高”。</li>
+</ul>
+<h5 id="portfolio--d-评价流程与评审主体">D. 评价流程与评审主体</h5>
+<ul>
+<li>§3（第3页）：院系委员会设置 BFA/MFA 单独或共同的 Aufnahmeausschuss；至少含4名教授（其中至少1名院系领导成员）、1名特殊任务教师、1名艺术/学术人员及2名学生；教授在有表决权成员中占多数，学生为咨询票；平票由主席票决定。</li>
+<li>§4(1)（第3页）：委员会先审形式条件与 Mappe，决定是否进入后续适合性评定。已有 Hochschulzugangsberechtigung 的申请人，即使 Mappe 被判“不通过”，仍可应本人请求参加考试日。</li>
+<li>§4(2)（第3页）：考试日包含<strong>1项书面任务、2项艺术任务、通常15分钟的专业面谈</strong>（可为小组考试）；数字提交过 Mappe 者在可行时带原作。可征求院系其他教师对考试任务的意见。</li>
+</ul>
+<h5 id="portfolio--e-官方评价维度">E. 官方评价维度</h5>
+<p>现行 2024 版第4页 §4(3) 共九项：</p>
+<ol>
+<li>将自己的艺术/设计想法付诸实现的能力；</li>
+<li>抽象能力以及迁移、转化能力；</li>
+<li>差异化观察能力；</li>
+<li>即兴能力；</li>
+<li>动机与敏感性；</li>
+<li>二维、三维的视觉与语境想象力；</li>
+<li>反思与批评能力；</li>
+<li>技术能力与理解；</li>
+<li>围绕本人艺术/设计工作的口头语言表达能力。</li>
+</ol>
+<h5 id="portfolio--f-评分与合成方法">F. 评分与合成方法</h5>
+<ul>
+<li><strong>现行规则（2024）</strong>：§4(2)明文规定最终评价“等同考试日评价”；Mappe 是前置筛选，但现行条文未再赋予其50%的最终成绩权重。</li>
+<li><strong>历史规则（2023）</strong>：2023 版第3页 §4(2)写明 Mappe 与 Prüfungstag “zu gleichen Teilen eingehen”，即各占50%。该句已在2024版被替换，不能当作现行规则。</li>
+<li>§4(4)（第4页）采用德国成绩界限表达结果：<strong>1.7及以内＝“hervorragend bestanden”</strong>（只用于无大学入学资格者）；<strong>4.0及以内＝“bestanden”</strong>；<strong>4.3起＝“nicht bestanden”</strong>。</li>
+</ul>
+<h5 id="portfolio--g-通过与录取规则">G. 通过与录取规则</h5>
+<ul>
+<li>有通常大学入学资格者：考试总评达到4.0或更好即为通过艺术适合性考试。</li>
+<li>无 Hochschulzugangsberechtigung 者：必须达到1.7或更好，方证明 Hessisches Hochschulgesetz 意义上的“卓越艺术适合性”。</li>
+<li>§4(5)要求形成能看出评价依据的书面记录并向申请人发送书面结果；拒绝须说明理由并附救济告知。</li>
+<li>§4(6)：未通过者可重考一次；适合性认定在考试当年及下一自然年有效。</li>
+<li>规章确认的是艺术适合性考试结果；它未公布按分数排序、固定名额或同分决胜规则。因此不应把“考试通过”进一步推断为无条件完成注册。</li>
+</ul>
+<h5 id="portfolio--h-证据索引">H. 证据索引</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 19" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 19</caption>
+<thead>
+<tr>
+<th scope="col">事项</th>
+<th scope="col">官方文件</th>
+<th align="right">年份</th>
+<th scope="col">页码/条款</th>
+<th scope="col">等级</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">Mappe至少30件及其余申请材料</th>
+<td><a href="https://www.hfg-offenbach.de/system/downloads/files/65ba517c6866670b740c0000/original/aufnahmesatzung_bfa_und_mfa_kunst_hfg_24.pdf?1706709370=" target="_blank" rel="noopener noreferrer">现行 Aufnahmesatzung</a></td>
+<td align="right">2024</td>
+<td>第2页，§2(4)</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">初筛、考试日组成、现行合成方式</th>
+<td>同上</td>
+<td align="right">2024</td>
+<td>第3页，§4(1)–(2)</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">九项维度、成绩门槛</th>
+<td>同上</td>
+<td align="right">2024</td>
+<td>第4页，§4(3)–(4)</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">50/50历史依据</th>
+<td>2023版 Aufnahmesatzung；原官方 PDF 在最终外链核查时已失效，不作为当前可验证依据</td>
+<td align="right">2023</td>
+<td>第3页，§4(2)</td>
+<td>Level 1（历史；当前不可访问）</td>
+</tr>
+<tr><th scope="row">官网当前列示文件版本</th>
+<td><a href="https://www.hfg-offenbach.de/de/pages/verwaltung" target="_blank" rel="noopener noreferrer">Verwaltung / Satzungen</a></td>
+<td align="right">当前页</td>
+<td>“Aufnahmesatzung … Kunst 2024”</td>
+<td>Level 2</td>
+</tr>
+</tbody></table></div>
+<h5 id="portfolio--i-目前无法确认">I. 【目前无法确认】</h5>
+<ul>
+<li>【目前无法确认】考试日内部“书面任务、两项艺术任务、面谈”各自的数值权重；现行规章未公开拆分。</li>
+<li>【目前无法确认】九项维度是否逐项单独打分、是否等权、是否使用统一评分量表；条文只列维度和总结果档位。</li>
+<li>【目前无法确认】通过适合性考试后的名额排序、候补、同分处理及实际录取率；所查官方文件未给出。</li>
+<li>【目前无法确认】2027轮次是否会在申请开放前再次修订规章；研究时点官网仍列2024版为现行艺术类 Aufnahmesatzung。</li>
+</ul>
+<hr>
+<h4 id="portfolio--13-kunstakademie-munster-freie-kunst">13. Kunstakademie Münster — Freie Kunst</h4>
+<p><strong>2027/28 状态：</strong> 当前申请页已经显示 2027/28 轮次；正式评价与决定机制来自 2025 年第六次修订后的 Feststellungsordnung，提交操作以当届申请页为准。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-项目与结论等级-2">A. 项目与结论等级</h5>
+<ul>
+<li>项目：Freie Kunst（Akademiebrief/Diplom）。</li>
+<li><strong>结论等级：A</strong>。2025年第六次修订后的 Feststellungsordnung 在 §3、§5、§6 明确委员会组成、三项评价标准、三档共同成绩以及何时直接认定/拒绝/进入补充面谈。</li>
+</ul>
+<h5 id="portfolio--b-现行法源与适用范围-2">B. 现行法源与适用范围</h5>
+<ul>
+<li><a href="https://www.kunstakademie-muenster.de/fileadmin/media/Website_2018/Verwaltung/Dez1_akad_stud_ang/ordnungen/20251111_Feststellungsordnung_FK_Fassung_6_AeO.pdf" target="_blank" rel="noopener noreferrer">《Ordnung zur Feststellung der künstlerischen Eignung für den Studiengang Freie Kunst》，15.05.1995，2025-11-11第六次修订合并文本</a>，共6页；学校<a href="https://www.kunstakademie-muenster.de/infos-fuer-studierende/ordnungen-und-bekanntmachungen/" target="_blank" rel="noopener noreferrer">规章与公告页</a>将其列为 Freie Kunst 当前 Rechtsgrundlage。证据：Level 1。</li>
+<li><a href="https://www.kunstakademie-muenster.de/bewerbung" target="_blank" rel="noopener noreferrer">当前 Bewerbung 页面</a>（页面现已显示2027/28轮次）用于核对现实提交方式；评价与决策规则仍以 Feststellungsordnung 为准。证据：Level 2。</li>
+</ul>
+<h5 id="portfolio--c-提交要求-不等同于评价维度-2">C. 提交要求（不等同于评价维度）</h5>
+<p>依据2025合并文本第1–2页 §1(4)，并以当前申请页校正操作方式：</p>
+<ul>
+<li>原则上至少<strong>20件本人艺术作品原作</strong>，媒介自选；若全部为电影/视频，则至少3件。</li>
+<li>超过 DIN A0 的作品，以及雕塑、立体对象、装置等以摄影文档提交；行为艺术以照片或视频文档提交。非数字材料集中于最大 DIN A0 的 Mappe；需标明原作或文档，并附作品清单。</li>
+<li>当前申请页进一步说明：能装入 DIN A0 Mappe 的模拟原作必须交原作；“扫描实体作品”不等于数字原作。原生数字作品汇总为一个不超过20 MB的 PDF；纯视频文件按页面格式上传。</li>
+<li>另需高中入学资格证明（或申请以卓越艺术天赋免除该证明）、独立完成声明、带照片并说明教育经历的表格式简历。</li>
+</ul>
+<h5 id="portfolio--d-评价流程与评审主体-2">D. 评价流程与评审主体</h5>
+<ul>
+<li><strong>§3（第2页）委员会</strong>：7名担任艺术班级负责人的艺术学科教授为有表决权成员；艺术技术/学术人员、技术与行政人员、以及已完成艺术基础阶段的学生各1名，以咨询身份参加。参议院每年选举；另选2名符合资格的教授替补。法定人数为5名有表决权成员，按出席者多数作决定，评价时不得弃权，平票由主席决定。</li>
+<li><strong>§4（第3页）流程</strong>：先评价作品；必要时追加面谈。</li>
+<li><strong>§6(2)–(4)（第3页）分流</strong>：仅凭作品已明确合格者，直接认定适合/卓越天赋；仅凭作品已明确不合格者，直接不认定且不进入后续；无法明确决定者，由委员会决定进入专业面谈。面谈以作品为基础，讨论造型基本问题与艺术关联。</li>
+</ul>
+<h5 id="portfolio--e-官方评价维度-2">E. 官方评价维度</h5>
+<p>第3页 §5 对作品及必要时的补充面谈，特别规定三项标准：</p>
+<ol>
+<li><strong>künstlerische Gestaltungsfähigkeit</strong>：艺术塑造/构成能力；</li>
+<li><strong>Realisierungsfähigkeit in den gewählten künstlerischen Medien</strong>：在所选艺术媒介中的实现能力；</li>
+<li><strong>künstlerische Konzeption und Intensität</strong>：艺术构想与强度。</li>
+</ol>
+<p>这是法定评价维度；学校并未在规章中另列“技巧、原创性、个人风格”等独立评分项，不宜自行扩写成官方维度。</p>
+<h5 id="portfolio--f-评分与合成方法-2">F. 评分与合成方法</h5>
+<ul>
+<li>§6(1)：三项标准被<strong>合并为一个共同成绩（gemeinsame Note）</strong>。</li>
+<li>成绩1＝卓越艺术天赋；成绩2＝艺术适合性；成绩3＝艺术适合性不足。</li>
+<li>评分是委员会多数决定；与多数结论不同的个别评价须另行记录。</li>
+<li>规章未规定三项标准的数值权重、算术公式或作品与面谈的百分比分配。面谈是疑难个案的补充程序，而非所有申请人都必经、也不是单独固定占比。</li>
+</ul>
+<h5 id="portfolio--g-通过与录取规则-2">G. 通过与录取规则</h5>
+<ul>
+<li>获共同成绩1者：认定“hervorragende künstlerische Begabung”，可在无 Hochschulreife 时满足 Freie Kunst 的特殊入学条件（§1(1)、§6(1)）。</li>
+<li>获共同成绩2者：认定“künstlerische Eignung”。</li>
+<li>获共同成绩3者：不认定艺术适合性。</li>
+<li>§7（第3–4页）：认定成功者取得证明；未认定者收到附法律救济说明的书面决定。</li>
+<li>该 Feststellungsverfahren 决定的是艺术适合性/卓越天赋。规章未给出按分数排序或固定录取名额；正式注册还需满足相应的一般条件。当前申请页还说明，从2026/27评定程序起，成功分配的名额不可延期保留。</li>
+</ul>
+<h5 id="portfolio--h-证据索引-2">H. 证据索引</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 20" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 20</caption>
+<thead>
+<tr>
+<th scope="col">事项</th>
+<th scope="col">官方文件</th>
+<th align="right">年份</th>
+<th scope="col">页码/条款</th>
+<th scope="col">等级</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">至少20件原作、例外及其余材料</th>
+<td><a href="https://www.kunstakademie-muenster.de/fileadmin/media/Website_2018/Verwaltung/Dez1_akad_stud_ang/ordnungen/20251111_Feststellungsordnung_FK_Fassung_6_AeO.pdf" target="_blank" rel="noopener noreferrer">Feststellungsordnung，第六次修订文本</a></td>
+<td align="right">2025</td>
+<td>第1–2页，§1(4)</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">委员会构成及多数决定</th>
+<td>同上</td>
+<td align="right">2025</td>
+<td>第2页，§3</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">三项评价标准</th>
+<td>同上</td>
+<td align="right">2025</td>
+<td>第3页，§5</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">共同成绩1/2/3与三路分流</th>
+<td>同上</td>
+<td align="right">2025</td>
+<td>第3页，§6</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">当前原作/数字原作操作要求</th>
+<td><a href="https://www.kunstakademie-muenster.de/bewerbung" target="_blank" rel="noopener noreferrer">Bewerbung</a></td>
+<td align="right">当前页（2027/28轮次）</td>
+<td>“Art und Umfang… / Originale Arbeiten”</td>
+<td>Level 2</td>
+</tr>
+<tr><th scope="row">官网确认现行版本</th>
+<td><a href="https://www.kunstakademie-muenster.de/infos-fuer-studierende/ordnungen-und-bekanntmachungen/" target="_blank" rel="noopener noreferrer">Ordnungen und Bekanntmachungen</a></td>
+<td align="right">当前页</td>
+<td>Freie Kunst / Rechtsgrundlagen</td>
+<td>Level 2</td>
+</tr>
+</tbody></table></div>
+<h5 id="portfolio--i-目前无法确认-2">I. 【目前无法确认】</h5>
+<ul>
+<li>【目前无法确认】三项法定维度各自权重、逐项分数或评分锚点；规章只规定合并共同成绩。</li>
+<li>【目前无法确认】何种作品表现会被委员会认定为“明确”合格或不合格，从而免去面谈；没有公开量化线。</li>
+<li>【目前无法确认】面谈时长、面谈单独成绩及其占比；现行规章均未规定。</li>
+<li>【目前无法确认】委员会成绩1、2内部是否还有非公开细分排序，以及当申请人多于可用名额时的同分/候补规则。</li>
+</ul>
+<hr>
+<h4 id="portfolio--14-burg-giebichenstein-kunsthochschule-halle-diplom-malerei-grafik-diplom-plastik">14. Burg Giebichenstein Kunsthochschule Halle — Diplom Malerei/Grafik、Diplom Plastik</h4>
+<p><strong>2027/28 状态：</strong> 2027 年度 Verfahrensregelung 尚未公布。长期评价维度来自现行规则体系；30+20+20+30 与各通过线只对 2026 年度官方公报已确认，绝不自动外推到 2027。【Level 1】</p>
+<h5 id="portfolio--a-项目与结论等级-3">A. 项目与结论等级</h5>
+<ul>
+<li>项目：Diplomstudiengänge <strong>Malerei/Grafik</strong> 与 <strong>Plastik</strong>；2026年度两项目适用同一套 Fachbereich Kunst 计分表。</li>
+<li><strong>结论等级：A</strong>。2026年度程序规则以官方 Amtsblatt 公布，精确列出 Mappe、两项任务、面谈的分数和双重通过线；长期 Aufnahmeprüfungsordnung 列出七项评价维度。</li>
+</ul>
+<h5 id="portfolio--b-现行法源与适用范围-3">B. 现行法源与适用范围</h5>
+<ul>
+<li><a href="https://www.burg-halle.de/media/documents/Allgemeine_Info_pdfs/Amtsblattausgaben/WEB_Amtsblatt_24._Jahrgang__Nr._5_Halle__Saale__15.12.2025__002_.pdf" target="_blank" rel="noopener noreferrer">Amtsblatt 24. Jahrgang, Nr. 5, 15.12.2025：2026年度 Aufnahmeprüfung Verfahrensregelung</a>，规则于01.12.2025追溯生效，仅适用于2026年度；Malerei/Grafik、Plastik 明列于适用项目。证据：Level 1。</li>
+<li><a href="https://www.burg-halle.de/media/documents/Hochschule/Studium/Amtsblatt_2004-01.pdf" target="_blank" rel="noopener noreferrer">Amtsblatt 4. Jahrgang Nr. 1，25.02.2004：第一修改后的 Aufnahmeprüfungsordnung</a>，PDF第3–4页（公报页3–4）§6正式公布七项评价维度、点数原则与一般通过逻辑；<a href="https://www.burg-halle.de/media/documents/Hochschule/Studium/Amtsblatt_06_2020.pdf" target="_blank" rel="noopener noreferrer">Amtsblatt 19. Jahrgang Nr. 6，25.11.2020</a>，PDF第5–8页公布第五次修订并更新法规名称/术语。两者均为 Level 1。</li>
+<li><a href="https://www.burg-halle.de/media/documents/Hochschule/Studium/Aufnahmepr%C3%BCfungsordnung_Nichtamtliche_Lesefassung-04.11.2020-2.pdf" target="_blank" rel="noopener noreferrer">《Aufnahmeprüfungsordnung》非官方合并阅读版，最后修订 04.11.2020</a>由学校官网托管，仅便于连续阅读；<strong>不单独计作 Level 1，法律依据以上述原始 Amtsblatt 为准</strong>。</li>
+<li><a href="https://www.burg-halle.de/en/article/details/a/faq-fuer-bewerberinnen" target="_blank" rel="noopener noreferrer">当前申请 FAQ（2026/27）</a>核对文件上传、动机陈述和当期流程。证据：Level 2。</li>
+</ul>
+<h5 id="portfolio--c-提交要求-不等同于评价维度-3">C. 提交要求（不等同于评价维度）</h5>
+<p>依据2026年度规则（Amtsblatt 第2–3页）及当前 FAQ：</p>
+<ul>
+<li>Fachbereich Kunst 的数字 Mappe 于01.12.2025 14:00至17.02.2026 14:00通过 Service-Portal 提交；单人最多50 MB。</li>
+<li>数字 Mappe <strong>至多20件工作样本</strong>，须本人完成；可含绘画、对象、摄影等，应能体现个人方法、观察方式及对所选专业/方向的兴趣。速写本节选算1件作品。除 Zeitbasierte Künste 外，艺术学院其他方向不接受影音作品数据作为该类提交。</li>
+<li>当前 FAQ 同时列出：表格式简历（PDF）、证件照、学校毕业/Abitur证明、最多3000字符的学习意向/动机说明、Mappe PDF；国际申请另有 VPD 等要求。</li>
+<li>数量、格式、文件大小是提交要求；“个人方法/观察方式/专业兴趣”是官方对 Mappe 内容呈现的说明，但正式跨环节评价维度仍以 §6(3)七项标准为准。</li>
+</ul>
+<h5 id="portfolio--d-评价流程与评审主体-3">D. 评价流程与评审主体</h5>
+<ul>
+<li>2026年度规则第3页 (2)：Mappe 与材料审查后，自02.03.2026起通知是否进入现场考试及面谈；Fachbereich Kunst 的考试任务与面谈于23.–27.03.2026现场进行。</li>
+<li>长期规则 §4（第3页）：各项目通常设7–12人的 Prüfungsausschuss（5–8名教师、1–2名相关员工、1–2名学生；学生仅咨询票），按出席多数决定；各具体任务由至少2名教师组成的 Prüfungskommission 评审。</li>
+<li>长期规则 §5（第3–4页）：程序分 Vorauswahl 与 Hauptverfahren；只有达到附件所定预选门槛者进入主程序。</li>
+</ul>
+<h5 id="portfolio--e-官方评价维度-3">E. 官方评价维度</h5>
+<p>长期 Aufnahmeprüfungsordnung 第4页 §6(3)列七项：</p>
+<ol>
+<li><strong>Wahrnehmungsvermögen</strong>：感知能力；</li>
+<li><strong>Darstellungs- und Ausdrucksvermögen</strong>：呈现与表达能力；</li>
+<li><strong>Vorstellungs- und Abstraktionsvermögen</strong>：想象与抽象能力；</li>
+<li><strong>Problemerkennung und Analysevermögen</strong>：问题识别与分析能力；</li>
+<li><strong>Phantasie und Kreativität</strong>：想象力与创造力；</li>
+<li><strong>Fachspezifische Befähigung</strong>：专业特定能力；</li>
+<li><strong>Motivationslage</strong>：动机状态。</li>
+</ol>
+<p>同条 §6(2)还解释各证据载体：Mappe 提供对能力的第一印象；现场任务考察不同时间范围内解决艺术/设计具体任务；面谈围绕一项或多项考试任务讨论动机，以形成对艺术/设计潜力和个人潜力的整体印象。</p>
+<h5 id="portfolio--f-评分与合成方法-3">F. 评分与合成方法</h5>
+<p>2026年度规则附件 <strong>Amtsblatt第7页（PDF第7页）</strong> 对 Malerei/Grafik、Plastik 规定：</p>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 21" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 21</caption>
+<thead>
+<tr>
+<th scope="col">环节</th>
+<th align="right">满分</th>
+<th scope="col">进入/通过条件</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">预选：数字 Mappe</th>
+<td align="right">30</td>
+<td><strong>至少15/30</strong>方进入主程序</td>
+</tr>
+<tr><th scope="row">主程序：中央考试任务</th>
+<td align="right">20</td>
+<td>计入总分</td>
+</tr>
+<tr><th scope="row">主程序：专业特定考试任务</th>
+<td align="right">20</td>
+<td>计入总分</td>
+</tr>
+<tr><th scope="row">主程序：专业面谈</th>
+<td align="right">30</td>
+<td>最终通过还要求<strong>至少15/30</strong></td>
+</tr>
+<tr><th scope="row">合计</th>
+<td align="right">100</td>
+<td>普通申请人至少40/100，且面谈至少15/30</td>
+</tr>
+</tbody></table></div>
+<p>因此，Mappe占总分30%，两项任务各20%，面谈30%；预选线与最终线是<strong>双重门槛</strong>，不能只看总分。</p>
+<h5 id="portfolio--g-通过与录取规则-3">G. 通过与录取规则</h5>
+<ul>
+<li>有 Allgemeine Hochschulreife 或等同资格：总分<strong>至少40/100</strong>，且面谈<strong>至少15/30</strong>；此外先须 Mappe <strong>至少15/30</strong>才能进入主程序。</li>
+<li>无 Allgemeine Hochschulreife：2026年度艺术学院表格规定总分<strong>至少50/100</strong>，且面谈<strong>至少15/30</strong>；同样先过 Mappe 15/30预选线。</li>
+<li>长期规则 §7（第5页）补充：无 Abitur 的特殊路径通常还考虑职业教育/职业经验；专业面谈应扩展至至少15分钟并基于专业问题，由2名评审对学习能力形成书面意见；最终由 Fachbereichsrat 根据 Prüfungsausschuss 建议决定学习资格。2026年度具体分数门槛以当年 Level 1 公报的50/100为准。</li>
+<li>通过上述门槛表示获得项目相关艺术/设计能力认定；所查文件未公布通过者之间的二次排名、名额分配或候补算法。</li>
+</ul>
+<h5 id="portfolio--h-证据索引-3">H. 证据索引</h5>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 22" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 22</caption>
+<thead>
+<tr>
+<th scope="col">事项</th>
+<th scope="col">官方文件</th>
+<th align="right">年份</th>
+<th scope="col">页码/条款</th>
+<th scope="col">等级</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">数字 Mappe时间、50 MB、至多20件及内容说明</th>
+<td><a href="https://www.burg-halle.de/media/documents/Allgemeine_Info_pdfs/Amtsblattausgaben/WEB_Amtsblatt_24._Jahrgang__Nr._5_Halle__Saale__15.12.2025__002_.pdf" target="_blank" rel="noopener noreferrer">2026 Verfahrensregelung / Amtsblatt 5/2025</a></td>
+<td align="right">2025发布、适用2026</td>
+<td>Amtsblatt第2–3页，(1)</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">现场考试与面谈流程</th>
+<td>同上</td>
+<td align="right">2026</td>
+<td>Amtsblatt第3页，(2)</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">30+20+20+30计分及三条门槛</th>
+<td>同上</td>
+<td align="right">2026</td>
+<td><strong>Amtsblatt第7页（PDF第7页），Anlage“Aufnahmeprüfung FB Kunst”</strong></td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">七项评价维度与一般评价逻辑</th>
+<td><a href="https://www.burg-halle.de/media/documents/Hochschule/Studium/Amtsblatt_2004-01.pdf" target="_blank" rel="noopener noreferrer">Amtsblatt 2004/1</a></td>
+<td align="right">2004</td>
+<td>PDF第3–4页（公报页3–4），§6</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">2020修订及现行术语链</th>
+<td><a href="https://www.burg-halle.de/media/documents/Hochschule/Studium/Amtsblatt_06_2020.pdf" target="_blank" rel="noopener noreferrer">Amtsblatt 2020/6</a></td>
+<td align="right">2020</td>
+<td>PDF第5–8页，第五次修改 Satzung</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">评审主体与无Abitur补充程序</th>
+<td><a href="https://www.burg-halle.de/media/documents/Hochschule/Studium/Amtsblatt_2004-01.pdf" target="_blank" rel="noopener noreferrer">Amtsblatt 2004/1</a>，并结合<a href="https://www.burg-halle.de/media/documents/Hochschule/Studium/Amtsblatt_06_2020.pdf" target="_blank" rel="noopener noreferrer">Amtsblatt 2020/6修订</a></td>
+<td align="right">2004＋2020</td>
+<td>2004公报 PDF第3页§4、第4页§7；2020公报第五次修改 Satzung</td>
+<td>Level 1</td>
+</tr>
+<tr><th scope="row">当前一般申请材料</th>
+<td><a href="https://www.burg-halle.de/en/article/details/a/faq-fuer-bewerberinnen" target="_blank" rel="noopener noreferrer">FAQ für Bewerber*innen</a></td>
+<td align="right">2026/27</td>
+<td>“Welche Unterlagen…”</td>
+<td>Level 2</td>
+</tr>
+</tbody></table></div>
+<h5 id="portfolio--i-目前无法确认-3">I. 【目前无法确认】</h5>
+<ul>
+<li>【目前无法确认】七项评价维度在 Mappe、中央任务、专业任务、面谈四个环节中的逐项权重或评分表；官方只公开环节分值，未公开 rubric。</li>
+<li>【目前无法确认】每个20分任务如何映射到七项维度、每一分的评分锚点、两名以上评审如何合成个人分。</li>
+<li>【目前无法确认】达到40/100（或无Abitur的50/100）及面谈门槛后，是否仍按总分排序分配有限名额；所查规章没有公开排名算法。</li>
+<li>【目前无法确认】2027及以后是否沿用2026年度的30+20+20+30结构；该 Verfahrensregelung 明文仅对2026年度有效。</li>
+</ul>
+<hr>
+<h4 id="portfolio--15-hochschule-der-bildenden-kunste-saar-hbksaar">15. Hochschule der Bildenden Künste Saar（HBKsaar）</h4>
+<p><strong>对应专业：</strong> Freie Kunst（Bachelor / Diplom 首次申请）<br><strong>机制类型：B（官方规定评价维度、二元结果；无公开数值分数）</strong></p>
+<p><strong>2027/28 状态：</strong> 当前申请页已明确标注 Wintersemester 2027/28（预计2027年4月中旬开放、5月31日截止）及 Freie Kunst 的现场 <code>Prüfungsgespräch</code>；评价维度仍依据学校当前法务索引列示的长期法规。具体谈话日期与邀请安排待当届通知。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-7">A. 作品集在申请中的作用</h5>
+<ul>
+<li>现行法定结构是“Vorauswahl（实践作品样本）→ mündliche/praktische Prüfung”。作品集属于第一阶段；它决定申请人能否进入后续考试，而不是单独直接录取。</li>
+<li>《Eignungsprüfungsverordnung》§4(3)–(4)规定预选依据提交作品；仅当作品未已显露缺乏本专业所需的 <code>Eignung und Befähigung</code> 时，才进入下一阶段。这个措辞建立了明确淘汰机制，但不是量化门槛。</li>
+<li>Freie Kunst 当前申请页要求提交约 20 件原创作品；这是【提交要求】，不能据此推出作品数量的评分权重。</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-7">B. 是否存在官方评分标准</h5>
+<ul>
+<li><strong>有正式评价维度，但没有公开数值分数、百分比或作品集单独权重。</strong></li>
+<li>官方法规要求预选与口头/实践考试均依据同一组三项标准，逐环节评价并合成为总结果；结果只有 <code>bestanden / nicht bestanden</code>。</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-7">C. 官方评价维度</h5>
+<p>《Verordnung über die Eignungsprüfung … für Bachelor- und Diplomstudiengänge》§6(1)（PDF 第3页）明确列出：</p>
+<ol>
+<li><code>künstlerisch-gestalterische Entwicklungsfähigkeit</code>：艺术—造型发展的能力；法规未进一步把它量化为“潜力占比”。</li>
+<li><code>künstlerisch-gestalterische Umsetzungsfähigkeit</code>：把艺术—造型意图落实为作品的能力。</li>
+<li><code>künstlerisch-gestalterisches Reflexionsvermögen</code>：对艺术—造型问题与自身实践进行反思的能力。</li>
+</ol>
+<p>这三项适用于预选和口头/实践考试。§1(2)把考试目的表述为确认申请人具有所选专业需要的 <code>Vorbildung und künstlerisch-kreative Eignung</code>。<br><strong>证据等级：Level 1。</strong></p>
+<h5 id="portfolio--d-具体分值-8">D. 具体分值</h5>
+<ul>
+<li>官方未公布具体分值、百分比、单项权重或 Bewertungsbogen。</li>
+<li>§6(2)只规定每个环节由专业考试委员会评价，并汇总为 <code>bestanden / nicht bestanden</code>。</li>
+</ul>
+<h5 id="portfolio--e-通过标准-7">E. 通过标准</h5>
+<ul>
+<li>普通艺术适合度：预选和口头/实践考试均纳入评价，最终结果为通过/不通过；公开法规没有数值通过线。</li>
+<li>无常规 HZB 的特殊路径使用 <code>besondere künstlerische Begabung</code>。§6仍要求依据上述三项维度；公开文件没有另给“特别才能”的量化阈值。</li>
+<li>缺席、无正当理由退出、欺骗或违规可导致相应考试或整个考试“不通过”（§10）。</li>
+</ul>
+<h5 id="portfolio--f-评审人员-7">F. 评审人员</h5>
+<ul>
+<li>学科专属 <code>Prüfungsausschuss</code> 负责准备和实施；至少 3 名教师，其中至少 2 名 Hochschullehrer*innen（2018 修订后的称谓）。</li>
+<li>委员等票权；至少 3 人在场方有表决能力；简单多数；不得弃权、秘密投票或委托投票（§3）。</li>
+<li>预选与口头/实践考试分别制作记录，所有委员签署；记录须表明判断依据（§8）。</li>
+</ul>
+<h5 id="portfolio--g-现场考试-7">G. 现场考试</h5>
+<ul>
+<li>**有。**法规称为 <code>mündliche/praktische Prüfung</code>，以围绕造型—专业问题的考试谈话实施，涵盖绘画、图形、媒介、雕塑/空间表现的基础问题、关联和专业问题；亦确认与专业相关的一般教育水平（§5）。</li>
+<li>现场阶段沿用上述三项维度；无公开分值或时长。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-7">H. 官方文件</h5>
+<ol>
+<li><a href="https://www.hbksaar.de/files/hbksaar/download/hochschulrecht/Recht%20der%20Studierenden/Verordnung_Eignungspruefung_dip_ba.pdf" target="_blank" rel="noopener noreferrer">Verordnung über die Eignungsprüfung … für Bachelor- und Diplomstudiengänge sowie sonstige einstufige Studiengänge（2011；当前官方法律页仍列示）</a>——PDF 第1页 §1；第2页 §3及§4开头；第3页 §4余文、§5、§6(1)；第4页 §6(2)–§9；<strong>Level 1</strong>。</li>
+<li><a href="https://www.hbksaar.de/files/hbksaar/download/hochschulrecht/Recht%20der%20Studierenden/Verordnung-zur-aenderung-der-eignungspruefungsverordnung_2018.pdf" target="_blank" rel="noopener noreferrer">2018 年修订条例</a>——PDF 第1页；<strong>Level 1</strong>。</li>
+<li><a href="https://www.hbksaar.de/files/hbksaar/download/hochschulrecht/Recht%20der%20Studierenden/aenderung_verordnung-eignungspr%C3%BCfung_Saarl-Digitalisierungsges_dez21.pdf" target="_blank" rel="noopener noreferrer">2021 年修订条例</a>——PDF 第1页 Article 263；<strong>Level 1</strong>。</li>
+<li><a href="https://www.hbksaar.de/service/hochschulrecht" target="_blank" rel="noopener noreferrer">HBKsaar Hochschulrecht 官方索引</a>——“Zulassungsverfahren und Immatrikulation”；<strong>Level 2（用于确认法规仍由学校列示）</strong>。</li>
+<li><a href="https://www.hbksaar.de/bewerbung-informationen" target="_blank" rel="noopener noreferrer">当前申请与作品集流程</a>——“Mappenabgabe / Bewerbungsprozess”；<strong>Level 2</strong>。</li>
+</ol>
+<h5 id="portfolio--i-研究结论-7">I. 研究结论</h5>
+<p>可以确认 HBKsaar 正式看三类能力：发展、落实和反思；作品集是预选门槛，后续口头/实践考试再按同一标准评定。不能确认三项权重、逐项分数、作品集在总结果中的比例或内部是否使用更细表格。</p>
+<p><strong>【目前无法确认】</strong></p>
+<ul>
+<li>委员是否对三项逐项填分，或仅形成整体二元判断；</li>
+<li>三项是否等权；作品集与口试各占多少；</li>
+<li>Freie Kunst 各工作室教授是否使用未公开的补充尺度；</li>
+<li>2027/28 是否会修改 2011 基础法规或考试形式；</li>
+<li>当前网页称 <code>Prüfungsgespräch</code> 与法规称 <code>mündliche/praktische Prüfung</code> 在 2027 邀请函中的具体对应。</li>
+</ul>
+<hr>
+<h4 id="portfolio--16-hochschule-fur-kunste-im-sozialen-ottersberg-hks-ottersberg">16. Hochschule für Künste im Sozialen, Ottersberg（HKS Ottersberg）</h4>
+<p><strong>对应专业：</strong> Künste im Sozialen，Schwerpunkt Freie Kunst（B.F.A.）<br><strong>机制类型：B（法规只公开通过/淘汰机制；当前官方专业页另明确三项非量化选拔取向）</strong></p>
+<p><strong>2027/28 状态：</strong> 目标周期的场次形式尚未公布；当前申请页只确认2026-09-11为数字 Aufnahmetag。下述法规结构为长期规则，现场/数字形式必须以2027邀请为准。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-8">A. 作品集在申请中的作用</h5>
+<ul>
+<li>对具有常规 HZB 的现行 <code>Künste im Sozialen</code> 申请人，官方流程不是传统“先交完整 Mappe 再筛选”：艺术能力在 Aufnahmetag 的艺术任务和面谈中确认。</li>
+<li><strong>只有无 HZB、申请以 <code>überragende künstlerische Befähigung</code> 替代 HZB 者</strong>，当前申请页明确要求预先上传 10 件本人艺术作品合并 PDF，并参加 <code>Sonderbegabten-Prüfung</code>。因此不能把“10 件作品”写成所有申请人的统一作品集评分环节。</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-8">B. 是否存在官方评分标准</h5>
+<ul>
+<li>2025 现行《Zulassungsordnung KiS》规定了委员会、考试组成、记录和不通过/复考机制，但<strong>没有公开具体评价维度、分值、权重、评分档或通过分数</strong>。</li>
+<li>当前官方专业页在招生流程中明确写道，决定因素不是分数，而是申请人的 <code>Persönlichkeit</code>、<code>kreatives Potenzial</code> 与 <code>Engagement</code>。这是 <strong>Level 2 的学校公开选拔取向</strong>，足以把本校归为 B 型；但它不是 Level 1 法规中的逐项评分表，也没有操作定义、权重或通过线。</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-8">C. 官方评价维度</h5>
+<ul>
+<li>**Level 1 法规：**只给目标术语 <code>besondere künstlerische Befähigung</code>；无 HZB 路径为 <code>überragende künstlerische Befähigung</code>。法规没有进一步定义这些术语的构成。</li>
+<li>**Level 2 当前官方专业页：**明确点名 <code>Persönlichkeit</code>（人格/个人呈现）、<code>kreatives Potenzial</code>（创造潜力）与 <code>Engagement</code>（投入/参与意愿）为选拔所看因素。学校没有进一步定义三者，也没有说明委员会如何记录或合成判断，故不能自行等权或分配比例。</li>
+<li>当前申请页还写艺术部分会处理不同问题、发展自己的想法并展示结果；学校总览写小组作业、展示和个人面谈。这些属于【考试内容/形式】，不能改写为“团队能力/展示能力各占分”。</li>
+</ul>
+<h5 id="portfolio--d-具体分值-9">D. 具体分值</h5>
+<p>官方未公布具体分值、百分比、成绩档或 Bewertungsbogen。</p>
+<h5 id="portfolio--e-通过标准-8">E. 通过标准</h5>
+<ul>
+<li>申请人须在由艺术任务与面谈构成的程序中证明艺术能力；不通过者可重考两次，但若 Prüfungsteam 不支持再次重考则除外（§5.1）。</li>
+<li>没有 HZB 且又未证明 <code>überragende künstlerische Befähigung</code> 时不得授予学位名额（§5.4）。</li>
+<li>公开法规没有最低分或对“特别/卓越艺术能力”的量化定义。</li>
+</ul>
+<h5 id="portfolio--f-评审人员-8">F. 评审人员</h5>
+<ul>
+<li><code>Zulassungsausschuss</code> 负责预选、程序和录取决定；由参议院任命，至少 3 名来自不同重点方向、具考试资格的教师，另有 1 名学生代表以咨询票参与（§2）。</li>
+<li>可另设 <code>Prüfungsteams</code>，每队至少 2 名具考试资格且专业相关的教师。</li>
+<li>结果须有记录并由 Prüfungsteam 成员签署（§4.3）；法规没有说明必须一致或简单多数。</li>
+</ul>
+<h5 id="portfolio--g-现场考试-8">G. 现场考试</h5>
+<ul>
+<li><strong>有艺术适合度日；是否现场或数字须以当届通知为准。</strong> 2026-09-11 的官方场次为数字形式，不能据此推定2027。</li>
+<li>正式组成是 <code>Zulassungsprüfung mit künstlerischer Aufgabenstellung</code> + <code>Zulassungsgespräch</code>（§4.2）。2026 数字场次的官方页描述为：处理不同问题、发展个人想法、展示结果，最后参加面谈。</li>
+<li>无公开评分维度、分数或通过线。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-8">H. 官方文件</h5>
+<ol>
+<li><a href="https://www.hks-ottersberg.de/media/dokumente/downloads/ordnungen/A3d_Zulassungsordnung_KiS.pdf" target="_blank" rel="noopener noreferrer">Zulassungsordnung Künste im Sozialen（Stand 19.03.2025）</a>——PDF 第1页 §2；第2页 §3.1.2、§3.3、§4；第3页 §5；<strong>Level 1</strong>。</li>
+<li><a href="https://www.hks-ottersberg.de/hochschule/service/downloads.php" target="_blank" rel="noopener noreferrer">HKS 官方下载索引</a>——“Zulassungsordnung Künste im Sozialen”；<strong>Level 2</strong>。</li>
+<li><a href="https://www.hks-ottersberg.de/studium/bewerbung/" target="_blank" rel="noopener noreferrer">现行在线申请/2026 Aufnahmetag</a>——“Upload der Bewerbungsunterlagen / Aufnahmeverfahren”；<strong>Level 2</strong>。</li>
+<li><a href="https://www.hks-ottersberg.de/studium/kuenste_im_sozialen/index.php" target="_blank" rel="noopener noreferrer">Künste im Sozialen 专业总览</a>——<code>Persönlichkeit / kreatives Potenzial / Engagement</code>，以及艺术小组作业、展示、个别面谈；<strong>Level 2</strong>。</li>
+</ol>
+<h5 id="portfolio--i-研究结论-8">I. 研究结论</h5>
+<p>可以确认 HKS 现行程序通过艺术任务和面谈确认艺术能力；无 HZB 时另以 10 件数字作品支持 <code>Sonderbegabten-Prüfung</code>。Level 2 专业页明确点名人格/个人呈现、创造潜力与投入为选拔取向，但 Level 1 法规没有公开操作性维度、分值或量化定义。因此不能从“发展想法/展示结果”自行推导额外评分项。</p>
+<p><strong>【教授个人教学 / 选拔倾向】</strong></p>
+<p>针对学校官方 Freie Kunst 教师名录、现任专业负责人及教师介绍页进行了定向检索；这些页面公开媒介与教学领域，但截至基准日未找到现任教师明确说明“我如何选择入学申请人”或个人作品集淘汰尺度的可核实表述。官方专业页的 <code>Persönlichkeit / kreatives Potenzial / Engagement</code> 是学校层面的 Level 2 信息，不归因于某位教授，也不升级为法规评分表。</p>
+<p><strong>【目前无法确认】</strong></p>
+<ul>
+<li>Zulassungsausschuss / Prüfungsteam 如何表决；</li>
+<li>艺术任务、展示、谈话各自权重；</li>
+<li>无 HZB 者 10 件作品是否单独评分、如何影响最终判断；</li>
+<li><code>besondere</code> 与 <code>überragende künstlerische Befähigung</code> 的内部区分尺度；</li>
+<li>是否存在未公开内部评分表；</li>
+<li>2027/28 Aufnahmetag 是现场还是线上及当届任务结构。</li>
+</ul>
+<hr>
+<h4 id="portfolio--17-hochschule-fur-grafik-und-buchkunst-leipzig-hgb-leipzig">17. Hochschule für Grafik und Buchkunst Leipzig（HGB Leipzig）</h4>
+<p><strong>对应专业：</strong> Malerei/Grafik，Diplom Bildende Kunst<br><strong>机制类型：A（明确评价维度与三级正式等级；无数值权重）</strong></p>
+<p><strong>2027/28 状态：</strong> 2027当届题目、日期与谈话安排尚未公布；2026-05-14《Immatrikulationsordnung》是截至基准日现行长期规则，当前申请页主要仍说明2026执行流程。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-9">A. 作品集在申请中的作用</h5>
+<ul>
+<li>《Immatrikulationsordnung》§6 将程序明确拆为：<code>Mappenvorauswahl</code>（决定是否受邀）→ <code>Eignungsprüfung</code> → 确认专业相关艺术/设计适合度。</li>
+<li>§8 明确作品集预选依据提交的工作样本，并使用 §12(1)同一四项正式标准；负面结果即不进入现场考试。</li>
+<li>作品集不是辅助材料，也不是独立直接录取；它是第一轮淘汰环节。</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-9">B. 是否存在官方评分标准</h5>
+<ul>
+<li>有正式评价维度与 <code>Rang 1 / Rang 2 / Rang 3</code> 三级结果；按本报告“公开可操作等级即属于 A 型”的统一口径，本校归 A，而不是因没有百分比就降为 B。</li>
+<li>没有分值、百分比或各维度权重。</li>
+<li>作品集预选和现场创作均按同一四项标准评价；最终适合度分 <code>Rang 1 / Rang 2 / Rang 3</code>。</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-9">C. 官方评价维度</h5>
+<p>2026-05-14 现行《Immatrikulationsordnung》§12(1)（PDF 第8页）规定：</p>
+<ol>
+<li><code>künstlerische Gestaltungsfähigkeit</code>：艺术造型/构成能力；</li>
+<li><code>Realisierungsfähigkeit</code>：将艺术构想实现出来的能力；</li>
+<li><code>künstlerische Konzeption</code>：艺术构思/概念形成能力；</li>
+<li><code>Intensität</code>：投入或艺术处理的强度。法规未进一步定义，不能自行解释为作品数量或制作时长。</li>
+</ol>
+<p>§6(1)补充总体目标：艺术/设计能力应足以“让人期待能够达到学习目标”（<code>das Erreichen des Studienziels erwarten lässt</code>）。<br><strong>证据等级：Level 1。</strong></p>
+<h5 id="portfolio--d-具体分值-10">D. 具体分值</h5>
+<ul>
+<li>无公开数值、权重或逐项打分表。</li>
+<li>结果采用三级：Rang 1（特别艺术适合度）、Rang 2（艺术适合度）、Rang 3（艺术适合度不足）。不要把“Rang”误写为 1–3 分。</li>
+</ul>
+<h5 id="portfolio--e-通过标准-9">E. 通过标准</h5>
+<ul>
+<li>Rang 3 明确为不充分；Rang 1/2分别表示特别/一般艺术适合度。</li>
+<li>无 HZB 的例外通道必须达到 Rang 1，学校申请页亦明确该点；普通 HZB 申请的艺术门槛为证明专业相关艺术适合度（Rang 2 或更高）。</li>
+<li>多个考试部分分别评价，再形成总评（§12(3)）；无公开算法。</li>
+<li>预选记录须含结果和简短文字评语（§8(4)）；正式考试记录须含评价和简短理由（§14）。</li>
+</ul>
+<h5 id="portfolio--f-评审人员-9">F. 评审人员</h5>
+<ul>
+<li>各 Diplom 专业的 <code>Zulassungskommission</code> 至少 5 名由相应专业领域提名、具法定考试资格的成员，由参议院任命（§11(1)）。</li>
+<li>该委员会组织考试并确认考试结果。法规没有在该条公开逐人评分或多数表决规则。</li>
+</ul>
+<h5 id="portfolio--g-现场考试-9">G. 现场考试</h5>
+<ul>
+<li><strong>有。</strong>§9规定现场/可含数字形式的 <code>praktische Prüfung</code>，包含专业相关任务；当前申请页另说明艺术实践部分和考试谈话。</li>
+<li>现场作品沿用 §12(1)四项标准；每部分单独评价并形成总评，无公开分值或时长权重。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-9">H. 官方文件</h5>
+<ol>
+<li><a href="https://www.hgb-leipzig.de/f/e/PDF/Immatrikulationsordnung%20in%20der%20Lesefassung%20vom%2014.05.2026.pdf" target="_blank" rel="noopener noreferrer">Immatrikulationsordnung，Lesefassung 14.05.2026</a>——PDF 第5页 §6；第6–7页 §8–9；第8页 §11、§12(1)；第9页 §12(2)–(3)、§14开头；第10页 §14余文；<strong>Level 1</strong>。</li>
+<li><a href="https://www.hgb-leipzig.de/studium/bewerbung/" target="_blank" rel="noopener noreferrer">HGB 当前申请页</a>——“Bewerbung Diplomstudiengänge / Vorauswahl / Aufnahmeprüfung”；<strong>Level 2</strong>。</li>
+<li><a href="https://www.hgb-leipzig.de/studium/studienordnungen" target="_blank" rel="noopener noreferrer">HGB Studienordnungen 官方索引</a>——确认 2026-05-14 版本；<strong>Level 2</strong>。</li>
+</ol>
+<h5 id="portfolio--i-研究结论-9">I. 研究结论</h5>
+<p>HGB 是公开信息较完整的 <strong>A 型</strong>学校：四项正式维度适用于作品集和考试中制作的作品，作品集决定是否进入下一轮，最终按三种 Rang 判断艺术适合度；但没有公开各项权重、数值或总评算法。当前申请页另称考试含谈话，但法规没有公开谈话的独立量表，不能自行断言谈话逐项按四维打分。</p>
+<p><strong>【目前无法确认】</strong></p>
+<ul>
+<li>四项是否等权；</li>
+<li>作品集、实践题、谈话在总评中的比例；</li>
+<li>委员个人评分如何合并；</li>
+<li>是否存在未公开 Bewertungsbogen；</li>
+<li><code>Intensität</code> 在内部操作中的精确定义；</li>
+<li>2027/28 现场题数量、时长和是否继续含数字环节。</li>
+</ul>
+<hr>
+<h4 id="portfolio--18-bauhaus-universitat-weimar">18. Bauhaus-Universität Weimar</h4>
+<p><strong>对应专业：</strong> Freie Kunst，Diplom<br><strong>机制类型：B（明确评价维度；二元结果，无数值分数）</strong></p>
+<p><strong>2027/28 状态：</strong> 学校项目总览已列申请截止日2027-03-31；评价机制仍依据2022现行长期规章。2027谈话日期与邀请细节尚未公布。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-10">A. 作品集在申请中的作用</h5>
+<ul>
+<li>2022 现行《Eignungsprüfungsordnung》将流程拆为：最多 20 件数字工作样本 → 作品预选决定能否继续 → 约 15 分钟个人适合度谈话并展示部分原作 → 最终结果。</li>
+<li>§4(3)规定预选选择的是作品结果能够显示“具备继续参加考试所需适合度”的申请人。作品集是第一轮门槛，不是独立最终录取。</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-10">B. 是否存在官方评分标准</h5>
+<ul>
+<li>有三项正式能力维度，结果为 <code>bestanden / nicht bestanden</code>；没有公开数值、百分比或权重。</li>
+<li>§6(1)要求每位考官分别评价预选与谈话，再合成为总结果。</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-10">C. 官方评价维度</h5>
+<p>§6(2)（PDF 第3页）把所需艺术能力界定为在所选领域“明显高于平均水平”，并由以下三项体现：</p>
+<ol>
+<li><code>Eigenständigkeit</code>：艺术工作的独立性；法规未把它等同于固定个人风格。</li>
+<li><code>Kreativität</code>：创造性。</li>
+<li><code>Fähigkeit zur künstlerischen Entwicklung</code>：继续进行艺术发展的能力/潜力。</li>
+</ol>
+<p>§6(3)概括评价基础为申请人从事艺术工作的适合度。<br><strong>证据等级：Level 1。</strong></p>
+<h5 id="portfolio--d-具体分值-11">D. 具体分值</h5>
+<p>官方未公布具体分值、百分比或权重；法定结果只有通过/不通过。</p>
+<h5 id="portfolio--e-通过标准-10">E. 通过标准</h5>
+<ul>
+<li>必须整体显示“显著高于平均水平”的独立性、创造力和艺术发展能力（§6(2)）。</li>
+<li>委员会决议简单多数；票数相同由主席票决定（§3(4)）。</li>
+<li>无正当理由缺席/退出、欺骗、抄袭或严重扰乱会造成不通过（§9）。</li>
+</ul>
+<h5 id="portfolio--f-评审人员-10">F. 评审人员</h5>
+<ul>
+<li><code>Eignungsprüfungskommission</code>：2 名本专业 Hochschullehrer*innen、2 名学术员工、1 名本专业学生代表；由专业 Prüfungsausschuss 设置（§3）。</li>
+<li>达到法定出席数后以简单多数决定；全过程制作由全体委员签署的记录，记录必须显示判断依据（§7）。</li>
+</ul>
+<h5 id="portfolio--g-现场考试-10">G. 现场考试</h5>
+<ul>
+<li><strong>有后续个人谈话/原作展示，但现行法规未规定另做绘画 Klausur。</strong></li>
+<li>约 15 分钟个别谈话，可追问艺术主题；展示从数字申请中选取的原作（§5）。</li>
+<li>预选与谈话均按三项维度评价；无分值或单独通过线。</li>
+<li>注意版本冲突：较早招生手册曾出现 Hausaufgabe，但 2022 现行法规和当前专业申请页列出的核心步骤为数字作品预选与谈话。本报告不把旧 Hausaufgabe 当作 2027 事实。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-10">H. 官方文件</h5>
+<ol>
+<li><a href="https://www.uni-weimar.de/fileadmin/user/uni/universitaetsleitung/kanzler/mdu_akad/22/24_2022.pdf" target="_blank" rel="noopener noreferrer">Eignungsprüfungsordnung Freie Kunst，MdU 24/2022</a>——PDF 第2页 §1、§3；第3页 §4–6；第4页 §7；<strong>Level 1</strong>。</li>
+<li><a href="https://www.uni-weimar.de/de/kunst-und-gestaltung/studium/freie-kunst/" target="_blank" rel="noopener noreferrer">Freie Kunst 官方申请页</a>——数字申请、预选和谈话；<strong>Level 2</strong>。</li>
+<li><a href="https://www.uni-weimar.de/de/kunst-und-gestaltung/service/downloads/ordnungen/freie-kunst-und-public-art-an-new-artistic-strategies/" target="_blank" rel="noopener noreferrer">Freie Kunst 法规索引</a>——确认 MdU 24/2022 为当前 Eignungsprüfungsordnung；<strong>Level 2</strong>。</li>
+</ol>
+<h5 id="portfolio--i-研究结论-10">I. 研究结论</h5>
+<p>Weimar 公开告诉申请人，它判断的核心是明显高于平均的独立性、创造性和艺术发展能力。作品集先决定是否进入谈话；委员会随后综合两阶段作二元判断。数值权重和内部表格未公开。</p>
+<p><strong>【目前无法确认】</strong></p>
+<ul>
+<li>三项是否等权以及考官是否逐项给内部数值；</li>
+<li>作品集与谈话的相对权重；</li>
+<li>学生代表是否与其他委员拥有完全相同的内部评价表；</li>
+<li>2027/28 是否另发 Hausaufgabe（现行法规没有该固定步骤）；</li>
+<li>各教授/工作室是否有未公开补充关注点。</li>
+</ul>
+<hr>
+<h4 id="portfolio--19-staatliche-akademie-der-bildenden-kunste-karlsruhe-adbk-karlsruhe">19. Staatliche Akademie der Bildenden Künste Karlsruhe（AdBK Karlsruhe）</h4>
+<p><strong>对应专业：</strong> Freie Kunst（Diplom；Malerei/Grafik 或 Bildhauerei）<br><strong>机制类型：A（公开评价维度、权重、1–5级、计算方法与通过线）</strong></p>
+<p><strong>2027/28 状态：</strong> 当前申请页已说明2027年3—4月开放目标周期申请，但精确日期尚未发布；评价机制仍依据2022 ZIS，是否在申请前修订需复核。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-11">A. 作品集在申请中的作用</h5>
+<ul>
+<li>流程为作品与动机信预选 → 至少 5 小时艺术实践考试（现场或 Hausarbeit）→ 通常约 15 分钟口试；无 HZB 者另有一般教育检查。</li>
+<li>作品集和动机信是预选评分基础。预选达到 4.0 或更好才能进入后续两部分（§13）。</li>
+<li>作品集评价不是“只看是否完整”：§17(3)–(4)规定预选、实践、口试各环节的三维评价都进入同一算术平均。法规没有把三个环节另写成百分比；不应自行换算成“各33.33%”。</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-11">B. 是否存在官方评分标准</h5>
+<ul>
+<li>**有。**三项维度按 5:3:2 加权；每位考官在每个环节对每项给 1–5 级；按规定求算术平均，保留两位且不进位。</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-11">C. 官方评价维度</h5>
+<p>§17(1)（PDF 第15页）规定：</p>
+<ol>
+<li><code>künstlerische Gestaltungsfähigkeit</code>（绘画/图形/雕塑方向的艺术造型能力），<strong>5 倍权重</strong>；</li>
+<li><code>künstlerisch-manuelle Fähigkeiten</code>（相应方向的艺术—手工/操作能力），<strong>3 倍权重</strong>；</li>
+<li><code>Reflexionsvermögen und/oder verbale Darstellung künstlerischer Probleme</code>（反思能力和/或以语言表述艺术问题的能力），<strong>2 倍权重</strong>。</li>
+</ol>
+<p>Malerei/Grafik 申请以绘画/图形方面为重点，Bildhauerei 以雕塑方面为重点（§17(2)）。<br><strong>证据等级：Level 1。</strong></p>
+<h5 id="portfolio--d-具体分值-12">D. 具体分值</h5>
+<ul>
+<li>每项给 <code>Bewertungsstufe 1–5</code>：1 特别卓越、预期能以“非常好”完成；2 卓越、预期“好”；3 仍可预期达到学习目标；4 不足、不能预期达到学习目标；5 不充分（§17(3)）。</li>
+<li>综合成绩为预选、实践、口试各环节、各考官所给评价级别在 5:3:2 权重下的算术平均，保留两位且不向上取整（§17(3)–(4)）。公开规则因此已经说明三阶段评分如何汇入总平均，只是没有另写阶段百分比。</li>
+<li>这里的 5:3:2 是三个<strong>评价维度</strong>的权重，不是作品集/实践/面试三阶段的百分比。</li>
+</ul>
+<h5 id="portfolio--e-通过标准-11">E. 通过标准</h5>
+<ul>
+<li><strong>预选：4.0 或更好</strong>（作品+动机信；§13(2)）。</li>
+<li><strong>最终 Eignungsprüfung：3.0 或更好</strong>（§17(5)）。</li>
+<li>无 HZB 的 Begabtenprüfung：同样须 3.0 或更好，且另须通过一般教育检查；一般教育由委员会多数判断（§15(2)、§17(5)）。</li>
+<li>需要注意：4 级在定义上是“mangelnde Eignung”，但法规仍将 4.0 设为预选进入后续环节的边界；不能自行改成 3.0。</li>
+</ul>
+<h5 id="portfolio--f-评审人员-11">F. 评审人员</h5>
+<ul>
+<li>入学委员会 5–6 名有表决权成员，通常至少分别有 Malerei/Grafik 与 Bildhauerei 代表；成员只能是全职教授，由参议院任命（§20）。</li>
+<li>简单多数；平票由主席决定。可有最多 2 名校内专家作为咨询成员，无表决权。</li>
+<li>记录包括达到的评价级别/成绩，拒绝时附简短理由（§21）。</li>
+</ul>
+<h5 id="portfolio--g-现场考试-11">G. 现场考试</h5>
+<ul>
+<li>**有。**至少 5 小时的图像—实践工作，依所选方向；可现场或作为 Hausarbeit，后者须在口试日交原作（§14）。</li>
+<li>口试通常约 15 分钟，讨论艺术—专业问题，可反思作品集、动机信和实践考试结果（§15）。</li>
+<li>预选、实践、口试均采用 §17 同一三项维度及 1–5 级；无 HZB 另考一般教育。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-11">H. 官方文件</h5>
+<ol>
+<li><a href="https://www.kunstakademie-karlsruhe.de/fileadmin/abk/media/dokumente/allgemeine_Satzungen_Richtlinien/studium_und_lehre/abk_dok_Zulass_und_Immatrikualtionssatzung_Fassung_31.05.2022.pdf" target="_blank" rel="noopener noreferrer">Zulassungs- und Immatrikulationssatzung（Fassung 31.05.2022）</a>——PDF 第13页 §12；第14页 §13–15；第15–16页 §17；第17–18页 §20–21；<strong>Level 1</strong>。</li>
+<li><a href="https://www.kunstakademie-karlsruhe.de/studium/bewerbung/freie-kunst/" target="_blank" rel="noopener noreferrer">Freie Kunst 当前申请页</a>——当届数字工作样本及申请入口；<strong>Level 2</strong>。</li>
+<li><a href="https://www.kunstakademie-karlsruhe.de/studium/bewerbung/arbeitsproben/" target="_blank" rel="noopener noreferrer">Arbeitsproben 官方说明</a>——数字作品与受邀后的原作；<strong>Level 2</strong>。</li>
+<li><a href="https://www.kunstakademie-karlsruhe.de/akademie/organisation/gremien-und-ausschuesse/aufnahmepruefungskommissionen/" target="_blank" rel="noopener noreferrer">当前 Aufnahmeprüfungskommission 名单</a>——<strong>Level 2（人员可能变化）</strong>。</li>
+</ol>
+<h5 id="portfolio--i-研究结论-11">I. 研究结论</h5>
+<p>Karlsruhe 的公开机制较为完整：艺术造型能力、艺术—手工能力、反思/语言表述按 5:3:2 评价；预选 4.0、最终 3.0 是明确边界；预选、实践、口试各自生成的三维评分进入同一算术平均。不能把 5:3:2 误写成“创意/技术/概念”，也不能把它当作三阶段占比。</p>
+<p><strong>【目前无法确认】</strong></p>
+<ul>
+<li>各阶段是否由同一批考官评分，以及缺席/替补情形如何影响进入平均的评分数量；法规给出通常计算结构，但未公开内部操作表；</li>
+<li>数字作品与到场原作之间是否会分别评分；</li>
+<li>委员是否使用公开之外的操作性 Bewertungsbogen；</li>
+<li>2027/28 是否修订 2022 ZIS；</li>
+<li>每位现任教授在委员会内部的个人选择倾向。</li>
+</ul>
+<hr>
+<h4 id="portfolio--20-muthesius-kunsthochschule-kiel">20. Muthesius Kunsthochschule Kiel</h4>
+<p><strong>对应专业：</strong> Freie Kunst（B.F.A.）<br><strong>机制类型：A（公开评价维度、成绩档与两类通过线；未公开三阶段权重）</strong></p>
+<p><strong>2027/28 状态：</strong> 目标 Wintersemester 2027/28 的当届安排尚未发布；当前流程页显示的是 Sommersemester 2027，只能用于佐证数字预选和到校考试的最近执行方式，不能当作目标周期日期。评价条款仍来自当前法务索引列示的2009 Bachelor-EPO。【Level 1 / Level 2】</p>
+<h5 id="portfolio--a-作品集在申请中的作用-12">A. 作品集在申请中的作用</h5>
+<ul>
+<li>法规把 Eignungsprüfung 分为 Mappe、三项艺术实践监考作业、Kolloquium；当前线上流程先以数字作品集预选，再邀请到校实践考试并带原作。</li>
+<li>作品集是有成绩的正式考试部分。法规 §6(2)规定作品至少达到 <code>ausreichend</code>，否则整个考试不通过。</li>
+<li>当前 FAQ 说明 Bachelor 最终成绩由作品集、实践题和 Kolloquium 三部分组成；官方没有公开三部分的权重。</li>
+</ul>
+<h5 id="portfolio--b-是否存在官方评分标准-12">B. 是否存在官方评分标准</h5>
+<ul>
+<li>**有。**法规列出七项评价维度、1–5 分/0.3 级差、普通 HZB 与无 HZB 的不同通过线。</li>
+<li>但 2009 法规的“随申请寄至少20件原创”已被当前数字流程更新；评价条款仍由学校当前 Hochschulrecht 页列作 Bachelor EPO，并被当前 FAQ 的三部分总成绩表述印证。报告需同时标注法规年份与物流变化。</li>
+</ul>
+<h5 id="portfolio--c-官方评价维度-12">C. 官方评价维度</h5>
+<p>§9(1)（PDF 第3页）规定所有考试部分依据：</p>
+<ol>
+<li><code>Phantasie, Erfindungsgabe, Wahrnehmungsfähigkeit</code>：想象力、创造/发明能力、感知能力；</li>
+<li><code>Originalität und Eigenständigkeit</code>：原创性与独立性；</li>
+<li><code>Formauffassung</code>：对形式的理解/把握；</li>
+<li><code>Farbwahrnehmung</code>：色彩感知；</li>
+<li><code>Zeichnerische Fähigkeit</code>：绘画/素描表达能力；</li>
+<li><code>Plastisch-räumliches Darstellungsvermögen</code>：立体—空间表现能力；</li>
+<li><code>Technisch-konstruktives Verständnis</code>：技术—构造理解。</li>
+</ol>
+<p>Kolloquium 另用于了解 <code>Motivation, Absichten, Vorstellungen und Kenntnisse</code>（动机、意图、设想、知识；§8）。这些是谈话目的，法规未给单独权重。<br><strong>证据等级：Level 1。</strong></p>
+<h5 id="portfolio--d-具体分值-13">D. 具体分值</h5>
+<ul>
+<li>成绩 1=sehr gut、2=gut、3=befriedigend、4=ausreichend、5=nicht ausreichend；单项可用 ±0.3 细分（§9(2)–(3)）。</li>
+<li>总成绩档：≤1.50 非常好；&gt;1.50–2.50 好；&gt;2.50–3.50 满意；&gt;3.50 不通过（§9(4)）。</li>
+<li>法规没有公开七项如何加权，也没有明确 Mappe/三项实践/Kolloquium 三类成绩的权重或总分公式。</li>
+</ul>
+<h5 id="portfolio--e-通过标准-12">E. 通过标准</h5>
+<ul>
+<li>有一般 HZB：所有单项都通过，且总成绩至少 <code>befriedigend</code>；按给定总评档即不高于 3.50。</li>
+<li>无一般 HZB（也包括仅 Fachhochschulreife 的校方说明情形）：所有单项通过，且总成绩必须<strong>优于 2.0</strong>。</li>
+<li>作品集本身低于 <code>ausreichend</code> 即全程不通过；实践作业同理（§6–7）。</li>
+</ul>
+<h5 id="portfolio--f-评审人员-12">F. 评审人员</h5>
+<ul>
+<li>总 <code>Eignungsprüfungsausschuss</code> 5 人：四个专业各 1 名代表，加 1 名学生；参议院任命；至少 3 人在场，简单多数，平票对申请人有利（§2）。</li>
+<li>每个专业另设 <code>Eignungsprüfungskommission</code>，至少 3 名本专业教师（§3）。</li>
+<li>每项实践作业至少由 2 名委员会成员评价（§7）。所有咨询与决定均须有记录。</li>
+</ul>
+<h5 id="portfolio--g-现场考试-12">G. 现场考试</h5>
+<ul>
+<li>**有。**实践部分为 3 项针对所选专业的任务；当前官方页称通常在校内按考试条件完成，并另有 Kolloquium。</li>
+<li>实践任务按七项维度评价；每项至少两名委员评分；作品集、实践、谈话共同构成最终成绩。</li>
+<li>当前申请页描述 Freie Kunst 到校考试约 2–3 天；具体题目和时限由当届通知给出，不能用旧题推测 2027。</li>
+</ul>
+<h5 id="portfolio--h-官方文件-12">H. 官方文件</h5>
+<ol>
+<li><a href="https://muthesius-kunsthochschule.de/wp-content/uploads/2013/05/bachelor-epo.pdf" target="_blank" rel="noopener noreferrer">Bachelor-Eignungsprüfungsordnung（20.05.2009；截至基准日仍列在学校当前 Hochschulrecht 页）</a>——PDF 第1页 §1–3；第2页 §5–8；第3页 §9；<strong>Level 1</strong>。</li>
+<li><a href="https://muthesius-kunsthochschule.de/hochschulrecht/" target="_blank" rel="noopener noreferrer">Hochschulrecht 官方索引</a>——“Eignungsprüfungsordnungen der Studiengänge / Eignungsprüfungsordnung Bachelor”；<strong>Level 2（确认当前列示状态）</strong>。</li>
+<li><a href="https://muthesius-kunsthochschule.de/faq-bewerberinnen/" target="_blank" rel="noopener noreferrer">FAQ zur Bewerbung und Eignungsprüfung</a>——三部分总成绩、无 Abitur 的 &gt;2.0 门槛；<strong>Level 2</strong>。</li>
+<li><a href="https://muthesius-kunsthochschule.de/die-praktische-eignungspruefung/" target="_blank" rel="noopener noreferrer">Die künstlerische Eignungsprüfung</a>——当前三项任务与现场形式；<strong>Level 2</strong>。</li>
+<li><a href="https://muthesius-kunsthochschule.de/bewerbungsablauf/" target="_blank" rel="noopener noreferrer">当前 Bewerbungsablauf</a>——数字作品预选、原作与到校考试；<strong>Level 2</strong>。</li>
+</ol>
+<h5 id="portfolio--i-研究结论-12">I. 研究结论</h5>
+<p>Muthesius 对“看什么”给出七项正式标准，并公开成绩档和两条通过线。需要保守处理的是法规年代与流程数字化：提交方式已有变化，但没有证据显示评价维度和成绩规则被新的 Bachelor EPO 取代。</p>
+<p><strong>【目前无法确认】</strong></p>
+<ul>
+<li>七项维度的相对权重；</li>
+<li>Mappe、三项实践题、Kolloquium 的相对权重及具体总评算法；</li>
+<li>当前数字预选是否直接形成法规意义上的 Mappe 成绩，或先作邀请筛选后再以原作复核；</li>
+<li>2027/28 是否会发布取代 2009 版的 Bachelor EPO；</li>
+<li>不同 Freie-Kunst 教师是否使用未公开补充评分表。</li>
+</ul>
+<h3 id="portfolio--第三部分-跨校事实比较">第三部分：跨校事实比较</h3>
+<h4 id="portfolio--3-1-作品集在流程中的位置">3.1 作品集在流程中的位置</h4>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 23" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 23</caption>
+<thead>
+<tr>
+<th scope="col">机制</th>
+<th scope="col">可以确认的学校</th>
+<th scope="col">边界说明</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row"><strong>作品集可以直接形成艺术资格结果</strong></th>
+<td>Düsseldorf（法规允许；2026实际只审作品）、HFBK Hamburg（通常直接决定）、AdBK München（Freie Kunst 只审提交作品）、Kunstakademie Münster（明确个案可直接通过/淘汰）</td>
+<td>2027执行方式仍须重查；“只审作品”不替代注册条件</td>
+</tr>
+<tr><th scope="row"><strong>作品集是量化预选且进入最终计算</strong></th>
+<td>HBK Braunschweig（Mappe 40%）；BURG 2026（Mappe 30/100）</td>
+<td>BURG 比例仅对2026年度已确认</td>
+</tr>
+<tr><th scope="row"><strong>作品集是有门槛的量化预选</strong></th>
+<td>ABK Stuttgart、HfK Bremen、HBK Braunschweig、BURG、AdBK Karlsruhe</td>
+<td>各校阈值和后续合成完全不同，不可横向套用</td>
+</tr>
+<tr><th scope="row"><strong>作品集是定性预选，之后还有任务/谈话</strong></th>
+<td>UdK、HfBK Dresden、Nürnberg、weißensee、Kassel、HfG Offenbach、HBKsaar、HGB Leipzig、Weimar</td>
+<td>“定性”不代表随意，只表示公开文件没有数值表</td>
+</tr>
+<tr><th scope="row"><strong>常规路径没有传统完整作品集预选</strong></th>
+<td>HKS Ottersberg</td>
+<td>无 HZB 的特殊路径另有10件作品PDF；是否单独计分未公开</td>
+</tr>
+</tbody></table></div>
+<h4 id="portfolio--3-2-明确公开-技术-手工-实现能力-的学校">3.2 明确公开“技术/手工/实现能力”的学校</h4>
+<ul>
+<li><strong>直接写出技术或手工能力：</strong> HfBK Dresden、AdBK München、ABK Stuttgart、Kunsthochschule Kassel、HfG Offenbach、AdBK Karlsruhe、Muthesius Kiel。</li>
+<li><strong>写出所选媒介中的实现/落实能力：</strong> Düsseldorf、HFBK Hamburg、HBK Braunschweig、weißensee、Kunstakademie Münster、HBKsaar、HGB Leipzig。</li>
+<li><strong>未在正式维度中单列技术：</strong> UdK、HfK Bremen、Nürnberg、HKS Ottersberg、Bauhaus Weimar；这只能写“未确认”，不能写成“学校不看技术”。</li>
+</ul>
+<p>因此，公开证据不支持“德国美院统一认为创意比技术重要”或“技术不重要”这类通则。</p>
+<h4 id="portfolio--3-3-明确公开-潜力-发展能力-的学校">3.3 明确公开“潜力/发展能力”的学校</h4>
+<ul>
+<li>HFBK Hamburg：B 等级明确写“当前尚未充分显出特殊艺术能力，但存在 <code>Entwicklungspotential</code>”；B 仍不录取。</li>
+<li>HfBK Dresden：作品集正式维度包含 <code>schöpferisches Potential</code>。</li>
+<li>HBKsaar：正式维度包含 <code>künstlerisch-gestalterische Entwicklungsfähigkeit</code>。</li>
+<li>Bauhaus Weimar：正式维度包含 <code>Fähigkeit zur künstlerischen Entwicklung</code>。</li>
+<li>HKS Ottersberg：当前 Level 2 专业页点名 <code>kreatives Potenzial</code>，但法规没有量化定义。</li>
+<li>BURG：长期规章说明面谈用于形成对艺术/设计与个人潜力的整体印象；2026计分表未把“潜力”另列分值。</li>
+</ul>
+<p>其余学校即使可能在实际评审中考虑潜力，公开正式依据不足时一律记为“未确认”。</p>
+<h4 id="portfolio--3-4-明确公开-独立性-自主艺术表达-的学校">3.4 明确公开“独立性/自主艺术表达”的学校</h4>
+<ul>
+<li>AdBK München：<code>eigenständige Ideen und Bildfindungen</code>。</li>
+<li>HBK Braunschweig：<code>eigenständige künstlerische Artikulation</code> 与 <code>Selbständigkeit</code>。</li>
+<li>weißensee：<code>Selbständigkeit</code>。</li>
+<li>Bauhaus Weimar：<code>Eigenständigkeit</code>。</li>
+<li>Muthesius Kiel：<code>Originalität und Eigenständigkeit</code>。</li>
+</ul>
+<p>Düsseldorf 的当前官方解释谈到独立转化，Nürnberg/Kassel谈到“自己的艺术观念”，但这些不自动等同于法规中的 <code>Eigenständigkeit</code>，故在最终表中保留层级差异。</p>
+<h4 id="portfolio--3-5-现场-后续考试的事实差异">3.5 现场/后续考试的事实差异</h4>
+<ul>
+<li><strong>当前无常规后续实践/口试：</strong> AdBK München；Düsseldorf 2026无追加考试，但长期法规保留疑难个案追加程序。</li>
+<li><strong>作品集疑难时才追加：</strong> HFBK Hamburg；Kunstakademie Münster（专业面谈，无常规实践题）。</li>
+<li><strong>有实践任务＋谈话：</strong> HfBK Dresden、ABK Stuttgart、weißensee、Kassel、HfG Offenbach、BURG、HGB Leipzig、AdBK Karlsruhe、Muthesius Kiel。</li>
+<li><strong>当前后续仅谈话/原作：</strong> HfK Bremen、Nürnberg、HBK Braunschweig、Bauhaus Weimar。</li>
+<li><strong>线上后续测试：</strong> UdK 2026；2027形式尚未公布。</li>
+<li><strong>形式随当届通知：</strong> HKS Ottersberg 的2026场次为数字形式；2027是现场还是数字尚未公布。</li>
+</ul>
+<h3 id="portfolio--第四部分-这些评价标准对作品集准备意味着什么">第四部分：《这些评价标准对作品集准备意味着什么》</h3>
+<h4 id="portfolio--4-1-学校明确要求或明确评价的内容">4.1 学校明确要求或明确评价的内容</h4>
+<ul>
+<li>只在逐校档案列出的 Level 1–2 原词范围内准备针对性版本。例如 Stuttgart 的50/30/20、Braunschweig 的40%/60%、BURG 2026 的30/20/20/30，都是可操作事实。</li>
+<li>若学校把作品集作为第一轮门槛，应先满足该校的材料边界；件数、格式或原作要求本身不是质量分，但形式不合格可能让作品无法进入艺术评审。</li>
+<li>对明确评价反思/口头表达的学校，后续谈话不能只准备作品名称和材料；法规要求的范围可能包括自身项目、艺术问题、学习动机或艺术史知识。</li>
+<li>对明确评价实现/技术能力的学校，不能用“概念说明”代替作品本身显示出的实现证据。</li>
+</ul>
+<h4 id="portfolio--4-2-研究性推论-只作为准备策略-不是学校命令">4.2 【研究性推论】—只作为准备策略，不是学校命令</h4>
+<ul>
+<li><strong>【研究性推论】</strong> 对 UdK、Nürnberg、München 等明确要求“深入处理自选主题、强度或连续工作”的学校，作品之间能否看出持续研究关系，可能比简单增加互不关联的单件更有助于委员会读取官方所述维度；这不是数量或系列的隐含加分公式。</li>
+<li><strong>【研究性推论】</strong> 对数字初审、入围后看原作的学校，数字文档应忠实显示比例、材质、空间关系和细节，否则委员会可能无法从第一阶段材料判断法规所说的实现能力；学校没有公开“摄影质量占多少分”。</li>
+<li><strong>【研究性推论】</strong> 对作品集与现场考试使用相同维度的学校，可用同一套创作问题准备作品集、现场任务和谈话，但不要背诵统一答案；现场环节通常验证申请人能否在不同时间条件下继续工作与说明。</li>
+<li><strong>【研究性推论】</strong> 对只审作品或通常可仅凭作品作决定的学校，作品集需要独立承担构思、实现、强度与发展轨迹的证据；但不能据此推断“完成度一定比实验重要”。</li>
+<li><strong>【研究性推论】</strong> 最安全的策略不是制作一套所谓“德国统一审美”作品集，而是保留作品主体不变、按各校公开维度调整顺序、文档、说明和谈话准备。</li>
+</ul>
+<h3 id="portfolio--第五部分-制度冲突-版本风险与尚未公开的信息">第五部分：制度冲突、版本风险与尚未公开的信息</h3>
+<h4 id="portfolio--5-1-已发现的官方版本-文本冲突">5.1 已发现的官方版本/文本冲突</h4>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 24" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 24</caption>
+<thead>
+<tr>
+<th scope="col">学校</th>
+<th scope="col">冲突或版本风险</th>
+<th scope="col">本报告处理</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">Düsseldorf</th>
+<td>长期规章允许疑难个案追加实践/谈话；2026申请页明确本轮只审作品</td>
+<td>两者同时保留；不把2026执行写成永久规则</td>
+</tr>
+<tr><th scope="row">HFBK Hamburg</th>
+<td>2026法规保留 A/B/C；当前 FAQ 对外简化为 A/C</td>
+<td>以 Level 1 的 A/B/C 为准，注明公众页省略 B</td>
+</tr>
+<tr><th scope="row">AdBK München</th>
+<td>旧的一般现场考试条款仍在；后加 Freie-Kunst 专项条款及官网取消实践/口试</td>
+<td>以专业专项条款和当前官网为准，保留遗留文本说明</td>
+</tr>
+<tr><th scope="row">HfK Bremen</th>
+<td>2023合并版取消实践制作且改委员会构成；官网法规目录仍链接旧扫描版；合并版 §4 又残留“现场作品”计分措辞</td>
+<td>采用后期合并版与当前申请页；第二阶段精确计分对象列为未确认</td>
+</tr>
+<tr><th scope="row">AdBK Nürnberg</th>
+<td>官方索引可核法规正文，但原 PDF 在研究日返回404</td>
+<td>关键法定结论标注 Level 1 可访问性缺口，并建议向校方索取现行文本</td>
+</tr>
+<tr><th scope="row">HfG Offenbach</th>
+<td>2023版 Mappe/Prüfungstag 各50%；2024现行版改为最终评价等同考试日</td>
+<td>50/50只作历史信息，不写成现行规则</td>
+</tr>
+<tr><th scope="row">BURG</th>
+<td>长期规章与每年 Verfahrensregelung 并存</td>
+<td>评价维度取长期规则；环节分数以当年公报为准；2026分值不外推至2027</td>
+</tr>
+<tr><th scope="row">Bauhaus Weimar</th>
+<td>旧手册出现 Hausaufgabe；2022现行规章与当前页面只规定数字预选＋谈话/原作</td>
+<td>不把旧 Hausaufgabe 当作现行固定步骤</td>
+</tr>
+<tr><th scope="row">Muthesius Kiel</th>
+<td>2009法规仍在当前法务索引，但寄送原作等物流已被数字流程更新</td>
+<td>评价维度/成绩规则继续引用并明确年代；提交方式按当前页面，2027需重核</td>
+</tr>
+</tbody></table></div>
+<h4 id="portfolio--5-2-全校普遍未公开或经常未公开的内容">5.2 全校普遍未公开或经常未公开的内容</h4>
+<ul>
+<li>委员内部实际使用的空白评分表、逐项备注模板和讨论记录；</li>
+<li>不同教授/不同班级是否使用附加的内部观察尺度；</li>
+<li>多数学校的作品集、任务、面谈之间精确百分比；</li>
+<li>分值或等级相同后的名额排序、候补与同分处理；</li>
+<li>历年各阶段通过率、委员个人给分分布；</li>
+<li>2027/28 委员名单、题型、面谈形式和年度执行细则；</li>
+<li>艺术能力考试通过后，艺术资格与最终名额分配之间的全部内部操作。</li>
+</ul>
+<p>这些内容在逐校档案没有官方依据时均写“未确认”，而不是“没有”。</p>
+<h3 id="portfolio--第六部分-20所德国艺术院校-作品集到底-看什么">第六部分：《20所德国艺术院校：作品集到底“看什么”？》</h3>
+<blockquote>
+<p>“是”只在 Level 1–2 有明确依据时使用；没有查到明确依据时写“未确认”，不写“否”。“技术能力”列把法规中的狭义技术/手工与较宽的媒介实现能力区分说明。</p>
+</blockquote>
+<div class="table-wrap" role="region" aria-label="作品集评价机制 · 数据表 25" tabindex="0"><table class="data-table"><caption class="sr-only">作品集评价机制 · 数据表 25</caption>
+<thead>
+<tr>
+<th scope="col">学校</th>
+<th scope="col">官方明确评价什么</th>
+<th scope="col">有无具体评分</th>
+<th scope="col">作品集作用</th>
+<th scope="col">是否看艺术潜力</th>
+<th scope="col">是否强调艺术独立性</th>
+<th scope="col">是否强调技术能力</th>
+<th scope="col">是否强调概念/思考</th>
+<th scope="col">是否有现场考试</th>
+<th scope="col">信息确定程度</th>
+</tr>
+</thead>
+<tbody><tr><th scope="row">Kunstakademie Düsseldorf</th>
+<td>艺术造型能力；所选媒介实现能力；艺术构思与强度</td>
+<td>有：1–3 级、均值及 2.3/1.3 线</td>
+<td>可直接作决定；法规另保留疑难个案追加考试</td>
+<td>未确认</td>
+<td>L2 解释提到独立转化，但 L1 未单列 <code>Eigenständigkeit</code></td>
+<td>是：媒介实现能力</td>
+<td>是：艺术构思</td>
+<td>2026 无；未来须重查</td>
+<td>高；当年是否继续取消追加考试为可变项</td>
+</tr>
+<tr><th scope="row">UdK Berlin</th>
+<td>内容与形式深入研究；自身兴趣/能力；观察；原创性；强度</td>
+<td>无</td>
+<td>第一轮预选</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>是：内容/形式研究和反思任务</td>
+<td>2026 为线上后续测试/谈话，非现场</td>
+<td>高；2027 实施细则待公布</td>
+</tr>
+<tr><th scope="row">HFBK Hamburg</th>
+<td>构思；造型能力；所选媒介实现能力</td>
+<td>有 A/B/C 整体等级；无数字</td>
+<td>通常直接决定，疑难时追加</td>
+<td><strong>是：B 级明写存在发展潜力</strong></td>
+<td>未确认</td>
+<td>是：媒介实现能力</td>
+<td>是：Konzeption</td>
+<td>可选，不是人人必考</td>
+<td>高；L2 FAQ 省略 B，L1 仍明确保留</td>
+</tr>
+<tr><th scope="row">HfBK Dresden</th>
+<td>手工与艺术能力水平；原创性；创造潜力；终试反思和艺术知识</td>
+<td>无数字；有“至少三维＋多数票”</td>
+<td>初选门槛</td>
+<td><strong>是：<code>schöpferisches Potential</code></strong></td>
+<td>未确认；原创性不能等同独立性</td>
+<td>是</td>
+<td>是：终试自我反思/理论知识</td>
+<td>是</td>
+<td>高</td>
+</tr>
+<tr><th scope="row">AdBK München</th>
+<td>强度；实验/解题；独立理念/图像；空间构图；抽象/创造/即兴；动机/敏感；想象；技术</td>
+<td>无</td>
+<td>唯一公开艺术考试载体</td>
+<td>未确认</td>
+<td><strong>是：<code>eigenständiger Ideen und Bildfindungen</code></strong></td>
+<td>是</td>
+<td>是：解决路径、独立理念、抽象与理解</td>
+<td>否</td>
+<td>高；现行专项条款与旧 §15 并存但 L2 同步确认取消</td>
+</tr>
+<tr><th scope="row">ABK Stuttgart</th>
+<td>艺术造型；手工；兴趣、反思和口头表达</td>
+<td>有：50/30/20，100 分及 70/90 线</td>
+<td>初选，决定后续考试资格</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>是</td>
+<td>是：反思与表达</td>
+<td>是</td>
+<td>很高；2027 是否修法待查</td>
+</tr>
+<tr><th scope="row">HfK Bremen</th>
+<td>感知/观察；想象、创造和原创的艺术转化；反思、历史定位、组织与表达</td>
+<td>有：100 分、等权均值、60/80 线</td>
+<td>初选，决定面谈资格</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>是：反思/历史定位</td>
+<td>当前仅现场面谈</td>
+<td>中高；2023 合并版与新站旧扫描件、修订后 §3 与残留 §4 存在冲突</td>
+</tr>
+<tr><th scope="row">AdBK Nürnberg</th>
+<td>艺术—创造性天赋/适合性；表达自身艺术观念；Level 2另写个人兴趣与深入处理自选主题</td>
+<td>无数字；二元通过</td>
+<td>预选并继续影响整体判断</td>
+<td>未确认</td>
+<td>未确认；“自身观念”不自动等同法规上的独立性</td>
+<td>未确认</td>
+<td>是：自身观念；口试看对项目/观念的反思</td>
+<td>是，仅口试/原作，无实践题</td>
+<td>中高；QualS原PDF失效，须向校方补证当前性</td>
+</tr>
+<tr><th scope="row">HBK Braunschweig</th>
+<td>图像理解；实现；独立艺术表达；投入强度；独立性；原创性</td>
+<td>有：0–10、40/60、5/8/9门槛</td>
+<td>量化预选且占总评40%</td>
+<td>未确认</td>
+<td>是</td>
+<td>是：实现能力（不等同狭义技巧）</td>
+<td>是：图像理解与艺术表达</td>
+<td>是，约10分钟面谈</td>
+<td>很高；2025现行法规</td>
+</tr>
+<tr><th scope="row">weißensee</th>
+<td>专业问题的艺术理解；想象；实现；投入强度；独立；反思；原创</td>
+<td>无数字；适合/不适合</td>
+<td>预选门槛，终试仍看作品与考试作品</td>
+<td>未确认</td>
+<td>是</td>
+<td>是：实现能力</td>
+<td>是：艺术理解与精神反思</td>
+<td>是，2–3天任务＋谈话</td>
+<td>高；现行目录仍列2015合并文本</td>
+</tr>
+<tr><th scope="row">Kunsthochschule Kassel</th>
+<td>抽象；自身艺术观念；细致观察；创造/即兴；动机/敏感；想象；技术</td>
+<td>无数字；通过/优秀通过/不通过</td>
+<td>可仅凭作品集淘汰</td>
+<td>未确认</td>
+<td>未确认；“自身观念”不自动等同独立性</td>
+<td>是</td>
+<td>是：抽象与自身观念</td>
+<td>是，监督任务＋约30分钟谈话</td>
+<td>高；2014规章仍由当前项目引用</td>
+</tr>
+<tr><th scope="row">HfG Offenbach</th>
+<td>实现自身想法；抽象/迁移；观察；即兴；动机/敏感；二维三维语境想象；反思/批评；技术；口头表达</td>
+<td>有总评线；作品集无单独现行分值</td>
+<td>前置筛选；2024最终成绩等同考试日</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>是</td>
+<td>是：抽象、反思、批评、口头表达</td>
+<td>是</td>
+<td>很高；50/50仅为2023历史规则</td>
+</tr>
+<tr><th scope="row">Kunstakademie Münster</th>
+<td>艺术造型；所选媒介实现；艺术构思与强度</td>
+<td>有共同成绩1/2/3；无维度权重</td>
+<td>可直接通过/淘汰；疑难时谈话</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>是：媒介实现能力</td>
+<td>是：艺术构思</td>
+<td>无常规实践；可追加谈话</td>
+<td>很高；2025第六次修订</td>
+</tr>
+<tr><th scope="row">Burg Halle</th>
+<td>感知；呈现/表达；想象/抽象；问题识别/分析；幻想/创造；专业能力；动机</td>
+<td>2026有30+20+20+30和三条门槛</td>
+<td>2026占总分30%且先过15/30</td>
+<td>是：面谈形成艺术/个人潜力整体印象</td>
+<td>未确认</td>
+<td>未确认；只写专业能力</td>
+<td>是：抽象、问题分析</td>
+<td>是</td>
+<td>高（仅对2026分值）；2027年度表待发</td>
+</tr>
+<tr><th scope="row">HBKsaar</th>
+<td>艺术—造型发展、实现、反思能力</td>
+<td>无数字；二元结果</td>
+<td>第一轮预选</td>
+<td>是：发展能力</td>
+<td>未确认</td>
+<td>是：实现能力（非狭义技术）</td>
+<td>是：反思</td>
+<td>是</td>
+<td>中高；2011基础法规＋2018/2021修订</td>
+</tr>
+<tr><th scope="row">HKS Ottersberg</th>
+<td>Level 2：人格/个人呈现、创造潜力、投入；法规只写特别/卓越艺术能力</td>
+<td>无</td>
+<td>常规路径无传统Mappe；无HZB者另交作品样本</td>
+<td>是：Level 2 <code>kreatives Potenzial</code></td>
+<td>未确认</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>有；2026数字，2027形式待通知</td>
+<td>中；正式操作性维度、分值均未公开</td>
+</tr>
+<tr><th scope="row">HGB Leipzig</th>
+<td>艺术造型；实现；艺术构思；强度</td>
+<td>无数字；Rang 1/2/3</td>
+<td>预选门槛</td>
+<td>学习目标预期明确；独立发展潜力未单列</td>
+<td>未确认</td>
+<td>是：实现能力</td>
+<td>是：艺术构思</td>
+<td>是</td>
+<td>很高；2026现行规章</td>
+</tr>
+<tr><th scope="row">Bauhaus Weimar</th>
+<td>独立性；创造力；艺术发展能力，整体须明显高于平均</td>
+<td>无；二元结果</td>
+<td>预选门槛</td>
+<td>是</td>
+<td>是</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>有谈话/原作；无固定实践题</td>
+<td>很高；2022现行规章</td>
+</tr>
+<tr><th scope="row">AdBK Karlsruhe</th>
+<td>艺术造型×5；艺术—手工×3；反思/语言表达×2</td>
+<td>有1–5级、5:3:2、4.0/3.0线</td>
+<td>量化预选；三阶段评分进入同一总平均</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>是</td>
+<td>是：反思/语言表达</td>
+<td>是</td>
+<td>很高；2022现行规章</td>
+</tr>
+<tr><th scope="row">Muthesius Kiel</th>
+<td>想象/发明/感知；原创/独立；形式；色彩；绘画；立体空间；技术构造</td>
+<td>有1–5、±0.3、≤3.5及&lt;2.0线</td>
+<td>正式考试部分；当前数字预选映射未完全公开</td>
+<td>未确认</td>
+<td>是</td>
+<td>是</td>
+<td>谈话明确动机/意图/知识；概念能力未单列</td>
+<td>是</td>
+<td>中高；评价规则仍列示但法规为2009年</td>
+</tr>
+</tbody></table></div>
+<h3 id="portfolio--第七部分-最终事实核查">第七部分：最终事实核查</h3>
+<h4 id="portfolio--7-1-覆盖检查">7.1 覆盖检查</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 20/20 所学校均检索 Prüfungsordnung / Eignungsprüfungsordnung / Zulassungsordnung / Satzung 或学校当前官方法规目录。</li>
+<li><input checked="" disabled="" type="checkbox"> 20/20 所学校均检索 <code>Bewertung</code>、<code>Bewertungskriterien</code>、<code>Bewertungsmaßstab</code>、<code>Punkte</code>、<code>Mindestpunktzahl</code>、<code>Bestehensgrenze</code> 等量化词。</li>
+<li><input checked="" disabled="" type="checkbox"> 20/20 所学校均检索 <code>künstlerische Eignung/Begabung/Befähigung</code> 及特别/卓越等级用语。</li>
+<li><input checked="" disabled="" type="checkbox"> 20/20 所学校均核查委员会、表决或记录规则；未公开者明确写“未确认”。</li>
+<li><input checked="" disabled="" type="checkbox"> 作品集提交要求、评价维度、评分方法、通过规则在逐校档案中分开。</li>
+<li><input checked="" disabled="" type="checkbox"> 现场实践、谈话与作品集作用分开说明；没有把“允许某媒介”写成“评价媒介实验”。</li>
+<li><input checked="" disabled="" type="checkbox"> 2026年度规则与2027/28待公布内容分开；没有把2026日期或年度分值写成2027事实。</li>
+<li><input checked="" disabled="" type="checkbox"> 教授个人取向未被升级为学校正式标准；第三方未作为核心制度事实的唯一来源。</li>
+<li><input checked="" disabled="" type="checkbox"> 除 Nürnberg 已披露的 QualS 原 PDF 可访问性缺口外，关键结论均附学校官方原始链接或当前官方索引；法规尽量给出页码/条款。</li>
+<li><input checked="" disabled="" type="checkbox"> 所有可点击外链均指向学校官方域名；最终检查未发现未标记的 404，已失效的历史页面已移除链接或明确标为不可复核，未继续充当当前核心证据。</li>
+</ul>
+<h4 id="portfolio--7-2-结论边界检查">7.2 结论边界检查</h4>
+<ul>
+<li>没有自行创造百分比或分配维度权重。</li>
+<li>没有把作品数量、PDF大小、作品媒介直接当作质量评分。</li>
+<li>没有把 <code>Originalität</code> 自动等同 <code>Eigenständigkeit</code>，也没有把 <code>Realisierungsfähigkeit</code> 一律窄化为写实技巧。</li>
+<li>没有把“多数决”改写成“每位教授独立按统一分表打分”，除非条文明文规定。</li>
+<li>没有把“未在公开资料找到”写成“学校不存在内部标准”。</li>
+</ul>
+<h3 id="portfolio--第八部分-需要申请人之后再次确认的问题">第八部分：需要申请人之后再次确认的问题</h3>
+<p>建议在 <strong>2026年11月至2027年各校申请开放前</strong>逐校复核：</p>
+<ol>
+<li>2027/28 是否发布新的 Eignungsprüfungsordnung、Zulassungsordnung、Ausführungsbestimmung 或年度 Verfahrensregelung；</li>
+<li>Düsseldorf 2027 是否仍然只审作品、UdK 2027 后续考试是否仍在线；</li>
+<li>HfK Bremen 是否发布消除 §3 / §4 冲突的新合并文本；</li>
+<li>Nürnberg 能否重新提供当前有效 QualS 原 PDF；</li>
+<li>HfG Offenbach 2027前是否再次修改2024规则，以及最终成绩是否仍等同 Prüfungstag；</li>
+<li>BURG 2027年度是否沿用30+20+20+30和15/30、40/100、50/100三条门槛；</li>
+<li>Muthesius 是否发布取代2009 Bachelor-EPO的新规章；</li>
+<li>各校当届是否改变实体原作、现场考试、视频面谈或委员会安排；</li>
+<li>艺术考试通过后是否另有名额排序，以及成功结果是否能延期或跨年度使用；</li>
+<li>学校是否愿意提供申请人可查阅的 Prüfungsprotokoll、拒绝理由或现行 Bewertungsbogen。</li>
+</ol>
+<hr>
+<p><strong>最终结论：</strong> 20校并不存在一套可以泛化的“德国美院统一审美量表”。公开制度呈现出三种主要做法：量化分数/权重、等级/共同成绩、以及围绕明确维度的委员会整体判断。真正可用于准备的，是逐校公开的能力词、作品集在流程中的位置、后续考试形式和通过机制；未公开的教授内部判断必须继续保留为未知。</p>
+
+        </article>
+      </main>
+    </div>
+
+    <footer>德国 20 所艺术院校作品集评价机制与评价依据 · 研究基准日 2026-09-29 · 内容完整保留自原始 Markdown</footer>
+  </section>
+  <button class="back-top" id="backTop" type="button" aria-label="返回当前报告顶部">↑</button>
+  <script type="application/json" id="report-manifest">{"generatedAt":"2026-09-29","architecture":"flat-sibling-panels-no-iframe","reports":[{"key":"portfolio","source":"德国美院_20校_作品集评价机制与评价依据数据库_2026-09-29.md","sourceChars":109179,"sourceBytes":200134,"sourceSha256":"5cba527171bf8a835a24dd2bbba8b0bcd05d48f4690168d045807dcb0c834c2a","headings":265,"tocItems":9,"tables":25,"uniqueUrls":85}]}</script>
+  <script>
+    (function () {
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.report-panel'));
+      var reportTabs = Array.prototype.slice.call(document.querySelectorAll('[data-report-target]'));
+      var progress = document.getElementById('progressBar');
+      var backTop = document.getElementById('backTop');
+      var skipLink = document.querySelector('.skip-link');
+      var activePanel = panels.find(function (panel) { return !panel.hidden; }) || panels[0];
+      var observer = null;
+      var detailsState = [];
+
+      function panelFromHash() {
+        var raw = window.location.hash ? decodeURIComponent(window.location.hash.slice(1)) : '';
+        return panels.find(function (panel) {
+          return raw.indexOf(panel.getAttribute('data-report') + '--') === 0;
+        }) || null;
+      }
+
+      function closeMenus() {
+        panels.forEach(function (panel) {
+          var toc = panel.querySelector('.toc');
+          var button = panel.querySelector('.mobile-menu-button');
+          if (toc) toc.classList.remove('open');
+          if (button) button.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      function updateActiveToc() {
+        if (observer) observer.disconnect();
+        var links = Array.prototype.slice.call(activePanel.querySelectorAll('.toc-link'));
+        var headings = Array.prototype.slice.call(activePanel.querySelectorAll('main h2[id], main h3[id]'));
+        if (!('IntersectionObserver' in window)) return;
+        observer = new IntersectionObserver(function (entries) {
+          var visible = entries.filter(function (entry) { return entry.isIntersecting; });
+          if (!visible.length) return;
+          visible.sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+          var id = visible[0].target.id;
+          links.forEach(function (link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }, { rootMargin: '-18% 0px -70% 0px', threshold: [0, 1] });
+        headings.forEach(function (heading) { observer.observe(heading); });
+      }
+
+      function activatePanel(key, options) {
+        options = options || {};
+        var next = panels.find(function (panel) { return panel.getAttribute('data-report') === key; });
+        if (!next) return;
+        panels.forEach(function (panel) {
+          var active = panel === next;
+          panel.hidden = !active;
+          panel.classList.toggle('is-active', active);
+        });
+        reportTabs.forEach(function (tab) {
+          var active = tab.getAttribute('data-report-target') === key;
+          tab.classList.toggle('is-current', active);
+          if (active) tab.setAttribute('aria-current', 'page');
+          else tab.removeAttribute('aria-current');
+        });
+        activePanel = next;
+        document.title = next.getAttribute('data-title') + ' · 三合一总报告';
+        if (skipLink) skipLink.setAttribute('href', '#' + key + '--main-content');
+        closeMenus();
+        updateActiveToc();
+        updateScrollUi();
+        if (options.scrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      panels.forEach(function (panel) {
+        var toc = panel.querySelector('.toc');
+        var toggle = panel.querySelector('.mobile-menu-button');
+        var search = panel.querySelector('.toc-search');
+        var links = Array.prototype.slice.call(panel.querySelectorAll('.toc-link'));
+        if (toggle && toc) {
+          toggle.addEventListener('click', function () {
+            var open = toc.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', String(open));
+          });
+        }
+        if (search) {
+          search.addEventListener('input', function () {
+            var query = search.value.trim().toLowerCase();
+            links.forEach(function (link) {
+              link.hidden = Boolean(query && link.getAttribute('data-label').indexOf(query) === -1);
+            });
+          });
+        }
+        links.forEach(function (link) {
+          link.addEventListener('click', function () {
+            if (window.innerWidth <= 1120) closeMenus();
+          });
+        });
+      });
+
+      reportTabs.forEach(function (tab) {
+        tab.addEventListener('click', function (event) {
+          event.preventDefault();
+          var key = tab.getAttribute('data-report-target');
+          activatePanel(key, { scrollTop: true });
+          history.pushState(null, '', '#' + key + '--top');
+        });
+      });
+
+      function handleHash() {
+        var requested = panelFromHash();
+        if (requested) activatePanel(requested.getAttribute('data-report'), { scrollTop: false });
+        var raw = window.location.hash ? decodeURIComponent(window.location.hash.slice(1)) : '';
+        var target = raw ? document.getElementById(raw) : null;
+        if (target) requestAnimationFrame(function () { target.scrollIntoView(); });
+      }
+
+      if (panels.length > 1) {
+        window.addEventListener('hashchange', handleHash);
+        var initial = panelFromHash();
+        if (initial) activatePanel(initial.getAttribute('data-report'), { scrollTop: false });
+      }
+
+      function updateScrollUi() {
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        var ratio = max > 0 ? window.scrollY / max : 0;
+        if (progress) progress.style.width = Math.max(0, Math.min(100, ratio * 100)) + '%';
+        if (backTop) backTop.classList.toggle('visible', window.scrollY > 850);
+      }
+      window.addEventListener('scroll', updateScrollUi, { passive: true });
+      window.addEventListener('resize', updateScrollUi);
+      updateActiveToc();
+      updateScrollUi();
+
+      if (backTop) {
+        backTop.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      document.querySelectorAll('.print-button').forEach(function (button) {
+        button.addEventListener('click', function () { window.print(); });
+      });
+      window.addEventListener('beforeprint', function () {
+        detailsState = Array.prototype.slice.call(activePanel.querySelectorAll('details')).map(function (item) { return item.open; });
+        activePanel.querySelectorAll('details').forEach(function (item) { item.open = true; });
+      });
+      window.addEventListener('afterprint', function () {
+        activePanel.querySelectorAll('details').forEach(function (item, index) { item.open = detailsState[index]; });
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeMenus();
+      });
+    }());
+  </script>
+</body>
+</html>
